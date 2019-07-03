@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>kirnoのBlog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://kirning.github.io/"/>
+  <updated>2019-06-21T10:45:07.897Z</updated>
+  <id>https://kirning.github.io/</id>
+  
+  <author>
+    <name>kirno</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>构建electron、typescript、react、antd应用</title>
+    <link href="https://kirning.github.io/2019/06/14/cjxmod9su001e34u9klshizrk/"/>
+    <id>https://kirning.github.io/2019/06/14/cjxmod9su001e34u9klshizrk/</id>
+    <published>2019-06-14T10:14:11.000Z</published>
+    <updated>2019-06-21T10:45:07.897Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;这个研究了很旧，还没研究透，先记录，以免忘记&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;1-初始化react项目&quot;&gt;&lt;a href=&quot;#1-初始化react项目&quot; class=&quot;headerlink&quot; title=&quot;1.
+        
+      
+    
+    </summary>
+    
+    
+      <category term="electron, typescript, react, antd" scheme="https://kirning.github.io/tags/electron-typescript-react-antd/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://kirning.github.io/2019/01/27/cjxmod9s7000n34u98wt78hiw/"/>
+    <id>https://kirning.github.io/2019/01/27/cjxmod9s7000n34u98wt78hiw/</id>
+    <published>2019-01-27T10:37:54.357Z</published>
+    <updated>2019-01-27T10:37:54.357Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>2018-11-04日记</title>
+    <link href="https://kirning.github.io/2018/11/05/cjxmod9rj000834u9sxah3ynl/"/>
+    <id>https://kirning.github.io/2018/11/05/cjxmod9rj000834u9sxah3ynl/</id>
+    <published>2018-11-05T02:45:16.000Z</published>
+    <updated>2019-01-27T10:37:54.289Z</updated>
+    
+    <summary type="html">
+    
+      Welcome to my blog, ener password to read.
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="https://kirning.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2018-11-03日记</title>
+    <link href="https://kirning.github.io/2018/11/05/cjxmod9rl000a34u9hxti7z0r/"/>
+    <id>https://kirning.github.io/2018/11/05/cjxmod9rl000a34u9hxti7z0r/</id>
+    <published>2018-11-05T02:44:56.000Z</published>
+    <updated>2019-01-27T10:37:54.283Z</updated>
+    
+    <summary type="html">
+    
+      Welcome to my blog, ener password to read.
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="https://kirning.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2018-11-02日记</title>
+    <link href="https://kirning.github.io/2018/11/02/cjxmod9ro000d34u9cfi4bbcx/"/>
+    <id>https://kirning.github.io/2018/11/02/cjxmod9ro000d34u9cfi4bbcx/</id>
+    <published>2018-11-02T10:26:34.000Z</published>
+    <updated>2019-01-27T10:37:54.278Z</updated>
+    
+    <summary type="html">
+    
+      Welcome to my blog, ener password to read.
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="https://kirning.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2018-11-01日记</title>
+    <link href="https://kirning.github.io/2018/11/01/cjxmod9r9000334u9qnpra56r/"/>
+    <id>https://kirning.github.io/2018/11/01/cjxmod9r9000334u9qnpra56r/</id>
+    <published>2018-11-01T06:44:50.000Z</published>
+    <updated>2019-01-27T10:37:54.237Z</updated>
+    
+    <summary type="html">
+    
+      Welcome to my blog, ener password to read.
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="https://kirning.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2018-10-31日记</title>
+    <link href="https://kirning.github.io/2018/11/01/cjxmod9r5000134u9npw4147c/"/>
+    <id>https://kirning.github.io/2018/11/01/cjxmod9r5000134u9npw4147c/</id>
+    <published>2018-11-01T03:42:20.000Z</published>
+    <updated>2019-01-27T10:37:54.223Z</updated>
+    
+    <summary type="html">
+    
+      Welcome to my blog, ener password to read.
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="https://kirning.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2018-10-29日记</title>
+    <link href="https://kirning.github.io/2018/10/30/cjxmod9qy000034u98ufzq592/"/>
+    <id>https://kirning.github.io/2018/10/30/cjxmod9qy000034u98ufzq592/</id>
+    <published>2018-10-30T10:50:36.000Z</published>
+    <updated>2019-01-27T10:37:54.212Z</updated>
+    
+    <summary type="html">
+    
+      Welcome to my blog, ener password to read.
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="https://kirning.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2018-10-30日记</title>
+    <link href="https://kirning.github.io/2018/10/30/cjxmod9rd000434u9kx6wu5cp/"/>
+    <id>https://kirning.github.io/2018/10/30/cjxmod9rd000434u9kx6wu5cp/</id>
+    <published>2018-10-30T08:20:29.000Z</published>
+    <updated>2019-01-27T10:37:54.219Z</updated>
+    
+    <summary type="html">
+    
+      Welcome to my blog, ener password to read.
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="https://kirning.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>dnsCheck</title>
+    <link href="https://kirning.github.io/2018/07/10/cjxmod9rs000i34u9z4pprz7k/"/>
+    <id>https://kirning.github.io/2018/07/10/cjxmod9rs000i34u9z4pprz7k/</id>
+    <published>2018-07-10T06:45:51.000Z</published>
+    <updated>2019-01-27T10:37:54.336Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;使用dig命令进行检测。&lt;br&gt;运行 dig 主机记录命令进行检测或者运行 dig 主机记录 @8.8.8.8命令指定使用谷歌DNS进行验证。例如， dig txt b.aliyuntest.com @8.8.8.8。&lt;br&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>linux常用命令</title>
+    <link href="https://kirning.github.io/2018/07/02/cjxmod9rx000k34u9xqhlwkee/"/>
+    <id>https://kirning.github.io/2018/07/02/cjxmod9rx000k34u9xqhlwkee/</id>
+    <published>2018-07-02T03:40:43.000Z</published>
+    <updated>2019-01-27T10:37:54.363Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ol&gt;
+&lt;li&gt;查看apt-get下载的软件的位置&lt;/li&gt;
+&lt;/ol&gt;
+
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>gitlab安装教程</title>
+    <link href="https://kirning.github.io/2018/06/28/cjxmod9st001d34u9uxnjvugr/"/>
+    <id>https://kirning.github.io/2018/06/28/cjxmod9st001d34u9uxnjvugr/</id>
+    <published>2018-06-28T09:37:12.000Z</published>
+    <updated>2019-01-27T10:37:54.352Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;这是一片关于GitLab的安装教程以及踩过的坑&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;浪费了一个下午的时间，终于把Gitlab搭建完成，搭建环境如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;系统（虚拟机）&lt;/p&gt;
+&lt;p&gt;  Distributor ID:    Ubuntu&lt;/p&gt;
+&lt;p&gt;  Description:    Ubuntu 18.04 LTS&lt;/p&gt;
+&lt;p&gt;  Release:    18.04&lt;/p&gt;
+&lt;p&gt;  Codename:    bionic&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;gitlab V11.0.1&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="gitlab" scheme="https://kirning.github.io/tags/gitlab/"/>
+    
+      <category term="git" scheme="https://kirning.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>bt搜索脚本</title>
+    <link href="https://kirning.github.io/2018/06/19/cjxmod9rq000f34u9c2jgxjo4/"/>
+    <id>https://kirning.github.io/2018/06/19/cjxmod9rq000f34u9c2jgxjo4/</id>
+    <published>2018-06-19T09:37:10.000Z</published>
+    <updated>2019-01-27T10:37:54.331Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;脚本&quot;&gt;&lt;a href=&quot;#脚本&quot; class=&quot;headerlink&quot; title=&quot;脚本&quot;&gt;&lt;/a&gt;脚本&lt;/h2&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;
+javascript:pachong();&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;pachong&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;{&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; currentUrl = location.href;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (currentUrl.indexOf(&lt;span class=&quot;string&quot;&gt;&quot;http://sdkcloud.pro/&quot;&lt;/span&gt;) == &lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;) {&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; query = prompt(&lt;span class=&quot;string&quot;&gt;&quot;请输入想要搜索的资源关键字&quot;&lt;/span&gt;);&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(query.trim()){&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; sdkUrl = &lt;span class=&quot;string&quot;&gt;&quot;http://sdkcloud.pro/xfs.php?s=&quot;&lt;/span&gt;+query;location.href = sdkUrl;}} &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; {addBtn();}}&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;addBtn&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;{&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; list = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.querySelectorAll(&lt;span class=&quot;string&quot;&gt;&quot;.T1 a&quot;&lt;/span&gt;);list.forEach(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;item&lt;/span&gt;)&lt;/span&gt;{&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; l = item.href;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; mag = l.substring(&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;, l.length);&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; url =  &lt;span class=&quot;string&quot;&gt;&quot;https://apiv.ga/magnet/&quot;&lt;/span&gt;+mag;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; btn = &lt;span class=&quot;string&quot;&gt;&quot;&amp;lt;a style=&#39;margin-left:5px;text-decoration:none;border:1px solid #efefef;border-radius:4px;font-size:15px;padding:5px&#39; href=&#39;&quot;&lt;/span&gt;+url+&lt;span class=&quot;string&quot;&gt;&quot;&#39; target=&#39;view_window&#39;&amp;gt;%E6%92%AD%E6%94%BE&amp;lt;/a&amp;gt;&quot;&lt;/span&gt;;item.innerHTML = item.innerHTML + btn;});}
+
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>通过源码来编译nginx</title>
+    <link href="https://kirning.github.io/2018/06/19/cjxmod9sd000r34u92rm4hhnb/"/>
+    <id>https://kirning.github.io/2018/06/19/cjxmod9sd000r34u92rm4hhnb/</id>
+    <published>2018-06-19T09:34:14.000Z</published>
+    <updated>2019-01-27T10:37:54.368Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用配置参数进行编译。它定义了系统的各个方面,包含了nginx所允许的链接方法。配置后会生成一个 &lt;code&gt;Makefile&lt;/code&gt; 文件. 以下是配置支持的参数:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;--prefix=path&lt;/code&gt; — 定义一个用于保存服务器的目录 This same directory will also be used for all relative paths set by configure (except for paths to libraries sources) and in the nginx.conf configuration file. It is set to the /usr/local/nginx directory by default.&lt;/p&gt;
+&lt;p&gt;–sbin-path=path — sets the name of an nginx executable file. This name is used only during installation. By default the file is named prefix/sbin/nginx.&lt;/p&gt;
+&lt;p&gt;–conf-path=path — sets the name of an nginx.conf configuration file. If needs be, nginx can always be started with a different configuration file, by specifying it in the command-line parameter -c file. By default the file is named prefix/conf/nginx.conf.&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="nginx" scheme="https://kirning.github.io/tags/nginx/"/>
+    
+      <category term="编译" scheme="https://kirning.github.io/tags/%E7%BC%96%E8%AF%91/"/>
+    
+      <category term="linux" scheme="https://kirning.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PL2303HX 的驱动安装</title>
+    <link href="https://kirning.github.io/2018/06/19/cjxmod9rg000534u9c8gdlrny/"/>
+    <id>https://kirning.github.io/2018/06/19/cjxmod9rg000534u9c8gdlrny/</id>
+    <published>2018-06-19T05:52:28.000Z</published>
+    <updated>2019-01-27T10:37:54.325Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;由于官方不再支持PL2303HX,所以就没有了win10上可用的官方驱动.有一个应该是民间高手的人补充了这个空白&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="单片机" scheme="https://kirning.github.io/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>node 远程调试</title>
+    <link href="https://kirning.github.io/2018/06/19/cjxmod9se000t34u9x7yqxn7r/"/>
+    <id>https://kirning.github.io/2018/06/19/cjxmod9se000t34u9x7yqxn7r/</id>
+    <published>2018-06-19T05:52:00.000Z</published>
+    <updated>2019-01-27T10:37:54.382Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;进入项目根目录，假如启动个文件在 &lt;code&gt;./bin/www&lt;/code&gt; 这里。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;命令&lt;/p&gt;
+ &lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs shell&quot;&gt;node --inspect=0.0.0.0:3001 bin/www&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt; 其中 &lt;code&gt;0.0.0.0&lt;/code&gt; 表示监听的Ip地址，全0 表示任意地方可以访问。3001 是访问端口 bin/www 就是程序的启动文件&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Node" scheme="https://kirning.github.io/tags/Node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>gitHub库整理</title>
+    <link href="https://kirning.github.io/2018/06/19/cjxmod9sa000p34u9uuy7st9h/"/>
+    <id>https://kirning.github.io/2018/06/19/cjxmod9sa000p34u9uuy7st9h/</id>
+    <published>2018-06-19T05:50:25.000Z</published>
+    <updated>2019-01-27T10:37:54.341Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;javascript&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/axios/axios&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;axios&lt;/a&gt; ⭐38,326&lt;/p&gt;
+&lt;p&gt;  javascript的 http client 库&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/react-community/create-react-native-app&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;create-react-native-app&lt;/a&gt; ⭐8,843&lt;/p&gt;
+&lt;p&gt; 简介：辅助创建 react-native 程序&lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;开发文档&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="gitHub" scheme="https://kirning.github.io/tags/gitHub/"/>
+    
+      <category term="javascript" scheme="https://kirning.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>协议</title>
+    <link href="https://kirning.github.io/2018/06/19/cjxmod9sh000v34u9bntrxens/"/>
+    <id>https://kirning.github.io/2018/06/19/cjxmod9sh000v34u9bntrxens/</id>
+    <published>2018-06-19T05:48:51.000Z</published>
+    <updated>2019-01-27T10:37:54.394Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;2018年5月5日&quot;&gt;&lt;a href=&quot;#2018年5月5日&quot; class=&quot;headerlink&quot; title=&quot;2018年5月5日&quot;&gt;&lt;/a&gt;2018年5月5日&lt;/h1&gt;&lt;h3 id=&quot;机台发送给客户端&quot;&gt;&lt;a href=&quot;#机台发送给客户端&quot; class=&quot;headerlink&quot; title=&quot;机台发送给客户端&quot;&gt;&lt;/a&gt;机台发送给客户端&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;字段&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;类型&lt;/th&gt;
+&lt;th style=&quot;text-align:right&quot;&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;clientId&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;string&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;唯一识别码&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;col 2 is&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;centered&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;$12&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;col 3 is&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;right-aligned&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;$1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;主题&lt;code&gt;zbc/client/death&lt;/code&gt; 死亡主题:&lt;/p&gt;
+&lt;p&gt; 描述:    当客户端掉线的时候发送&lt;/p&gt;
+&lt;p&gt; 等级:  &amp;gt;=1&lt;/p&gt;
+&lt;p&gt; 数据:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;字段&lt;/th&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;th&gt;例子&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;clientId&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;唯一识别码&lt;/td&gt;
+&lt;td&gt;0201&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;&lt;p&gt;主题 &lt;code&gt;zbc/client/login&lt;/code&gt; 连接主题&lt;/p&gt;
+&lt;p&gt; 描述:    机台连接上来后发送&lt;/p&gt;
+&lt;p&gt; 等级:    &amp;gt;=1&lt;/p&gt;
+&lt;p&gt; 数据:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;字段&lt;/th&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;th&gt;例子&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;clientId&lt;/td&gt;
+&lt;td&gt;string&lt;/td&gt;
+&lt;td&gt;唯一识别码&lt;/td&gt;
+&lt;td&gt;0201&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+    
+    </summary>
+    
+    
+      <category term="协议" scheme="https://kirning.github.io/tags/%E5%8D%8F%E8%AE%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>c#调用数据库之Dapper</title>
+    <link href="https://kirning.github.io/2018/06/19/cjxmod9sg000u34u9cj6e8j8o/"/>
+    <id>https://kirning.github.io/2018/06/19/cjxmod9sg000u34u9cj6e8j8o/</id>
+    <published>2018-06-19T02:13:40.000Z</published>
+    <updated>2019-01-27T10:37:54.388Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这里记录一下Dapper的使用方式，这个库有点像java的&lt;code&gt;mybatis&lt;/code&gt;可以很方便的把查询出来的数据映射到对象上面去。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;安装&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;通过 NetGet 就可以安装了，vs自带的一个包管理工具&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://oepv0v7je.bkt.clouddn.com/18-3-6/97896696.jpg&quot; alt&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="c#" scheme="https://kirning.github.io/tags/c/"/>
+    
+      <category term="Dapper" scheme="https://kirning.github.io/tags/Dapper/"/>
+    
+  </entry>
+  
+</feed>

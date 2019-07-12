@@ -296,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/07/12/cjxzr37az000r7ou9drowynwh/">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/07/12/cjxzvzagf000qmsu9qy2dcfny/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kirno">
@@ -316,7 +316,206 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/07/12/cjxzr37az000r7ou9drowynwh/" class="post-title-link" itemprop="url">在nodejs使用mysql库中连接mysql8的问题</a>
+                <a href="/2019/07/12/cjxzvzagf000qmsu9qy2dcfny/" class="post-title-link" itemprop="url">hexo 折腾日记</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-12 17:01:09 / 修改时间：17:11:38" itemprop="dateCreated datePublished" datetime="2019-07-12T17:01:09+08:00">2019-07-12</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Hexo 也用了一段时间了，记录一下折腾日记</p>
+<h2 id="首页文章过滤"><a href="#首页文章过滤" class="headerlink" title="首页文章过滤"></a>首页文章过滤</h2><p>有些文章不想在首页出现，可以用 <a href="https://github.com/Jamling/hexo-generator-index2/blob/master/README_zh.md" target="_blank" rel="noopener">hexo-generator-index2</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm install hexo-generator-index2<br></code></pre></td></tr></table></figure>
+<p>来解决，使用比较简单</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># index2 generator是否包含官方的hexo-generator-index，默认true（包含）</span><br><span class="hljs-attr">index2_include_index:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># defult is true</span><br><br><span class="hljs-comment"># 配置index2 generator，可以是数组或对象</span><br><span class="hljs-attr">index2_generator:</span><br><span class="hljs-attr">  per_page:</span> <span class="hljs-number">10</span><br><span class="hljs-attr">  order_by:</span> <span class="hljs-bullet">-date</span><br><span class="hljs-attr">  include:</span><br><span class="hljs-bullet">    -</span> <span class="hljs-string">category</span> <span class="hljs-string">Web</span> <span class="hljs-comment"># 只包含Web分类下的文章</span><br><span class="hljs-attr">  exclude:</span><br><span class="hljs-bullet">    -</span> <span class="hljs-string">tag</span> <span class="hljs-string">Hexo</span> <span class="hljs-comment"># 不包含标签为Hexo的文章</span><br></code></pre></td></tr></table></figure>
+<h2 id="live2D-看板娘"><a href="#live2D-看板娘" class="headerlink" title="live2D 看板娘"></a>live2D 看板娘</h2><p>有看板娘的感觉很好，页面不至于太单调，具体使用 <a href="https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md" target="_blank" rel="noopener">hexo-helper-live2d</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm install --save hexo-helper-live2d<br></code></pre></td></tr></table></figure>
+<p>这个只是安装了依赖，还要安装具体的看板娘</p>
+<p>使用 <code>npm install [看板娘的名字]</code> 名字如下：</p>
+<ul>
+<li><code>live2d-widget-model-chitose</code></li>
+<li><code>live2d-widget-model-epsilon2_1</code></li>
+<li><code>live2d-widget-model-gf</code></li>
+<li><code>live2d-widget-model-haru/01</code> (use <code>npm install --save live2d-widget-model-haru</code>)</li>
+<li><code>live2d-widget-model-haru/02</code> (use <code>npm install --save live2d-widget-model-haru</code>)</li>
+<li><code>live2d-widget-model-haruto</code></li>
+<li><code>live2d-widget-model-hibiki</code></li>
+<li><code>live2d-widget-model-hijiki</code></li>
+<li><code>live2d-widget-model-izumi</code></li>
+<li><code>live2d-widget-model-koharu</code></li>
+<li><code>live2d-widget-model-miku</code></li>
+<li><code>live2d-widget-model-ni-j</code></li>
+<li><code>live2d-widget-model-nico</code></li>
+<li><code>live2d-widget-model-nietzsche</code></li>
+<li><code>live2d-widget-model-nipsilon</code></li>
+<li><code>live2d-widget-model-nito</code></li>
+<li><code>live2d-widget-model-shizuku</code></li>
+<li><code>live2d-widget-model-tororo</code></li>
+<li><code>live2d-widget-model-tsumiki</code></li>
+<li><code>live2d-widget-model-unitychan</code></li>
+<li><code>live2d-widget-model-wanko</code></li>
+<li><code>live2d-widget-model-z16</code></li>
+</ul>
+<p><a href="https://huaji8.top/post/live2d-plugin-2.0/" target="_blank" rel="noopener">各看板娘预览</a></p>
+<h2 id="hexo主题推荐之-Next"><a href="#hexo主题推荐之-Next" class="headerlink" title="hexo主题推荐之 Next"></a>hexo主题推荐之 <code>Next</code></h2><p><a href="https://theme-next.org/docs/getting-started/" target="_blank" rel="noopener">主题</a>风格挺好看的，简单明了，具体配官方比较全。</p>
+<p><img src="https://user-images.githubusercontent.com/16272760/61057395-d2deb000-a427-11e9-8e28-f348fe181795.png" alt></p>
+<h2 id="简单命令"><a href="#简单命令" class="headerlink" title="简单命令"></a>简单命令</h2><ol>
+<li><p>生产网站</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo g<br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="2">
+<li><p>上传网站</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo delop<br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/07/12/cjxzvzagh000smsu9attocrbo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kirno">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kirnoのBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/12/cjxzvzagh000smsu9attocrbo/" class="post-title-link" itemprop="url">在nodejs使用mysql库中连接mysql8的问题</a>
               
             
           </h1>
@@ -391,7 +590,7 @@
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/07/12/cjxzr37az000r7ou9drowynwh/#more" rel="contents">
+              <a class="btn" href="/2019/07/12/cjxzvzagh000smsu9attocrbo/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -457,7 +656,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/07/04/cjxzr37b3000v7ou9czz4z1fb/">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/07/04/cjxzvzagm000xmsu9l3ymrtvt/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kirno">
@@ -477,7 +676,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/07/04/cjxzr37b3000v7ou9czz4z1fb/" class="post-title-link" itemprop="url">redux</a>
+                <a href="/2019/07/04/cjxzvzagm000xmsu9l3ymrtvt/" class="post-title-link" itemprop="url">redux</a>
               
             
           </h1>
@@ -626,7 +825,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/07/03/cjxzr37uj00207ou9y8s4f11g/">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/07/03/cjxzvzayu0023msu9xxwj5oii/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kirno">
@@ -646,7 +845,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/07/03/cjxzr37uj00207ou9y8s4f11g/" class="post-title-link" itemprop="url">typesafe-actions-zh</a>
+                <a href="/2019/07/03/cjxzvzayu0023msu9xxwj5oii/" class="post-title-link" itemprop="url">typesafe-actions-zh</a>
               
             
           </h1>
@@ -730,7 +929,7 @@
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/07/03/cjxzr37uj00207ou9y8s4f11g/#more" rel="contents">
+              <a class="btn" href="/2019/07/03/cjxzvzayu0023msu9xxwj5oii/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -796,7 +995,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/06/14/cjxzr37j0001n7ou97rsdiaea/">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/06/14/cjxzvzao7001qmsu90knea9p3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kirno">
@@ -816,7 +1015,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/06/14/cjxzr37j0001n7ou97rsdiaea/" class="post-title-link" itemprop="url">构建electron、typescript、react、antd应用</a>
+                <a href="/2019/06/14/cjxzvzao7001qmsu90knea9p3/" class="post-title-link" itemprop="url">构建electron、typescript、react、antd应用</a>
               
             
           </h1>
@@ -902,7 +1101,7 @@
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/06/14/cjxzr37j0001n7ou97rsdiaea/#more" rel="contents">
+              <a class="btn" href="/2019/06/14/cjxzvzao7001qmsu90knea9p3/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -968,7 +1167,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/01/27/cjxzr37aw000n7ou974ucriuo/">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/01/27/cjxzvzagc000nmsu97v2r28ek/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kirno">
@@ -988,7 +1187,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/01/27/cjxzr37aw000n7ou974ucriuo/" class="post-title-link" itemprop="url">Hello World</a>
+                <a href="/2019/01/27/cjxzvzagc000nmsu97v2r28ek/" class="post-title-link" itemprop="url">Hello World</a>
               
             
           </h1>
@@ -1126,7 +1325,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2018/07/10/cjxzr37ap000j7ou9gar1fl2k/">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2018/07/10/cjxzvzag7000gmsu91b6eqir3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kirno">
@@ -1146,7 +1345,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/07/10/cjxzr37ap000j7ou9gar1fl2k/" class="post-title-link" itemprop="url">dnsCheck</a>
+                <a href="/2018/07/10/cjxzvzag7000gmsu91b6eqir3/" class="post-title-link" itemprop="url">dnsCheck</a>
               
             
           </h1>
@@ -1290,7 +1489,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2018/07/02/cjxzr37ay000q7ou9owq0ji7i/">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2018/07/02/cjxzvzagg000rmsu9rvp5qj53/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kirno">
@@ -1310,7 +1509,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/07/02/cjxzr37ay000q7ou9owq0ji7i/" class="post-title-link" itemprop="url">linux常用命令</a>
+                <a href="/2018/07/02/cjxzvzagg000rmsu9rvp5qj53/" class="post-title-link" itemprop="url">linux常用命令</a>
               
             
           </h1>
@@ -1456,7 +1655,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2018/06/28/cjxzr37ii001l7ou96ufp5l6l/">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2018/06/28/cjxzvzao3001omsu9ni57c7sr/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kirno">
@@ -1476,7 +1675,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/06/28/cjxzr37ii001l7ou96ufp5l6l/" class="post-title-link" itemprop="url">gitlab安装教程</a>
+                <a href="/2018/06/28/cjxzvzao3001omsu9ni57c7sr/" class="post-title-link" itemprop="url">gitlab安装教程</a>
               
             
           </h1>
@@ -1573,7 +1772,7 @@
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/06/28/cjxzr37ii001l7ou96ufp5l6l/#more" rel="contents">
+              <a class="btn" href="/2018/06/28/cjxzvzao3001omsu9ni57c7sr/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1639,7 +1838,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2018/06/19/cjxzr37am000g7ou9mj44vjfa/">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2018/06/19/cjxzvzag9000jmsu9081fzymz/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kirno">
@@ -1659,7 +1858,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/06/19/cjxzr37am000g7ou9mj44vjfa/" class="post-title-link" itemprop="url">bt搜索脚本</a>
+                <a href="/2018/06/19/cjxzvzag9000jmsu9081fzymz/" class="post-title-link" itemprop="url">bt搜索脚本</a>
               
             
           </h1>
@@ -1746,7 +1945,7 @@ javascript:pachong();<span class="function"><span class="keyword">function</span
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/06/19/cjxzr37am000g7ou9mj44vjfa/#more" rel="contents">
+              <a class="btn" href="/2018/06/19/cjxzvzag9000jmsu9081fzymz/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1755,179 +1954,6 @@ javascript:pachong();<span class="function"><span class="keyword">function</span
         
       
     </div>
-
-    
-      
-
-
-    
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2018/06/19/cjxzr37b0000s7ou9gvn3nipg/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kirno">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kirnoのBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/06/19/cjxzr37b0000s7ou9gvn3nipg/" class="post-title-link" itemprop="url">通过源码来编译nginx</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-06-19 17:34:14" itemprop="dateCreated datePublished" datetime="2018-06-19T17:34:14+08:00">2018-06-19</time>
-            </span>
-          
-
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-27 18:37:54" itemprop="dateModified" datetime="2019-01-27T18:37:54+08:00">2019-01-27</time>
-              </span>
-            
-          
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>使用配置参数进行编译。它定义了系统的各个方面,包含了nginx所允许的链接方法。配置后会生成一个 <code>Makefile</code> 文件. 以下是配置支持的参数:</p>
-<p><code>--prefix=path</code> — 定义一个用于保存服务器的目录 This same directory will also be used for all relative paths set by configure (except for paths to libraries sources) and in the nginx.conf configuration file. It is set to the /usr/local/nginx directory by default.</p>
-<p>–sbin-path=path — sets the name of an nginx executable file. This name is used only during installation. By default the file is named prefix/sbin/nginx.</p>
-<p>–conf-path=path — sets the name of an nginx.conf configuration file. If needs be, nginx can always be started with a different configuration file, by specifying it in the command-line parameter -c file. By default the file is named prefix/conf/nginx.conf.<br>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/06/19/cjxzr37b0000s7ou9gvn3nipg/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </p></div>
 
     
       
@@ -2016,7 +2042,7 @@ javascript:pachong();<span class="function"><span class="keyword">function</span
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-count">23</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2071,7 +2097,9 @@ javascript:pachong();<span class="function"><span class="keyword">function</span
                     
                       
                     
-                    <span class="site-state-item-count">20</span>
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">标签</span>
                   
                 </div>

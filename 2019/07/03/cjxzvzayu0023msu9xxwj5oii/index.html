@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <meta name="description" content="# typesafe-actions&amp;gt; 主要是学习翻译用的，目前翻译不完整Typesafe utilities designed to reduce types verbosityand complexity  in Redux Architecture.">
+<meta name="keywords" content="javascript,redux,typescript,react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="typesafe-actions-zh">
+<meta property="og:url" content="https://kirning.github.io/2019/07/03/cjxzvzayu0023msu9xxwj5oii/index.html">
+<meta property="og:site_name" content="kirnoのBlog">
+<meta property="og:description" content="# typesafe-actions&amp;gt; 主要是学习翻译用的，目前翻译不完整Typesafe utilities designed to reduce types verbosityand complexity  in Redux Architecture.">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://img.shields.io/npm/v/typesafe-actions.svg">
+<meta property="og:image" content="https://img.shields.io/npm/dm/typesafe-actions.svg">
+<meta property="og:image" content="https://img.shields.io/npm/dt/typesafe-actions.svg">
+<meta property="og:image" content="https://img.shields.io/bundlephobia/minzip/typesafe-actions.svg">
+<meta property="og:image" content="https://semaphoreci.com/api/v1/piotrekwitek/typesafe-actions/branches/master/shields_badge.svg">
+<meta property="og:image" content="https://david-dm.org/piotrwitek/typesafe-actions/status.svg">
+<meta property="og:image" content="https://img.shields.io/npm/l/typesafe-actions.svg?style=flat">
+<meta property="og:image" content="https://withspectrum.github.io/badge/badge.svg">
+<meta property="og:image" content="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png">
+<meta property="og:image" content="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png">
+<meta property="og:image" content="https://issuehunt.io/static/embed/issuehunt-button-v1.svg">
+<meta property="og:updated_time" content="2019-07-12T06:57:39.677Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="typesafe-actions-zh">
+<meta name="twitter:description" content="# typesafe-actions&amp;gt; 主要是学习翻译用的，目前翻译不完整Typesafe utilities designed to reduce types verbosityand complexity  in Redux Architecture.">
+<meta name="twitter:image" content="https://img.shields.io/npm/v/typesafe-actions.svg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="kirnoのBlog" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://kirning.github.io/2019/07/03/cjxzvzayu0023msu9xxwj5oii/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>typesafe-actions-zh | kirnoのBlog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">kirnoのBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/07/03/cjxzvzayu0023msu9xxwj5oii/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kirno">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kirnoのBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">typesafe-actions-zh
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-03 15:51:00" itemprop="dateCreated datePublished" datetime="2019-07-03T15:51:00+08:00">2019-07-03</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-12 14:57:39" itemprop="dateModified" datetime="2019-07-12T14:57:39+08:00">2019-07-12</time>
+              </span>
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <div align="center"><br><br># typesafe-actions<br><br>&gt; 主要是学习翻译用的，目前翻译不完整<br><br>Typesafe utilities designed to reduce types <strong>verbosity</strong><br>and <strong>complexity</strong>  in Redux Architecture.<br><br><a id="more"></a><br><br><em>This library is part of the <a href="https://github.com/piotrwitek/react-redux-typescript-guide" target="_blank" rel="noopener">React &amp; Redux TypeScript Guide</a></em> ecosystem :book:<br><br><a href="https://www.npmjs.com/package/typesafe-actions" target="_blank" rel="noopener"><img src="https://img.shields.io/npm/v/typesafe-actions.svg" alt="Latest Stable Version"></a><br><a href="https://www.npmjs.com/package/typesafe-actions" target="_blank" rel="noopener"><img src="https://img.shields.io/npm/dm/typesafe-actions.svg" alt="NPM Downloads"></a><br><a href="https://www.npmjs.com/package/typesafe-actions" target="_blank" rel="noopener"><img src="https://img.shields.io/npm/dt/typesafe-actions.svg" alt="NPM Downloads"></a><br><a href="https://www.npmjs.com/package/typesafe-actions" target="_blank" rel="noopener"><img src="https://img.shields.io/bundlephobia/minzip/typesafe-actions.svg" alt="Bundlephobia Size"></a><br><br><a href="https://semaphoreci.com/piotrekwitek/typesafe-actions" target="_blank" rel="noopener"><img src="https://semaphoreci.com/api/v1/piotrekwitek/typesafe-actions/branches/master/shields_badge.svg" alt="Build Status"></a><br><a href="https://david-dm.org/piotrwitek/typesafe-actions" target="_blank" rel="noopener"><img src="https://david-dm.org/piotrwitek/typesafe-actions/status.svg" alt="Dependencies Status"></a><br><a href="https://david-dm.org/piotrwitek/typesafe-actions?type=peer" target="_blank" rel="noopener"><img src="https://img.shields.io/npm/l/typesafe-actions.svg?style=flat" alt="License"></a><br><a href="https://spectrum.chat/typesafe-actions" target="_blank" rel="noopener"><img src="https://withspectrum.github.io/badge/badge.svg" alt="Join the community on Spectrum"></a><br><br><br><br>:star: <em>Found it useful? Want more updates?</em> <a href="https://github.com/piotrwitek/typesafe-actions/stargazers" target="_blank" rel="noopener"><strong>Show your support by giving a :star:</strong></a><br><br>:tada: <em>Now updated to support <strong>TypeScript v3.5</strong></em> :tada:<br><br><a href="https://www.buymeacoffee.com/zh9guxbA5" target="_blank" rel="noopener"><br>  <img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me a Coffee"><br></a><br><a href="https://www.patreon.com/piotrekwitek" target="_blank" rel="noopener"><br>  <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" alt="Become a Patron" width="160"><br></a><br><br></div>
+
+<hr>
+<p><strong>Features</strong></p>
+<ul>
+<li><strong>minimalistic</strong> - according to <code>size-snapshot</code> (Minified: 3.48 KB, Gzipped: 1.03 KB), check also on <a href="https://bundlephobia.com/result?p=typesafe-actions" target="_blank" rel="noopener">bundlephobia</a></li>
+<li><strong>secure and optimized</strong> - no external dependencies, bundled in 3 different formats (<code>cjs</code>, <code>esm</code> and <code>umd</code> for browser) with separate optimized bundles for dev &amp; prod (same as <code>react</code>)</li>
+<li><strong>focus on quality</strong> - complete test-suite for an entire API surface containing regular runtime tests and extra type-tests to guarantee <strong>type soundness</strong> and to prevent regressions in the future TypeScript versions</li>
+<li><strong>focus on performance</strong> - integrated performance benchmarks to guarantee that the computational complexity of types are in check and there are no slow-downs when your application grow <code>npm run benchmark:XXX</code></li>
+</ul>
+<p><strong>Codesandbox links</strong></p>
+<ul>
+<li>Reference Todo-App implementation using <code>typesafe-actions</code>: <a href="https://codesandbox.io/s/github/piotrwitek/typesafe-actions/tree/master/codesandbox" target="_blank" rel="noopener">Link</a></li>
+<li>Starter to help reproduce bug reports: <a href="https://codesandbox.io/s/github/piotrwitek/typesafe-actions/tree/master/codesandbox" target="_blank" rel="noopener">Link</a></li>
+</ul>
+<hr>
+<h2 id="Table-of-Contents"><a href="#Table-of-Contents" class="headerlink" title="Table of Contents"></a>Table of Contents</h2><!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<ul>
+<li><a href="#motivation">Motivation</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#compatibility-notes">Compatibility Notes</a></li>
+<li><a href="#contributing-guide">Contributing Guide</a></li>
+<li><a href="#funding">Funding</a></li>
+<li><a href="#tutorial">Tutorial</a><ul>
+<li><a href="#constants">Constants</a></li>
+<li><a href="#actions">Actions</a><ul>
+<li><a href="#1-basic-actions">1. Basic actions</a></li>
+<li><a href="#2-fsa-compliant-actions">2. FSA compliant actions</a></li>
+<li><a href="#3-custom-actions-non-standard-use-cases">3. Custom actions (non-standard use-cases)</a></li>
+</ul>
+</li>
+<li><a href="#action-helpers">Action Helpers</a><ul>
+<li><a href="#using-action-creators-instances-instead-of-type-constants">Using action-creators instances instead of type-constants</a></li>
+<li><a href="#using-regular-type-constants">Using regular type-constants</a></li>
+</ul>
+</li>
+<li><a href="#reducers">Reducers</a><ul>
+<li><a href="#extending-internal-types-to-enable-type-free-syntax-with-createreducer">Extending internal types to enable type-free syntax with <code>createReducer</code></a></li>
+<li><a href="#using-createreducer-api-with-type-free-syntax">Using createReducer API with type-free syntax</a></li>
+<li><a href="#alternative-usage-with-regular-switch-reducer">Alternative usage with regular switch reducer</a></li>
+</ul>
+</li>
+<li><a href="#async-flows">Async-Flows</a><ul>
+<li><a href="#with-redux-observable-epics">With <code>redux-observable</code> epics</a></li>
+<li><a href="#with-redux-saga-sagas">With <code>redux-saga</code> sagas</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#api-docs">API Docs</a><ul>
+<li><a href="#action-creators-api">Action-Creators API</a><ul>
+<li><a href="#action"><code>action</code></a></li>
+<li><a href="#createaction"><code>createAction</code></a></li>
+<li><a href="#createstandardaction"><code>createStandardAction</code></a></li>
+<li><a href="#createcustomaction"><code>createCustomAction</code></a></li>
+<li><a href="#createasyncaction"><code>createAsyncAction</code></a></li>
+</ul>
+</li>
+<li><a href="#reducer-creators-api">Reducer-Creators API</a><ul>
+<li><a href="#createreducer"><code>createReducer</code></a></li>
+</ul>
+</li>
+<li><a href="#action-helpers-api">Action-Helpers API</a><ul>
+<li><a href="#gettype"><code>getType</code></a></li>
+<li><a href="#isactionof"><code>isActionOf</code></a></li>
+<li><a href="#isoftype"><code>isOfType</code></a></li>
+</ul>
+</li>
+<li><a href="#type-helpers-api">Type-Helpers API</a><ul>
+<li><a href="#actiontype"><code>ActionType</code></a></li>
+<li><a href="#statetype"><code>StateType</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#migration-guides">Migration Guides</a><ul>
+<li><a href="#v3xx-to-v4xx"><code>v3.x.x</code> to <code>v4.x.x</code></a></li>
+<li><a href="#v2xx-to-v3xx"><code>v2.x.x</code> to <code>v3.x.x</code></a></li>
+<li><a href="#v1xx-to-v2xx"><code>v1.x.x</code> to <code>v2.x.x</code></a></li>
+<li><a href="#migrating-from-redux-actions-to-typesafe-actions">Migrating from <code>redux-actions</code> to <code>typesafe-actions</code></a></li>
+</ul>
+</li>
+<li><a href="#recipes">Recipes</a><ul>
+<li><a href="#restrict-meta-type-in-action-creator">Restrict Meta type in <code>action</code> creator</a></li>
+</ul>
+</li>
+<li><a href="#compare-to-others">Compare to others</a><ul>
+<li><a href="#redux-actions"><code>redux-actions</code></a></li>
+</ul>
+</li>
+<li><a href="#mit-license">MIT License</a></li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<hr>
+<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><p>当时我准备把Redux和Typescript进行结合开发，我尝试使用<a href="https://redux-actions.js.org/" target="_blank" rel="noopener">redux-actions</a> 来减少需要维护的代码和 <strong>action-creators</strong> 模板。不幸的是，由于错误的类型以及不完整的类型接口布遍了代码，所以结果并不理想<a href="#redux-actions">(点击这里查看对照)</a>  </p>
+<p>现存的解决方案不是太冗余就是使用 class 来解决(可读性差，而且需要new关键字😱)</p>
+<p><strong>所以我创建了<code>typesafe-actions</code> 来解决上述的痛点</strong></p>
+<p>核心设计方案是设计一个使用TypeScript中<strong>type-inference</strong>💪力量的API来举起“可维护的负担”的类型注释。另外，我希望使他“看起来或者感觉起来”都尽可能的接近我们所习惯的JavaScript❤️,所以我不想写太多多余的注解来给代码带来过多的噪点。</p>
+<p><a href="#table-of-contents">⇧ back to top</a></p>
+<hr>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">// NPM<br>npm install typesafe-actions<br><br>// YARN<br>yarn add typesafe-actions<br></code></pre></td></tr></table></figure>
+<p><a href="#table-of-contents">⇧ back to top</a></p>
+<hr>
+<h2 id="兼容性注意"><a href="#兼容性注意" class="headerlink" title="兼容性注意"></a>兼容性注意</h2><p><strong>TypeScript support</strong></p>
+<ul>
+<li><a href="mailto:`typesafe-actions@1.X.X" target="_blank" rel="noopener">`typesafe-actions@1.X.X</a>` - minimal TS v2.7</li>
+<li><a href="mailto:`typesafe-actions@2.X.X" target="_blank" rel="noopener">`typesafe-actions@2.X.X</a>` - minimal TS v2.9</li>
+<li><a href="mailto:`typesafe-actions@3.X.X" target="_blank" rel="noopener">`typesafe-actions@3.X.X</a>` - minimal TS v3.2</li>
+<li><a href="mailto:`typesafe-actions@4.X.X" target="_blank" rel="noopener">`typesafe-actions@4.X.X</a>` - minimal TS v3.2</li>
+</ul>
+<p><strong>浏览器支持情况</strong></p>
+<p>兼容所有主流浏览器。</p>
+<p>旧的浏览器的支持情况：IE &lt;= 11 ，某些手机浏览器你需要提供下列的扩展库</p>
+<ul>
+<li><a href="https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Object/assign#Polyfill" target="_blank" rel="noopener">Object.assign</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes" target="_blank" rel="noopener">Array.prototype.includes</a></li>
+</ul>
+<p><strong>Recommended polyfill for IE</strong></p>
+<p>To provide the best compatibility please include a popular polyfill package in your application, such as <code>core-js</code> or <code>react-app-polyfill</code> for <code>create-react-app</code>.<br>Please check the <code>React</code> guidelines to learn how to do that: <a href="https://reactjs.org/docs/javascript-environment-requirements.html" target="_blank" rel="noopener">LINK</a><br>A polyfill fo IE11 is included in our <code>/codesandbox</code> application.</p>
+<p><a href="#table-of-contents">⇧ back to top</a></p>
+<hr>
+<h2 id="Contributing-Guide"><a href="#Contributing-Guide" class="headerlink" title="Contributing Guide"></a>Contributing Guide</h2><p>We are open for contributions. If you’re planning to contribute please make sure to read the contributing guide: <a href="/CONTRIBUTING.md">CONTRIBUTING.md</a></p>
+<p><a href="#table-of-contents">⇧ back to top</a></p>
+<hr>
+<h2 id="Funding"><a href="#Funding" class="headerlink" title="Funding"></a>Funding</h2><p><strong>Typesafe-Actions</strong> is an independent open-source project created by people investing their free time for the benefit of our community.</p>
+<p>If you are using <strong>Typesafe-Actions</strong> please consider donating as this will guarantee the project will be updated and maintained in the long run.</p>
+<p>Issues can be funded by anyone interested in them being resolved. Reward will be transparently distributed to the contributor handling the task through the IssueHunt platform.</p>
+<p><a href="https://issuehunt.io/repos/110746954" target="_blank" rel="noopener"><img src="https://issuehunt.io/static/embed/issuehunt-button-v1.svg" alt="Let&#39;s fund issues in this repository"></a></p>
+<p><a href="#table-of-contents">⇧ back to top</a></p>
+<hr>
+<h2 id="Tutorial"><a href="#Tutorial" class="headerlink" title="Tutorial"></a>Tutorial</h2><p>为了展示使用了这个库<strong>type-safety</strong>后的灵活性和强大，让我们使用Redux结构来构建一个最常见的应用——经典的 todo-app 应用</p>
+<blockquote>
+<p><strong>注意</strong><br>请确保你以具备以下的知识点以便能顺利的完成教程: <a href="https://www.typescriptlang.org/docs/handbook/type-inference.html" target="_blank" rel="noopener">Type Inference</a>, <a href="https://github.com/Microsoft/TypeScript/wiki/What%27s-new-in-TypeScript#control-flow-based-type-analysis" target="_blank" rel="noopener">Control flow analysis</a>, <a href="https://github.com/Microsoft/TypeScript/wiki/What%27s-new-in-TypeScript#tagged-union-types" target="_blank" rel="noopener">Tagged union types</a>, <a href="https://www.typescriptlang.org/docs/handbook/generics.html" target="_blank" rel="noopener">Generics</a> and <a href="https://www.typescriptlang.org/docs/handbook/advanced-types.html" target="_blank" rel="noopener">Advanced Types</a>.</p>
+</blockquote>
+<p><a href="#table-of-contents">⇧ back to top</a></p>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><blockquote>
+<p><strong>RECOMMENDATION:</strong><br>When using <code>typesafe-actions</code> in your project you won’t need to export and reuse <strong>string constants</strong>. It’s because <strong>action-creators</strong> created by this library have static property with <strong>action type</strong> that you can easily access using <strong>actions-helpers</strong> and then use it in reducers, epics, sagas, and basically any other place. This will simplify your codebase and remove some boilerplate code associated with the usage of <strong>string constants</strong>. Check our <code>/codesandbox</code> application to learn some best-practices to create such codebase.</p>
+</blockquote>
+<p><strong>使用字符串常量时的Typescript局限</strong> - 当使用字符创常量作为<code>action</code>的type时, 请确保使用<strong>简单易懂的字符串常量</strong>. 限制来自原 type-system, 因为所有的动态字符创操作（比如：字符串连接，字符串模板以及作为映射的对象）会扩大这个类型成为着急类，<code>String</code>。结果就是破坏了action的上下文意思。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">// Example file: './constants.ts'</span><br><br><span class="hljs-comment">// WARNING: 错误的使用方法</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> ADD = prefix + <span class="hljs-string">'ADD'</span>; <span class="hljs-comment">// =&gt; string</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> ADD = <span class="hljs-string">`<span class="hljs-subst">$&#123;prefix&#125;</span>/ADD`</span>; <span class="hljs-comment">// =&gt; string</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>   ADD: <span class="hljs-string">'@prefix/ADD'</span>, <span class="hljs-comment">// =&gt; string</span><br>&#125;<br><br><span class="hljs-comment">// 正确的使用方法</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> ADD = <span class="hljs-string">'@prefix/ADD'</span>; <span class="hljs-comment">// =&gt; '@prefix/ADD'</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> TOGGLE = <span class="hljs-string">'@prefix/TOGGLE'</span>; <span class="hljs-comment">// =&gt; '@prefix/TOGGLE'</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> (&#123;<br>  ADD: <span class="hljs-string">'@prefix/ADD'</span>, <span class="hljs-comment">// =&gt; '@prefix/ADD'</span><br>&#125; <span class="hljs-keyword">as</span> <span class="hljs-keyword">const</span>) <span class="hljs-comment">// working in TS v3.4 and above =&gt; https://github.com/Microsoft/TypeScript/pull/29510</span><br></code></pre></td></tr></table></figure>
+<p><a href="#table-of-contents">⇧ back to top</a></p>
+<h3 id="Actions"><a href="#Actions" class="headerlink" title="Actions"></a>Actions</h3><p>不同的项目有不同的需求，不同的团队有不同的约定，这就是为什么我认为<code>typesafe-actions</code>设计的为什么需要设计的灵活。这里提供三种常用的不同方式让你选择，所以你可以选择最适合你团队的。</p>
+<h4 id="1-Basic-actions"><a href="#1-Basic-actions" class="headerlink" title="1. Basic actions"></a>1. Basic actions</h4><p><code>action</code> 和 <code>createAction</code> 是两个使用预设好的属性 ({ type, payload, meta })来创建 <strong>actions</strong>的创建者. 这使他们简洁而又自以为是。</p>
+<p>重要的属性是生成的<strong>action-creator</strong>将具有可变数量的参数并保留其语义名称（id，title，amount等）。</p>
+<p>这两个创建者是非常像的，唯一不同的是 <code>action</code> 不能和 <code>action-helpers</code>一起使用。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; action, createAction &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'typesafe-actions'</span>;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> add = <span class="hljs-function">(<span class="hljs-params">title: <span class="hljs-built_in">string</span></span>) =&gt;</span> action(<span class="hljs-string">'todos/ADD'</span>, &#123; id: cuid(), title, completed: <span class="hljs-literal">false</span> &#125;);<br><span class="hljs-comment">// add: (title: string) =&gt; &#123; type: "todos/ADD"; payload: &#123; id: string, title: string, completed: boolean; &#125;; &#125;</span><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> add = createAction(<span class="hljs-string">'todos/ADD'</span>, <span class="hljs-function"><span class="hljs-params">action</span> =&gt;</span> &#123;<br>  <span class="hljs-comment">// Note: "action" callback does not need "type" parameter</span><br>  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">title: <span class="hljs-built_in">string</span></span>) =&gt;</span> action(&#123; id: cuid(), title, completed: <span class="hljs-literal">false</span> &#125;);<br>&#125;);<br><span class="hljs-comment">// add: (title: string) =&gt; &#123; type: "todos/ADD"; payload: &#123; id: string, title: string, completed: boolean; &#125;; &#125;</span><br></code></pre></td></tr></table></figure>
+<h4 id="2-FSA-compliant-actions"><a href="#2-FSA-compliant-actions" class="headerlink" title="2. FSA compliant actions"></a>2. FSA compliant actions</h4><p>This style is aligned with <a href="https://github.com/redux-utilities/flux-standard-action" target="_blank" rel="noopener">Flux Standard Action</a>, so your <strong>action</strong> object shape is constrained to <code>({ type, payload, meta, error })</code>. It is using <strong>generic type arguments</strong> for <code>meta</code> and <code>payload</code> to simplify creation of type-safe action-creators.</p>
+<p>It is important to notice that in the resulting <strong>action-creator</strong> arguments are also constrained to the predefined: <code>(payload, meta)</code>, making it the most opinionated creator.</p>
+<blockquote>
+<p><strong>TIP</strong>: This creator is the most compatible with <code>redux-actions</code> in case you are migrating.</p>
+</blockquote>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; createStandardAction &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'typesafe-actions'</span>;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> toggle = createStandardAction(<span class="hljs-string">'todos/TOGGLE'</span>)&lt;<span class="hljs-built_in">string</span>&gt;();<br><span class="hljs-comment">// toggle: (payload: string) =&gt; &#123; type: "todos/TOGGLE"; payload: string; &#125;</span><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> add = createStandardAction(<span class="hljs-string">'todos/ADD'</span>).map(<br>  <span class="hljs-function">(<span class="hljs-params">title: <span class="hljs-built_in">string</span></span>) =&gt;</span> (&#123;<br>    payload: &#123; id: cuid(), title, completed: <span class="hljs-literal">false</span> &#125;,<br>  &#125;)<br>);<br><span class="hljs-comment">// add: (payload: string) =&gt; &#123; type: "todos/ADD"; payload: &#123; id: string, title: string, completed: boolean; &#125;; &#125;</span><br></code></pre></td></tr></table></figure>
+<h4 id="3-Custom-actions-non-standard-use-cases"><a href="#3-Custom-actions-non-standard-use-cases" class="headerlink" title="3. Custom actions (non-standard use-cases)"></a>3. Custom actions (non-standard use-cases)</h4><p>This approach will give us the most flexibility of all creators, providing a variadic number of named parameters and custom properties on <strong>action</strong> object to fit all the custom use-cases.</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; createCustomAction &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'typesafe-actions'</span>;<br><br><span class="hljs-keyword">const</span> add = createCustomAction(<span class="hljs-string">'todos/ADD'</span>, <span class="hljs-function"><span class="hljs-params">type</span> =&gt;</span> &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">title: <span class="hljs-built_in">string</span></span>) =&gt;</span> (&#123; <span class="hljs-keyword">type</span>, id: cuid(), title, completed: <span class="hljs-literal">false</span> &#125;);<br>&#125;);<br><span class="hljs-comment">// add: (title: string) =&gt; &#123; type: "todos/ADD"; id: string; title: string; completed: boolean; &#125;</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>TIP</strong>: For more examples please check the <a href="#table-of-contents">API Docs</a>.</p>
+</blockquote>
+<blockquote>
+<p><strong>RECOMMENDATION</strong><br>Common approach is to create a <code>RootAction</code> in the central point of your redux store - it will represent all possible action types in your application. You can even merge it with third-party action types as shown below to make your model complete.</p>
+</blockquote>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">// types.d.ts</span><br><span class="hljs-comment">// example of including `react-router` actions in `RootAction`</span><br><span class="hljs-keyword">import</span> &#123; RouterAction, LocationChangeAction &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'react-router-redux'</span>;<br><span class="hljs-keyword">import</span> &#123; TodosAction &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'../features/todos'</span>;<br><br><span class="hljs-keyword">type</span> ReactRouterAction = RouterAction | LocationChangeAction;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> RootAction =<br>  | ReactRouterAction<br>  | TodosAction;<br></code></pre></td></tr></table></figure>
+<p><a href="#table-of-contents">⇧ back to top</a></p>
+<h3 id="Action-Helpers"><a href="#Action-Helpers" class="headerlink" title="Action Helpers"></a>Action Helpers</h3><p>现在我想展时以下<strong>action-helpers</strong>以及解释一下他的用例。我们将要实现一个没有副作用的当用户成功添加新数据时展现成功的提示。</p>
+<p>主要注意以下，所有的这些helpers都是扮演者类型守护者，所以他们全部都是小标签组成的唯一Type(<code>RootAction</code>)来指定我们想要的action类型</p>
+<p><strong>使用<code>action-creators</code>来替代类型常量</strong></p>
+<p>我们可以用<strong>action-creators</strong>来替代类型常量来匹配reduces里指定的action以及epics用例。通过为包含类型字符的<strong>action-creator</strong>实例添加静态属性来使用</p>
+<p>最常用的命令就是<code>getType</code>，他常用于常规的reducer中的switch cases:</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">switch</span> (action.type) &#123;<br>  <span class="hljs-keyword">case</span> getType(todos.add):<br>    <span class="hljs-comment">// below action type is narrowed to: &#123; type: "todos/ADD"; payload: Todo; &#125;</span><br>    <span class="hljs-keyword">return</span> [...state, action.payload];<br>  ...<br></code></pre></td></tr></table></figure>
+<p>Then we have the <code>isActionOf</code> helper which accept <strong>action-creator</strong> as first parameter matching actions with corresponding type passed as second parameter (it’s a curried function).</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">// epics.ts</span><br><span class="hljs-keyword">import</span> &#123; isActionOf &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'typesafe-actions'</span>;<br><br><span class="hljs-keyword">import</span> &#123; add &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'./actions'</span>;<br><br><span class="hljs-keyword">const</span> addTodoToast: Epic&lt;RootAction, RootAction, RootState, Services&gt; = <span class="hljs-function">(<span class="hljs-params">action$, store, &#123; toastService &#125;</span>) =&gt;</span><br>  action$.pipe(<br>    filter(isActionOf(add)),<br>    tap(<span class="hljs-function"><span class="hljs-params">action</span> =&gt;</span> &#123; <span class="hljs-comment">// here action type is narrowed to: &#123; type: "todos/ADD"; payload: Todo; &#125;</span><br>      toastService.success(...);<br>    &#125;)<br>    ...<br>    <br>  <span class="hljs-comment">// Works with multiple actions! (with type-safety up to 5)</span><br>  action$.pipe(<br>    filter(isActionOf([add, toggle])) <span class="hljs-comment">// here action type is narrowed to a smaller union:</span><br>    <span class="hljs-comment">// &#123; type: "todos/ADD"; payload: Todo; &#125; | &#123; type: "todos/TOGGLE"; payload: string; &#125;</span><br></code></pre></td></tr></table></figure>
+<h4 id="Using-regular-type-constants"><a href="#Using-regular-type-constants" class="headerlink" title="Using regular type-constants"></a>Using regular type-constants</h4><p>Alternatively if your team prefers to use regular <strong>type-constants</strong> you can still do that.</p>
+<p>We have an equivalent helper (<code>isOfType</code>) which accept <strong>type-constants</strong> as parameter providing the same functionality.</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">// epics.ts</span><br><span class="hljs-keyword">import</span> &#123; isOfType &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'typesafe-actions'</span>;<br><br><span class="hljs-keyword">import</span> &#123; ADD &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'./constants'</span>;<br><br><span class="hljs-keyword">const</span> addTodoToast: Epic&lt;RootAction, RootAction, RootState, Services&gt; = <span class="hljs-function">(<span class="hljs-params">action$, store, &#123; toastService &#125;</span>) =&gt;</span><br>  action$.pipe(<br>    filter(isOfType(ADD)),<br>    tap(<span class="hljs-function"><span class="hljs-params">action</span> =&gt;</span> &#123; <span class="hljs-comment">// here action type is narrowed to: &#123; type: "todos/ADD"; payload: Todo; &#125;</span><br>    ...<br>    <br>  <span class="hljs-comment">// Works with multiple actions! (with type-safety up to 5)</span><br>  action$.pipe(<br>    filter(isOfType([ADD, TOGGLE])) <span class="hljs-comment">// here action type is narrowed to a smaller union:</span><br>    <span class="hljs-comment">// &#123; type: "todos/ADD"; payload: Todo; &#125; | &#123; type: "todos/TOGGLE"; payload: string; &#125;</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>TIP:</strong> you can use action-helpers with other types of conditional statements.</p>
+</blockquote>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; isActionOf, isOfType &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'typesafe-actions'</span>;<br><br><span class="hljs-keyword">if</span> (isActionOf(actions.add, action)) &#123;<br>  <span class="hljs-comment">// here action is narrowed to: &#123; type: "todos/ADD"; payload: Todo; &#125;</span><br>&#125;<br><span class="hljs-comment">// or with type constants</span><br><span class="hljs-keyword">if</span> (isOfType(types.ADD, action)) &#123;<br>  <span class="hljs-comment">// here action is narrowed to: &#123; type: "todos/ADD"; payload: Todo; &#125;</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p><a href="#table-of-contents">⇧ back to top</a></p>
+<h3 id="Reducers"><a href="#Reducers" class="headerlink" title="Reducers"></a>Reducers</h3><h4 id="Extending-internal-types-to-enable-type-free-syntax-with-createReducer"><a href="#Extending-internal-types-to-enable-type-free-syntax-with-createReducer" class="headerlink" title="Extending internal types to enable type-free syntax with createReducer"></a>Extending internal types to enable type-free syntax with <code>createReducer</code></h4><p>We can extend internal types of <code>typesafe-actions</code> module with <code>RootAction</code> definition of our application so that you don’t need to pass generic type arguments with <code>createReducer</code> API:</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">// types.d.ts</span><br><span class="hljs-keyword">import</span> &#123; StateType, ActionType &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'typesafe-actions'</span>;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> RootAction = ActionType&lt;<span class="hljs-keyword">typeof</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">'./actions'</span>).default&gt;;<br><br><span class="hljs-keyword">declare</span> <span class="hljs-keyword">module</span> 'typesafe-actions' &#123;<br>  <span class="hljs-keyword">interface</span> Types &#123;<br>    RootAction: RootAction;<br>  &#125;<br>&#125;<br><br><span class="hljs-comment">// now you can use</span><br>createReducer(...)<br><span class="hljs-comment">// instead of</span><br>createReducer&lt;State, Action&gt;(...)<br></code></pre></td></tr></table></figure>
+<h4 id="Using-createReducer-API-with-type-free-syntax"><a href="#Using-createReducer-API-with-type-free-syntax" class="headerlink" title="Using createReducer API with type-free syntax"></a>Using createReducer API with type-free syntax</h4><p>We can prevent a lot of boilerplate code and type errors using this powerfull and completely typesafe API.</p>
+<p>Using handleAction chain API:<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">// using action-creators</span><br><span class="hljs-keyword">const</span> counterReducer = createReducer(<span class="hljs-number">0</span>)<br>  <span class="hljs-comment">// state and action type is automatically inferred and return type is validated to be exact type</span><br>  .handleAction(add, <span class="hljs-function">(<span class="hljs-params">state, action</span>) =&gt;</span> state + action.payload)<br>  .handleAction(add, ... <span class="hljs-comment">// &lt;= error is shown on duplicated or invalid actions</span><br>  .handleAction(increment, <span class="hljs-function">(<span class="hljs-params">state, _</span>) =&gt;</span> state + <span class="hljs-number">1</span>)<br>  .handleAction(... <span class="hljs-comment">// &lt;= error is shown when all actions are handled</span><br>  <br>  <span class="hljs-comment">// or handle multiple actions using array</span><br>  .handleAction([add, increment], <span class="hljs-function">(<span class="hljs-params">state, action</span>) =&gt;</span><br>    state + (action.type === <span class="hljs-string">'ADD'</span> ? action.payload : <span class="hljs-number">1</span>)<br>  );<br><br><span class="hljs-comment">// all the same scenarios are working when using type-constants</span><br><span class="hljs-keyword">const</span> counterReducer = createReducer(<span class="hljs-number">0</span>)<br>  .handleAction(<span class="hljs-string">'ADD'</span>, <span class="hljs-function">(<span class="hljs-params">state, action</span>) =&gt;</span> state + action.payload)<br>  .handleAction(<span class="hljs-string">'INCREMENT'</span>, <span class="hljs-function">(<span class="hljs-params">state, _</span>) =&gt;</span> state + <span class="hljs-number">1</span>);<br>  <br>counterReducer(<span class="hljs-number">0</span>, add(<span class="hljs-number">4</span>)); <span class="hljs-comment">// =&gt; 4</span><br>counterReducer(<span class="hljs-number">0</span>, increment()); <span class="hljs-comment">// =&gt; 1</span><br></code></pre></td></tr></table></figure></p>
+<h4 id="Alternative-usage-with-regular-switch-reducer"><a href="#Alternative-usage-with-regular-switch-reducer" class="headerlink" title="Alternative usage with regular switch reducer"></a>Alternative usage with regular switch reducer</h4><p>First we need to start by generating a <strong>tagged union type</strong> of actions (<code>TodosAction</code>). It’s very easy to do by using <code>ActionType</code> <strong>type-helper</strong>.</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; ActionType &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'typesafe-actions'</span>;<br><br><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> todos <span class="hljs-keyword">from</span> <span class="hljs-string">'./actions'</span>;<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> TodosAction = ActionType&lt;<span class="hljs-keyword">typeof</span> todos&gt;;<br></code></pre></td></tr></table></figure>
+<p>Now we define a regular reducer function by annotating <code>state</code> and <code>action</code> arguments with their respective types (<code>TodosAction</code> for action type).</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> (state: Todo[] = [], action: TodosAction) =&gt; &#123;<br></code></pre></td></tr></table></figure>
+<p>Now in the switch cases we can use the <code>type</code> property of action to narrowing the union type of <code>TodosAction</code> to an action that is corresponding to that type.</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">switch</span> (action.type) &#123;<br>  <span class="hljs-keyword">case</span> getType(add):<br>    <span class="hljs-comment">// below action type is narrowed to: &#123; type: "todos/ADD"; payload: Todo; &#125;</span><br>    <span class="hljs-keyword">return</span> [...state, action.payload];<br>  ...<br></code></pre></td></tr></table></figure>
+<p><a href="#table-of-contents">⇧ back to top</a></p>
+<h3 id="Async-Flows"><a href="#Async-Flows" class="headerlink" title="Async-Flows"></a>Async-Flows</h3><h4 id="With-redux-observable-epics"><a href="#With-redux-observable-epics" class="headerlink" title="With redux-observable epics"></a>With <code>redux-observable</code> epics</h4><p>To handle an async-flow of http request lets implement an <code>epic</code>. The <code>epic</code> will call a remote API using an injected <code>todosApi</code> client, which will return a Promise that we’ll need to handle by using three different actions that correspond to triggering, success and failure.</p>
+<p>To help us simplify the creation process of necessary action-creators, we’ll use <code>createAsyncAction</code> function providing us with a nice common interface object <code>{ request: ... , success: ... , failure: ... }</code> that will nicely fit with the functional API of <code>RxJS</code>.<br>This will mitigate <strong>redux verbosity</strong> and greatly reduce the maintenance cost of type annotations for <strong>actions</strong> and <strong>action-creators</strong> that would otherwise be written explicitly.</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">// actions.ts</span><br><span class="hljs-keyword">import</span> &#123; createAsyncAction &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'typesafe-actions'</span>;<br><br><span class="hljs-keyword">const</span> fetchTodosAsync = createAsyncAction(<br>  <span class="hljs-string">'FETCH_TODOS_REQUEST'</span>,<br>  <span class="hljs-string">'FETCH_TODOS_SUCCESS'</span>,<br>  <span class="hljs-string">'FETCH_TODOS_FAILURE'</span>,<br>  <span class="hljs-string">'FETCH_TODOS_CANCEL'</span><br>)&lt;<span class="hljs-built_in">string</span>, Todo[], <span class="hljs-built_in">Error</span>, <span class="hljs-built_in">string</span>&gt;();<br><br><span class="hljs-comment">// epics.ts</span><br><span class="hljs-keyword">import</span> &#123; fetchTodosAsync &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'./actions'</span>;<br><br><span class="hljs-keyword">const</span> fetchTodosFlow: Epic&lt;RootAction, RootAction, RootState, Services&gt; = <span class="hljs-function">(<span class="hljs-params">action$, store, &#123; todosApi &#125;</span>) =&gt;</span><br>  action$.pipe(<br>    filter(isActionOf(fetchTodosAsync.request)),<br>    switchMap(<span class="hljs-function"><span class="hljs-params">action</span> =&gt;</span><br>      <span class="hljs-keyword">from</span>(todosApi.getAll(action.payload)).pipe(<br>        map(fetchTodosAsync.success),<br>        catchError(pipe(fetchTodosAsync.failure, of)),<br>        takeUntil(action$.pipe(filter(isActionOf(fetchTodosAsync.cancel)))),<br>      )<br>    );<br></code></pre></td></tr></table></figure>
+<h4 id="With-redux-saga-sagas"><a href="#With-redux-saga-sagas" class="headerlink" title="With redux-saga sagas"></a>With <code>redux-saga</code> sagas</h4><p>With sagas it’s not possible to achieve the same degree of type-safety as with epics because of limitations coming from <code>redux-saga</code> API design.</p>
+<p>Typescript issues:</p>
+<ul>
+<li><a href="https://github.com/Microsoft/TypeScript/issues/2983" target="_blank" rel="noopener">Typescript does not currently infer types resulting from a <code>yield</code> statement</a> so you have to manually assert the type  e.g. <code>const response: Todo[] = yield call(...</code></li>
+</ul>
+<p><em>Here is the latest recommendation although it’s not fully optimal. If you managed to cook something better, please open an issue to share your finding with us.</em></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; createAsyncAction &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'typesafe-actions'</span>;<br><br><span class="hljs-keyword">const</span> fetchTodosAsync = createAsyncAction(<br>  <span class="hljs-string">'FETCH_TODOS_REQUEST'</span>,<br>  <span class="hljs-string">'FETCH_TODOS_SUCCESS'</span>,<br>  <span class="hljs-string">'FETCH_TODOS_FAILURE'</span><br>)&lt;<span class="hljs-built_in">string</span>, Todo[], <span class="hljs-built_in">Error</span>&gt;();<br><br><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">addTodoSaga</span>(<span class="hljs-params">action: ReturnType&lt;<span class="hljs-keyword">typeof</span> fetchTodosAsync.request&gt;</span>): <span class="hljs-title">Generator</span> </span>&#123;<br>    <span class="hljs-keyword">const</span> response: Todo[] = <span class="hljs-keyword">yield</span> call(todosApi.getAll, action.payload);<br><br>    <span class="hljs-keyword">yield</span> put(fetchTodosAsync.success(response));<br>  &#125; <span class="hljs-keyword">catch</span> (err) &#123;<br>    <span class="hljs-keyword">yield</span> put(fetchTodosAsync.failure(err));<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><a href="#table-of-contents">⇧ back to top</a></p>
+<hr>
+<h2 id="API-Docs"><a href="#API-Docs" class="headerlink" title="API Docs"></a>API Docs</h2><h3 id="Action-Creators-API"><a href="#Action-Creators-API" class="headerlink" title="Action-Creators API"></a>Action-Creators API</h3><h4 id="action"><a href="#action" class="headerlink" title="action"></a><code>action</code></h4><p><em>Simple <strong>action factory function</strong> to simplify creation of type-safe actions.</em></p>
+<blockquote>
+<p><strong>WARNING</strong>:<br>This approach will <strong>NOT WORK</strong> with <strong>action-helpers</strong> (such as <code>getType</code> and <code>isActionOf</code>) because it is creating <strong>action objects</strong> while all the other creator functions are returning <strong>enhanced action-creators</strong>.</p>
+</blockquote>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ts">action(<span class="hljs-keyword">type</span>, payload?, meta?, error?)<br></code></pre></td></tr></table></figure>
+<p>Examples:<br><a href="src/action.spec.ts">&gt; Advanced Usage Examples</a></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> increment = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> action(<span class="hljs-string">'INCREMENT'</span>);<br><span class="hljs-comment">// &#123; type: 'INCREMENT'; &#125;</span><br><br><span class="hljs-keyword">const</span> createUser = <span class="hljs-function">(<span class="hljs-params">id: <span class="hljs-built_in">number</span>, name: <span class="hljs-built_in">string</span></span>) =&gt;</span><br>  action(<span class="hljs-string">'CREATE_USER'</span>, &#123; id, name &#125;);<br><span class="hljs-comment">// &#123; type: 'CREATE_USER'; payload: &#123; id: number; name: string &#125;; &#125;</span><br><br><span class="hljs-keyword">const</span> getUsers = <span class="hljs-function">(<span class="hljs-params">params?: <span class="hljs-built_in">string</span></span>) =&gt;</span><br>  action(<span class="hljs-string">'GET_USERS'</span>, <span class="hljs-literal">undefined</span>, params);<br><span class="hljs-comment">// &#123; type: 'GET_USERS'; meta: string | undefined; &#125;</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>TIP</strong>: Starting from TypeScript v3.4 you can achieve similar results using new <code>as const</code> operator.</p>
+</blockquote>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> increment = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> (&#123; <span class="hljs-keyword">type</span>: <span class="hljs-string">'INCREMENT'</span> &#125; <span class="hljs-keyword">as</span> <span class="hljs-keyword">const</span>);<br></code></pre></td></tr></table></figure>
+<h4 id="createAction"><a href="#createAction" class="headerlink" title="createAction"></a><code>createAction</code></h4><p><em>Create an enhanced action-creator with unlimited number of arguments.</em></p>
+<ul>
+<li>Resulting action-creator will preserve semantic names of their arguments  <code>(id, title, amount, etc...)</code>.</li>
+<li>Returned action object have predefined properties <code>({ type, payload, meta })</code></li>
+</ul>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ts">createAction(<span class="hljs-keyword">type</span>)<br>createAction(<span class="hljs-keyword">type</span>, <span class="hljs-function"><span class="hljs-params">actionCallback</span> =&gt;</span> &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">namedArg1, namedArg2, ...namedArgN</span>) =&gt;</span> actionCallback(payload?, meta?)<br>&#125;)<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>TIP</strong>: Injected <code>actionCallback</code> argument is similar to <code>action</code> API but doesn’t need the “type” parameter</p>
+</blockquote>
+<p>Examples:<br><a href="src/create-action.spec.ts">&gt; Advanced Usage Examples</a></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; createAction &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'typesafe-actions'</span>;<br><br><span class="hljs-comment">// - with type only</span><br><span class="hljs-keyword">const</span> increment = createAction(<span class="hljs-string">'INCREMENT'</span>);<br>dispatch(increment());<br><span class="hljs-comment">// &#123; type: 'INCREMENT' &#125;;</span><br><br><span class="hljs-comment">// - with type and payload</span><br><span class="hljs-keyword">const</span> add = createAction(<span class="hljs-string">'ADD'</span>, <span class="hljs-function"><span class="hljs-params">action</span> =&gt;</span> &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">amount: <span class="hljs-built_in">number</span></span>) =&gt;</span> action(amount);<br>&#125;);<br>dispatch(add(<span class="hljs-number">10</span>));<br><span class="hljs-comment">// &#123; type: 'ADD', payload: number &#125;</span><br><br><span class="hljs-comment">// - with type and meta</span><br><span class="hljs-keyword">const</span> getTodos = createAction(<span class="hljs-string">'GET_TODOS'</span>, <span class="hljs-function"><span class="hljs-params">action</span> =&gt;</span> &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">params: Params</span>) =&gt;</span> action(<span class="hljs-literal">undefined</span>, params);<br>&#125;);<br>dispatch(getTodos(<span class="hljs-string">'some_meta'</span>));<br><span class="hljs-comment">// &#123; type: 'GET_TODOS', meta: Params &#125;</span><br><br><span class="hljs-comment">// - and finally with type, payload and meta</span><br><span class="hljs-keyword">const</span> getTodo = createAction(<span class="hljs-string">'GET_TODO'</span>, <span class="hljs-function"><span class="hljs-params">action</span> =&gt;</span> &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">id: <span class="hljs-built_in">string</span>, meta: <span class="hljs-built_in">string</span></span>) =&gt;</span> action(id, meta);<br>&#125;);<br>dispatch(getTodo(<span class="hljs-string">'some_id'</span>, <span class="hljs-string">'some_meta'</span>));<br><span class="hljs-comment">// &#123; type: 'GET_TODO', payload: string, meta: string &#125;</span><br></code></pre></td></tr></table></figure>
+<p><a href="#table-of-contents">⇧ back to top</a></p>
+<h4 id="createStandardAction"><a href="#createStandardAction" class="headerlink" title="createStandardAction"></a><code>createStandardAction</code></h4><p><em>Create an enhanced action-creator compatible with <a href="https://github.com/redux-utilities/flux-standard-action" target="_blank" rel="noopener">Flux Standard Action</a> to reduce boilerplate and enforce convention.</em></p>
+<ul>
+<li>Resulting action-creator have predefined arguments <code>(payload, meta)</code></li>
+<li>Returned action object have predefined properties <code>({ type, payload, meta, error })</code></li>
+<li>But it also contains a <code>.map()</code> method that allow to map <code>(payload, meta)</code> arguments to a custom action object <code>({ customProp1, customProp2, ...customPropN })</code></li>
+</ul>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ts">createStandardAction(<span class="hljs-keyword">type</span>)()<br>createStandardAction(<span class="hljs-keyword">type</span>)&lt;TPayload, TMeta?&gt;()<br>createStandardAction(<span class="hljs-keyword">type</span>).map(<span class="hljs-function">(<span class="hljs-params">payload, meta</span>) =&gt;</span> (&#123; customProp1, customProp2, ...customPropN &#125;))<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>TIP</strong>: Using <code>undefined</code> as generic type parameter you can make the action-creator function require NO parameters.</p>
+</blockquote>
+<p>Examples:<br><a href="src/create-standard-action.spec.ts">&gt; Advanced Usage Examples</a></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; createStandardAction &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'typesafe-actions'</span>;<br><br><span class="hljs-comment">// Very concise with use of generic type arguments</span><br><span class="hljs-comment">// - with type only</span><br><span class="hljs-keyword">const</span> increment = createStandardAction(<span class="hljs-string">'INCREMENT'</span>)();<br><span class="hljs-keyword">const</span> increment = createStandardAction(<span class="hljs-string">'INCREMENT'</span>)&lt;<span class="hljs-literal">undefined</span>&gt;();<br>increment(); <span class="hljs-comment">// &#123; type: 'INCREMENT' &#125; (no parameters are required)</span><br><br><br><span class="hljs-comment">// - with type and payload</span><br><span class="hljs-keyword">const</span> add = createStandardAction(<span class="hljs-string">'ADD'</span>)&lt;<span class="hljs-built_in">number</span>&gt;();<br>add(<span class="hljs-number">10</span>); <span class="hljs-comment">// &#123; type: 'ADD', payload: number &#125;</span><br><br><span class="hljs-comment">// - with type and meta</span><br><span class="hljs-keyword">const</span> getData = createStandardAction(<span class="hljs-string">'GET_DATA'</span>)&lt;<span class="hljs-literal">undefined</span>, <span class="hljs-built_in">string</span>&gt;();<br>getData(<span class="hljs-literal">undefined</span>, <span class="hljs-string">'meta'</span>); <span class="hljs-comment">// &#123; type: 'GET_DATA', meta: string &#125;</span><br><br><span class="hljs-comment">// - and finally with type, payload and meta</span><br><span class="hljs-keyword">const</span> getData = createStandardAction(<span class="hljs-string">'GET_DATA'</span>)&lt;<span class="hljs-built_in">number</span>, <span class="hljs-built_in">string</span>&gt;();<br>getData(<span class="hljs-number">1</span>, <span class="hljs-string">'meta'</span>); <span class="hljs-comment">// &#123; type: 'GET_DATA', payload: number, meta: string &#125;</span><br><br><span class="hljs-comment">// Can map payload and meta arguments to a custom action object</span><br><span class="hljs-keyword">const</span> notify = createStandardAction(<span class="hljs-string">'NOTIFY'</span>).map(<br>  <span class="hljs-function">(<span class="hljs-params">payload: <span class="hljs-built_in">string</span>, meta: Meta</span>) =&gt;</span> (&#123;<br>    <span class="hljs-keyword">from</span>: meta.username,<br>    message: <span class="hljs-string">`<span class="hljs-subst">$&#123;username&#125;</span>: <span class="hljs-subst">$&#123;payload&#125;</span>`</span>,<br>    messageType: meta.type,<br>    datetime: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(),<br>  &#125;)<br>);<br><br>dispatch(notify(<span class="hljs-string">'Hello!'</span>, &#123; username: <span class="hljs-string">'Piotr'</span>, <span class="hljs-keyword">type</span>: <span class="hljs-string">'announcement'</span> &#125;));<br><span class="hljs-comment">// &#123; type: 'NOTIFY', from: string, message: string, messageType: MessageType, datetime: Date &#125;</span><br></code></pre></td></tr></table></figure>
+<p><a href="#table-of-contents">⇧ back to top</a></p>
+<h4 id="createCustomAction"><a href="#createCustomAction" class="headerlink" title="createCustomAction"></a><code>createCustomAction</code></h4><p><em>Create an enhanced action-creator with unlimited number of arguments and custom properties on action object.</em></p>
+<ul>
+<li>Resulting action-creator will preserve semantic names of their arguments  <code>(id, title, amount, etc...)</code>.</li>
+<li>Returned action object have custom properties <code>({ type, customProp1, customProp2, ...customPropN })</code></li>
+</ul>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ts">createCustomAction(<span class="hljs-keyword">type</span>, <span class="hljs-function"><span class="hljs-params">type</span> =&gt;</span> &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">namedArg1, namedArg2, ...namedArgN</span>) =&gt;</span> (&#123; <span class="hljs-keyword">type</span>, customProp1, customProp2, ...customPropN &#125;)<br>&#125;)<br></code></pre></td></tr></table></figure>
+<p>Examples:<br><a href="src/create-action-with-type.spec.ts">&gt; Advanced Usage Examples</a></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; createCustomAction &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'typesafe-actions'</span>;<br><br><span class="hljs-keyword">const</span> add = createCustomAction(<span class="hljs-string">'CUSTOM'</span>, <span class="hljs-function"><span class="hljs-params">type</span> =&gt;</span> &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">first: <span class="hljs-built_in">number</span>, second: <span class="hljs-built_in">number</span></span>) =&gt;</span> (&#123; <span class="hljs-keyword">type</span>, customProp1: first, customProp2: second &#125;);<br>&#125;);<br><br>dispatch(add(<span class="hljs-number">1</span>));<br><span class="hljs-comment">// &#123; type: "CUSTOM"; customProp1: number; customProp2: number; &#125;</span><br></code></pre></td></tr></table></figure>
+<p><a href="#table-of-contents">⇧ back to top</a></p>
+<h4 id="createAsyncAction"><a href="#createAsyncAction" class="headerlink" title="createAsyncAction"></a><code>createAsyncAction</code></h4><p><em>Create an object containing three enhanced action-creators to simplify handling of async flows (e.g. network request - request/success/failure).</em></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ts">createAsyncAction(<br>  requestType, successType, failureType, cancelType?<br>)&lt;TRequestPayload, TSuccessPayload, TFailurePayload, TCancelPayload?&gt;()<br></code></pre></td></tr></table></figure>
+<h5 id="AsyncActionCreator"><a href="#AsyncActionCreator" class="headerlink" title="AsyncActionCreator"></a><code>AsyncActionCreator</code></h5><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">type</span> AsyncActionCreator&lt;<br>  [TRequestType, TRequestPayload],<br>  [TSuccessType, TSuccessPayload],<br>  [TFailureType, TFailurePayload],<br>  [TCancelType, TCancelPayload]?<br>&gt; = &#123;<br>  request: StandardActionCreator&lt;TRequestType, TRequestPayload&gt;,<br>  success: StandardActionCreator&lt;TSuccessType, TSuccessPayload&gt;,<br>  failure: StandardActionCreator&lt;TFailureType, TFailurePayload&gt;,<br>  cancel?: StandardActionCreator&lt;TCancelType, TCancelPayload&gt;,<br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>TIP</strong>: Using <code>undefined</code> as generic type parameter you can make the action-creator function require NO parameters.</p>
+</blockquote>
+<p>Examples:<br><a href="src/create-async-action.spec.ts">&gt; Advanced Usage Examples</a></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; createAsyncAction, AsyncActionCreator &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'typesafe-actions'</span>;<br><br><span class="hljs-keyword">const</span> fetchUsersAsync = createAsyncAction(<br>  <span class="hljs-string">'FETCH_USERS_REQUEST'</span>,<br>  <span class="hljs-string">'FETCH_USERS_SUCCESS'</span>,<br>  <span class="hljs-string">'FETCH_USERS_FAILURE'</span><br>)&lt;<span class="hljs-built_in">string</span>, User[], <span class="hljs-built_in">Error</span>&gt;();<br><br>dispatch(fetchUsersAsync.request(params));<br><br>dispatch(fetchUsersAsync.success(response));<br><br>dispatch(fetchUsersAsync.failure(err));<br><br><span class="hljs-keyword">const</span> fn = (<br>  a: AsyncActionCreator&lt;<br>    [<span class="hljs-string">'FETCH_USERS_REQUEST'</span>, <span class="hljs-built_in">string</span>],<br>    [<span class="hljs-string">'FETCH_USERS_SUCCESS'</span>, User[]],<br>    [<span class="hljs-string">'FETCH_USERS_FAILURE'</span>, <span class="hljs-built_in">Error</span>]<br>  &gt;<br>) =&gt; a;<br>fn(fetchUsersAsync);<br><br><span class="hljs-comment">// There is 4th optional argument to declare cancel action</span><br><span class="hljs-keyword">const</span> fetchUsersAsync = createAsyncAction(<br>  <span class="hljs-string">'FETCH_USERS_REQUEST'</span>,<br>  <span class="hljs-string">'FETCH_USERS_SUCCESS'</span>,<br>  <span class="hljs-string">'FETCH_USERS_FAILURE'</span><br>  <span class="hljs-string">'FETCH_USERS_CANCEL'</span><br>)&lt;<span class="hljs-built_in">string</span>, User[], <span class="hljs-built_in">Error</span>, <span class="hljs-built_in">string</span>&gt;();<br><br>dispatch(fetchUsersAsync.cancel(<span class="hljs-string">'reason'</span>));<br><br><span class="hljs-keyword">const</span> fn = (<br>  a: AsyncActionCreator&lt;<br>    [<span class="hljs-string">'FETCH_USERS_REQUEST'</span>, <span class="hljs-built_in">string</span>],<br>    [<span class="hljs-string">'FETCH_USERS_SUCCESS'</span>, User[]],<br>    [<span class="hljs-string">'FETCH_USERS_FAILURE'</span>, <span class="hljs-built_in">Error</span>],<br>    [<span class="hljs-string">'FETCH_USERS_CANCEL'</span>, <span class="hljs-built_in">string</span>]<br>  &gt;<br>) =&gt; a;<br>fn(fetchUsersAsync);<br></code></pre></td></tr></table></figure>
+<p><a href="#table-of-contents">⇧ back to top</a></p>
+<hr>
+<h3 id="Reducer-Creators-API"><a href="#Reducer-Creators-API" class="headerlink" title="Reducer-Creators API"></a>Reducer-Creators API</h3><h4 id="createReducer"><a href="#createReducer" class="headerlink" title="createReducer"></a><code>createReducer</code></h4><p><em>Create a typesafe reducer</em></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ts">createReducer&lt;TState, TRootAction&gt;(initialState, handlersMap?)<br>  .handleAction(<span class="hljs-keyword">type</span>, reducer)<br>  .handleAction([type1, type2, ...typeN], reducer)<br>  .handleAction(actionCreator, reducer)<br>  .handleAction([actionCreator1, actionCreator2, ...actionCreatorN], reducer)<br></code></pre></td></tr></table></figure>
+<p>Examples:<br><a href="src/create-reducer.spec.ts">&gt; Advanced Usage Examples</a></p>
+<blockquote>
+<p><strong>TIP:</strong> You can use reducer API with a <strong>type-free</strong> syntax by <a href="#extending-internal-types-to-enable-type-free-syntax-with-createreducer">Extending internal types</a>, otherwise you’ll have to pass generic type arguments like in below examples<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">// type-free syntax doesn't require generic type arguments</span><br><span class="hljs-keyword">const</span> counterReducer = createReducer(<span class="hljs-number">0</span>, &#123; <br>  ADD: <span class="hljs-function">(<span class="hljs-params">state, action</span>) =&gt;</span> state + action.payload,<br>  [getType(increment)]: <span class="hljs-function">(<span class="hljs-params">state, _</span>) =&gt;</span> state + <span class="hljs-number">1</span>,<br>&#125;)<br></code></pre></td></tr></table></figure></p>
+</blockquote>
+<p>Using type-constants as keys in the object map:<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; createReducer, getType &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'typesafe-actions'</span><br><br><span class="hljs-keyword">type</span> State = <span class="hljs-built_in">number</span>;<br><span class="hljs-keyword">type</span> Action = &#123; <span class="hljs-keyword">type</span>: <span class="hljs-string">'ADD'</span>, payload: <span class="hljs-built_in">number</span> &#125; | &#123; <span class="hljs-keyword">type</span>: <span class="hljs-string">'INCREMENT'</span> &#125;;<br><br><span class="hljs-keyword">const</span> counterReducer = createReducer&lt;State, Action&gt;(<span class="hljs-number">0</span>, &#123; <br>  ADD: <span class="hljs-function">(<span class="hljs-params">state, action</span>) =&gt;</span> state + action.payload,<br>  [getType(increment)]: <span class="hljs-function">(<span class="hljs-params">state, _</span>) =&gt;</span> state + <span class="hljs-number">1</span>,<br>&#125;)<br><br>counterReducer(<span class="hljs-number">0</span>, add(<span class="hljs-number">4</span>)); <span class="hljs-comment">// =&gt; 4</span><br>counterReducer(<span class="hljs-number">0</span>, increment()); <span class="hljs-comment">// =&gt; 1</span><br></code></pre></td></tr></table></figure></p>
+<p>Using handleAction chain API:<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">// using action-creators</span><br><span class="hljs-keyword">const</span> counterReducer = createReducer&lt;State, Action&gt;(<span class="hljs-number">0</span>)<br>  .handleAction(add, <span class="hljs-function">(<span class="hljs-params">state, action</span>) =&gt;</span> state + action.payload)<br>  .handleAction(increment, <span class="hljs-function">(<span class="hljs-params">state, _</span>) =&gt;</span> state + <span class="hljs-number">1</span>)<br><br>  <span class="hljs-comment">// handle multiple actions by using array</span><br>  .handleAction([add, increment], <span class="hljs-function">(<span class="hljs-params">state, action</span>) =&gt;</span><br>    state + (action.type === <span class="hljs-string">'ADD'</span> ? action.payload : <span class="hljs-number">1</span>)<br>  );<br><br><span class="hljs-comment">// all the same scenarios are working when using type-constants</span><br><span class="hljs-keyword">const</span> counterReducer = createReducer&lt;State, Action&gt;(<span class="hljs-number">0</span>)<br>  .handleAction(<span class="hljs-string">'ADD'</span>, <span class="hljs-function">(<span class="hljs-params">state, action</span>) =&gt;</span> state + action.payload)<br>  .handleAction(<span class="hljs-string">'INCREMENT'</span>, <span class="hljs-function">(<span class="hljs-params">state, _</span>) =&gt;</span> state + <span class="hljs-number">1</span>);<br>  <br>counterReducer(<span class="hljs-number">0</span>, add(<span class="hljs-number">4</span>)); <span class="hljs-comment">// =&gt; 4</span><br>counterReducer(<span class="hljs-number">0</span>, increment()); <span class="hljs-comment">// =&gt; 1</span><br></code></pre></td></tr></table></figure></p>
+<p>Extend or compose various reducers together - every operation is completely typesafe:<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> newCounterReducer = createReducer&lt;State, Action&gt;(<span class="hljs-number">0</span>)<br>  .handleAction(<span class="hljs-string">'SUBTRACT'</span>, <span class="hljs-function">(<span class="hljs-params">state, action</span>) =&gt;</span> state - action.payload)<br>  .handleAction(<span class="hljs-string">'DECREMENT'</span>, <span class="hljs-function">(<span class="hljs-params">state, _</span>) =&gt;</span> state - <span class="hljs-number">1</span>);<br><br><span class="hljs-keyword">const</span> bigReducer = createReducer&lt;State, Action&gt;(<span class="hljs-number">0</span>, &#123;<br>  ...counterReducer.handlers, <span class="hljs-comment">// typesafe</span><br>  ...newCounterReducer.handlers, <span class="hljs-comment">// typesafe</span><br>  SUBTRACT: decrementReducer.handlers.DECREMENT, <span class="hljs-comment">// &lt;= error, wrong type</span><br>&#125;)<br></code></pre></td></tr></table></figure></p>
+<p><a href="#table-of-contents">⇧ back to top</a></p>
+<hr>
+<h3 id="Action-Helpers-API"><a href="#Action-Helpers-API" class="headerlink" title="Action-Helpers API"></a>Action-Helpers API</h3><h4 id="getType"><a href="#getType" class="headerlink" title="getType"></a><code>getType</code></h4><p><em>Get the <strong>type</strong> property value (narrowed to literal type) of given enhanced action-creator.</em></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ts">getType(actionCreator)<br></code></pre></td></tr></table></figure>
+<p><a href="src/get-type.spec.ts">&gt; Advanced Usage Examples</a></p>
+<p>Examples:<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; getType, createStandardAction &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'typesafe-actions'</span>;<br><br><span class="hljs-keyword">const</span> add = createStandardAction(<span class="hljs-string">'ADD'</span>)&lt;<span class="hljs-built_in">number</span>&gt;();<br><br><span class="hljs-comment">// In switch reducer</span><br><span class="hljs-keyword">switch</span> (action.type) &#123;<br>  <span class="hljs-keyword">case</span> getType(add):<br>    <span class="hljs-comment">// action type is &#123; type: "ADD"; payload: number; &#125;</span><br>    <span class="hljs-keyword">return</span> state + action.payload;<br><br>  <span class="hljs-keyword">default</span>:<br>    <span class="hljs-keyword">return</span> state;<br>&#125;<br><br><span class="hljs-comment">// or with conditional statements</span><br><span class="hljs-keyword">if</span> (action.type === getType(add)) &#123;<br>  <span class="hljs-comment">// action type is &#123; type: "ADD"; payload: number; &#125;</span><br>&#125;<br></code></pre></td></tr></table></figure></p>
+<p><a href="#table-of-contents">⇧ back to top</a></p>
+<h4 id="isActionOf"><a href="#isActionOf" class="headerlink" title="isActionOf"></a><code>isActionOf</code></h4><p><em>Check if action is an instance of given enhanced action-creator(s)<br>(it will narrow action type to a type of given action-creator(s))</em></p>
+<blockquote>
+<p><strong>WARNING</strong>: Regular action creators and <a href="#action">action</a> will not work with this helper</p>
+</blockquote>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">// can be used as a binary function</span><br>isActionOf(actionCreator, action)<br><span class="hljs-comment">// or as a curried function</span><br>isActionOf(actionCreator)(action)<br><span class="hljs-comment">// also accepts an array</span><br>isActionOf([actionCreator1, actionCreator2, ...actionCreatorN], action)<br><span class="hljs-comment">// with its curried equivalent</span><br>isActionOf([actionCreator1, actionCreator2, ...actionCreatorN])(action)<br></code></pre></td></tr></table></figure>
+<p>Examples:<br><a href="src/is-action-of.spec.ts">&gt; Advanced Usage Examples</a></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; addTodo, removeTodo &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'./todos-actions'</span>;<br><br><span class="hljs-comment">// Works with any filter type function (`Array.prototype.filter`, lodash, ramda, rxjs, etc.)</span><br><span class="hljs-comment">// - single action</span><br>[action1, action2, ...actionN]<br>  .filter(isActionOf(addTodo)) <span class="hljs-comment">// only actions with type `ADD` will pass</span><br>  .map(<span class="hljs-function">(<span class="hljs-params">action</span>) =&gt;</span> &#123;<br>    <span class="hljs-comment">// action type is &#123; type: "todos/ADD"; payload: Todo; &#125;</span><br>    ...<br>    <br><span class="hljs-comment">// - multiple actions</span><br>[action1, action2, ...actionN]<br>  .filter(isActionOf([addTodo, removeTodo])) <span class="hljs-comment">// only actions with type `ADD` or 'REMOVE' will pass</span><br>  .do(<span class="hljs-function">(<span class="hljs-params">action</span>) =&gt;</span> &#123;<br>    <span class="hljs-comment">// action type is &#123; type: "todos/ADD"; payload: Todo; &#125; | &#123; type: "todos/REMOVE"; payload: Todo; &#125;</span><br>    ...<br>      <br><span class="hljs-comment">// With conditional statements</span><br><span class="hljs-comment">// - single action</span><br><span class="hljs-keyword">if</span>(isActionOf(addTodo, action)) &#123;<br>  <span class="hljs-keyword">return</span> iAcceptOnlyTodoType(action.payload);<br>  <span class="hljs-comment">// action type is &#123; type: "todos/ADD"; payload: Todo; &#125;</span><br>&#125;<br><span class="hljs-comment">// - multiple actions</span><br><span class="hljs-keyword">if</span>(isActionOf([addTodo, removeTodo], action)) &#123;<br>  <span class="hljs-keyword">return</span> iAcceptOnlyTodoType(action.payload);<br>  <span class="hljs-comment">// action type is &#123; type: "todos/ADD"; payload: Todo; &#125; | &#123; type: "todos/REMOVE"; payload: Todo; &#125;</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p><a href="#table-of-contents">⇧ back to top</a></p>
+<h4 id="isOfType"><a href="#isOfType" class="headerlink" title="isOfType"></a><code>isOfType</code></h4><p><em>Check if action type property is equal given type-constant(s)<br>(it will narrow action type to a type of given action-creator(s))</em></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">// can be used as a binary function</span><br>isOfType(<span class="hljs-keyword">type</span>, action)<br><span class="hljs-comment">// or as curried function</span><br>isOfType(<span class="hljs-keyword">type</span>)(action)<br><span class="hljs-comment">// also accepts an array</span><br>isOfType([type1, type2, ...typeN], action)<br><span class="hljs-comment">// with its curried equivalent</span><br>isOfType([type1, type2, ...typeN])(action)<br></code></pre></td></tr></table></figure>
+<p>Examples:<br><a href="src/is-of-type.spec.ts">&gt; Advanced Usage Examples</a></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; ADD, REMOVE &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'./todos-types'</span>;<br><br><span class="hljs-comment">// Works with any filter type function (`Array.prototype.filter`, lodash, ramda, rxjs, etc.)</span><br><span class="hljs-comment">// - single action</span><br>[action1, action2, ...actionN]<br>  .filter(isOfType(ADD)) <span class="hljs-comment">// only actions with type `ADD` will pass</span><br>  .map(<span class="hljs-function">(<span class="hljs-params">action</span>) =&gt;</span> &#123;<br>    <span class="hljs-comment">// action type is &#123; type: "todos/ADD"; payload: Todo; &#125;</span><br>    ...<br>    <br><span class="hljs-comment">// - multiple actions</span><br>[action1, action2, ...actionN]<br>  .filter(isOfType([ADD, REMOVE])) <span class="hljs-comment">// only actions with type `ADD` or 'REMOVE' will pass</span><br>  .do(<span class="hljs-function">(<span class="hljs-params">action</span>) =&gt;</span> &#123;<br>    <span class="hljs-comment">// action type is &#123; type: "todos/ADD"; payload: Todo; &#125; | &#123; type: "todos/REMOVE"; payload: Todo; &#125;</span><br>    ...<br>      <br><span class="hljs-comment">// With conditional statements</span><br><span class="hljs-comment">// - single action</span><br><span class="hljs-keyword">if</span>(isOfType(ADD, action)) &#123;<br>  <span class="hljs-keyword">return</span> iAcceptOnlyTodoType(action.payload);<br>  <span class="hljs-comment">// action type is &#123; type: "todos/ADD"; payload: Todo; &#125;</span><br>&#125;<br><span class="hljs-comment">// - multiple actions</span><br><span class="hljs-keyword">if</span>(isOfType([ADD, REMOVE], action)) &#123;<br>  <span class="hljs-keyword">return</span> iAcceptOnlyTodoType(action.payload);<br>  <span class="hljs-comment">// action type is &#123; type: "todos/ADD"; payload: Todo; &#125; | &#123; type: "todos/REMOVE"; payload: Todo; &#125;</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p><a href="#table-of-contents">⇧ back to top</a></p>
+<hr>
+<h3 id="Type-Helpers-API"><a href="#Type-Helpers-API" class="headerlink" title="Type-Helpers API"></a>Type-Helpers API</h3><p>Below helper functions are very flexible generalizations, works great with nested structures and will cover numerous different use-cases.</p>
+<h4 id="ActionType"><a href="#ActionType" class="headerlink" title="ActionType"></a><code>ActionType</code></h4><p><em>Powerful type-helper that will infer union type from <strong>import * as …</strong> or <strong>action-creator map</strong> object.</em></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; ActionType &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'typesafe-actions'</span>;<br><br><span class="hljs-comment">// with "import * as ..."</span><br><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> todos <span class="hljs-keyword">from</span> <span class="hljs-string">'./actions'</span>;<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> TodosAction = ActionType&lt;<span class="hljs-keyword">typeof</span> todos&gt;;<br><span class="hljs-comment">// TodosAction: &#123; type: 'action1' &#125; | &#123; type: 'action2' &#125; | &#123; type: 'action3' &#125;</span><br><br><span class="hljs-comment">// with nested action-creator map case</span><br><span class="hljs-keyword">const</span> actions = &#123;<br>  action1: createAction(<span class="hljs-string">'action1'</span>),<br>  nested: &#123;<br>    action2: createAction(<span class="hljs-string">'action2'</span>),<br>    moreNested: &#123;<br>      action3: createAction(<span class="hljs-string">'action3'</span>),<br>    &#125;,<br>  &#125;,<br>&#125;;<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> RootAction = ActionType&lt;<span class="hljs-keyword">typeof</span> actions&gt;;<br><span class="hljs-comment">// RootAction: &#123; type: 'action1' &#125; | &#123; type: 'action2' &#125; | &#123; type: 'action3' &#125;</span><br></code></pre></td></tr></table></figure>
+<p><a href="#table-of-contents">⇧ back to top</a></p>
+<h4 id="StateType"><a href="#StateType" class="headerlink" title="StateType"></a><code>StateType</code></h4><p><em>Powerful type helper that will infer state object type from <strong>reducer function</strong> and <strong>nested/combined reducers</strong>.</em></p>
+<blockquote>
+<p><strong>WARNING</strong>: working with redux@4+ types</p>
+</blockquote>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">import</span> &#123; combineReducers &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'redux'</span>;<br><span class="hljs-keyword">import</span> &#123; StateType &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'typesafe-actions'</span>;<br><br><span class="hljs-comment">// with reducer function</span><br><span class="hljs-keyword">const</span> todosReducer = <span class="hljs-function">(<span class="hljs-params">state: Todo[] = [], action: TodosAction</span>) =&gt;</span> &#123;<br>  <span class="hljs-keyword">switch</span> (action.type) &#123;<br>    <span class="hljs-keyword">case</span> getType(todos.add):<br>      <span class="hljs-keyword">return</span> [...state, action.payload];<br>    ...<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> TodosState = StateType&lt;<span class="hljs-keyword">typeof</span> todosReducer&gt;;<br><br><span class="hljs-comment">// with nested/combined reducers</span><br><span class="hljs-keyword">const</span> rootReducer = combineReducers(&#123;<br>  router: routerReducer,<br>  counters: countersReducer,<br>&#125;);<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">type</span> RootState = StateType&lt;<span class="hljs-keyword">typeof</span> rootReducer&gt;;<br></code></pre></td></tr></table></figure>
+<p><a href="#table-of-contents">⇧ back to top</a></p>
+<hr>
+<h2 id="Migration-Guides"><a href="#Migration-Guides" class="headerlink" title="Migration Guides"></a>Migration Guides</h2><h3 id="v3-x-x-to-v4-x-x"><a href="#v3-x-x-to-v4-x-x" class="headerlink" title="v3.x.x to v4.x.x"></a><code>v3.x.x</code> to <code>v4.x.x</code></h3><p>From <code>v4.x.x</code> all action creators will use <code>undefined</code> instead of <code>void</code> as a generic type parameter to make the action-creator function require NO parameters.<br><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> increment = createStandardAction(<span class="hljs-string">'INCREMENT'</span>)&lt;<span class="hljs-literal">undefined</span>&gt;();<br>increment(); <span class="hljs-comment">// &lt;= no parameters required</span><br><br><span class="hljs-keyword">const</span> fetchUsersAsync = createAsyncAction(<br>  <span class="hljs-string">'FETCH_USERS_REQUEST'</span>,<br>  <span class="hljs-string">'FETCH_USERS_SUCCESS'</span>,<br>  <span class="hljs-string">'FETCH_USERS_FAILURE'</span><br>)&lt;<span class="hljs-literal">undefined</span>, User[], <span class="hljs-built_in">Error</span>&gt;();<br>fetchUsersAsync.request(); <span class="hljs-comment">// &lt;= no parameters required</span><br></code></pre></td></tr></table></figure></p>
+<h3 id="v2-x-x-to-v3-x-x"><a href="#v2-x-x-to-v3-x-x" class="headerlink" title="v2.x.x to v3.x.x"></a><code>v2.x.x</code> to <code>v3.x.x</code></h3><p><code>v3.x.x</code> API is backward compatible with <code>v2.x.x</code>. You’ll only need to update typescript dependency to <code>&gt; v3.1</code>.</p>
+<h3 id="v1-x-x-to-v2-x-x"><a href="#v1-x-x-to-v2-x-x" class="headerlink" title="v1.x.x to v2.x.x"></a><code>v1.x.x</code> to <code>v2.x.x</code></h3><p>In v2 we provide a <code>createActionDeprecated</code> function compatible with v1 API to help with incremental migration.</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">// in v1 we created action-creator like this:</span><br><span class="hljs-keyword">const</span> getTodo = createAction(<span class="hljs-string">'GET_TODO'</span>,<br>  <span class="hljs-function">(<span class="hljs-params">id: <span class="hljs-built_in">string</span>, meta: <span class="hljs-built_in">string</span></span>) =&gt;</span> (&#123;<br>    <span class="hljs-keyword">type</span>: <span class="hljs-string">'GET_TODO'</span>,<br>    payload: id,<br>    meta: meta,<br>  &#125;)<br>);<br><br>getTodo(<span class="hljs-string">'some_id'</span>, <span class="hljs-string">'some_meta'</span>); <span class="hljs-comment">// &#123; type: 'GET_TODO', payload: 'some_id', meta: 'some_meta' &#125;</span><br><br><span class="hljs-comment">// in v2 API we offer few different styles - please choose your preference</span><br><span class="hljs-keyword">const</span> getTodoNoHelpers = <span class="hljs-function">(<span class="hljs-params">id: <span class="hljs-built_in">string</span>, meta: <span class="hljs-built_in">string</span></span>) =&gt;</span> action(<span class="hljs-string">'GET_TODO'</span>, id, meta);<br><br><span class="hljs-keyword">const</span> getTodoWithHelpers = createAction(<span class="hljs-string">'GET_TODO'</span>, <span class="hljs-function"><span class="hljs-params">action</span> =&gt;</span> &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">id: <span class="hljs-built_in">string</span>, meta: <span class="hljs-built_in">string</span></span>) =&gt;</span> action(id, meta);<br>&#125;);<br><br><span class="hljs-keyword">const</span> getTodoFSA = createStandardAction(<span class="hljs-string">'GET_TODO'</span>)&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">string</span>&gt;();<br><br><span class="hljs-keyword">const</span> getTodoCustom = createStandardAction(<span class="hljs-string">'GET_TODO'</span>).map(<br>  <span class="hljs-function">(<span class="hljs-params">&#123; id, meta &#125;: &#123; id: <span class="hljs-built_in">string</span>; meta: <span class="hljs-built_in">string</span>; &#125;</span>) =&gt;</span> (&#123;<br>    payload: id,<br>    meta,<br>  &#125;)<br>);<br></code></pre></td></tr></table></figure>
+<h3 id="Migrating-from-redux-actions-to-typesafe-actions"><a href="#Migrating-from-redux-actions-to-typesafe-actions" class="headerlink" title="Migrating from redux-actions to typesafe-actions"></a>Migrating from <code>redux-actions</code> to <code>typesafe-actions</code></h3><ul>
+<li>createAction(s)</li>
+</ul>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ts">createAction(<span class="hljs-keyword">type</span>, payloadCreator, metaCreator) =&gt; createStandardAction(<span class="hljs-keyword">type</span>)() || createStandardAction(<span class="hljs-keyword">type</span>).map(payloadMetaCreator)<br><br>createActions() =&gt; <span class="hljs-comment">// COMING SOON!</span><br></code></pre></td></tr></table></figure>
+<ul>
+<li>handleAction(s)</li>
+</ul>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ts">handleAction(<span class="hljs-keyword">type</span>, reducer, initialState) =&gt; createReducer(initialState).handleAction(<span class="hljs-keyword">type</span>, reducer)<br><br>handleActions(reducerMap, initialState) =&gt; createReducer(initialState, reducerMap)<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>TIP: If migrating from JS -&gt; TS, you can swap out action-creators from <code>redux-actions</code> with action-creators from <code>typesafe-actions</code> in your <code>handleActions</code> handlers. This works because the action-creators from <code>typesafe-actions</code> provide the same <code>toString</code> method implementation used by <code>redux-actions</code> to match actions to the correct reducer.</p>
+</blockquote>
+<ul>
+<li>combineActions</li>
+</ul>
+<p>Not needed because each function in the API accept single value or array of values for action types or action creators.</p>
+<p><a href="#table-of-contents">⇧ back to top</a></p>
+<hr>
+<h2 id="Recipes"><a href="#Recipes" class="headerlink" title="Recipes"></a>Recipes</h2><h3 id="Restrict-Meta-type-in-action-creator"><a href="#Restrict-Meta-type-in-action-creator" class="headerlink" title="Restrict Meta type in action creator"></a>Restrict Meta type in <code>action</code> creator</h3><p>Using this recipe you can create an action creator with restricted Meta type with exact object shape.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs tsx">export type MetaType = &#123;<br>  analytics?: &#123;<br>    eventName: string;<br>  &#125;;<br>&#125;;<br><br>export const actionWithRestrictedMeta = &lt;T extends string, P&gt;(<br>  type: T,<br>  payload: P,<br>  meta: MetaType<br>) =&gt; action(type, payload, meta);<br><br>export const validAction = (payload: string) =&gt;<br>  actionWithRestrictedMeta(&apos;type&apos;, payload, &#123; analytics: &#123; eventName: &apos;success&apos; &#125; &#125;); // OK!<br><br>export const invalidAction = (payload: string) =&gt;<br>  actionWithRestrictedMeta(&apos;type&apos;, payload, &#123; analytics: &#123; excessProp: &apos;no way!&apos; &#125; &#125;); // Error<br>// Object literal may only specify known properties, and &apos;excessProp&apos; does not exist in type &apos;&#123; eventName: string; &#125;<br></code></pre></td></tr></table></figure>
+<p><a href="#table-of-contents">⇧ back to top</a></p>
+<hr>
+<h2 id="Compare-to-others"><a href="#Compare-to-others" class="headerlink" title="Compare to others"></a>Compare to others</h2><p>Here you can find out a detailed comparison of <code>typesafe-actions</code> to other solutions.</p>
+<h3 id="redux-actions"><a href="#redux-actions" class="headerlink" title="redux-actions"></a><code>redux-actions</code></h3><p>Lets compare the 3 most common variants of action-creators (with type only, with payload and with payload + meta)</p>
+<p>Note: tested with “@types/redux-actions”: “2.2.3”</p>
+<p><strong>- with type only (no payload)</strong></p>
+<h5 id="redux-actions-1"><a href="#redux-actions-1" class="headerlink" title="redux-actions"></a>redux-actions</h5><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> notify1 = createAction(<span class="hljs-string">'NOTIFY'</span>);<br><span class="hljs-comment">// resulting type:</span><br><span class="hljs-comment">// () =&gt; &#123;</span><br><span class="hljs-comment">//   type: string;</span><br><span class="hljs-comment">//   payload: void | undefined;</span><br><span class="hljs-comment">//   error: boolean | undefined;</span><br><span class="hljs-comment">// &#125;</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>with <code>redux-actions</code> you can notice the redundant nullable <code>payload</code> property and literal type of <code>type</code> property is lost (discrimination of union type would not be possible)</p>
+</blockquote>
+<h5 id="typesafe-actions"><a href="#typesafe-actions" class="headerlink" title="typesafe-actions"></a>typesafe-actions</h5><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> notify1 = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> action(<span class="hljs-string">'NOTIFY'</span>);<br><span class="hljs-comment">// resulting type:</span><br><span class="hljs-comment">// () =&gt; &#123;</span><br><span class="hljs-comment">//   type: "NOTIFY";</span><br><span class="hljs-comment">// &#125;</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>with <code>typesafe-actions</code> there is no excess nullable types and no excess properties and the action “type” property is containing a literal type</p>
+</blockquote>
+<p><strong>- with payload</strong></p>
+<h5 id="redux-actions-2"><a href="#redux-actions-2" class="headerlink" title="redux-actions"></a>redux-actions</h5><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> notify2 = createAction(<span class="hljs-string">'NOTIFY'</span>,<br>  <span class="hljs-function">(<span class="hljs-params">username: <span class="hljs-built_in">string</span>, message?: <span class="hljs-built_in">string</span></span>) =&gt;</span> (&#123;<br>    message: <span class="hljs-string">`<span class="hljs-subst">$&#123;username&#125;</span>: <span class="hljs-subst">$&#123;message || 'Empty!'&#125;</span>`</span>,<br>  &#125;)<br>);<br><span class="hljs-comment">// resulting type:</span><br><span class="hljs-comment">// (t1: string) =&gt; &#123;</span><br><span class="hljs-comment">//   type: string;</span><br><span class="hljs-comment">//   payload: &#123; message: string; &#125; | undefined;</span><br><span class="hljs-comment">//   error: boolean | undefined;</span><br><span class="hljs-comment">// &#125;</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>first the optional <code>message</code> parameter is lost, <code>username</code> semantic argument name is changed to some generic <code>t1</code>, <code>type</code> property is widened once again and <code>payload</code> is nullable because of broken inference</p>
+</blockquote>
+<h5 id="typesafe-actions-1"><a href="#typesafe-actions-1" class="headerlink" title="typesafe-actions"></a>typesafe-actions</h5><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> notify2 = <span class="hljs-function">(<span class="hljs-params">username: <span class="hljs-built_in">string</span>, message?: <span class="hljs-built_in">string</span></span>) =&gt;</span> action(<br>  <span class="hljs-string">'NOTIFY'</span>,<br>  &#123; message: <span class="hljs-string">`<span class="hljs-subst">$&#123;username&#125;</span>: <span class="hljs-subst">$&#123;message || 'Empty!'&#125;</span>`</span> &#125;,<br>);<br><span class="hljs-comment">// resulting type:</span><br><span class="hljs-comment">// (username: string, message?: string | undefined) =&gt; &#123;</span><br><span class="hljs-comment">//   type: "NOTIFY";</span><br><span class="hljs-comment">//   payload: &#123; message: string; &#125;;</span><br><span class="hljs-comment">// &#125;</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p><code>typesafe-actions</code> infer very precise resulting type, notice working optional parameters and semantic argument names are preserved which is really important for great intellisense experience</p>
+</blockquote>
+<p><strong>- with payload and meta</strong></p>
+<h5 id="redux-actions-3"><a href="#redux-actions-3" class="headerlink" title="redux-actions"></a>redux-actions</h5><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> notify3 = createAction(<span class="hljs-string">'NOTIFY'</span>,<br>  <span class="hljs-function">(<span class="hljs-params">username: <span class="hljs-built_in">string</span>, message?: <span class="hljs-built_in">string</span></span>) =&gt;</span> (<br>    &#123; message: <span class="hljs-string">`<span class="hljs-subst">$&#123;username&#125;</span>: <span class="hljs-subst">$&#123;message || 'Empty!'&#125;</span>`</span> &#125;<br>  ),<br>  <span class="hljs-function">(<span class="hljs-params">username: <span class="hljs-built_in">string</span>, message?: <span class="hljs-built_in">string</span></span>) =&gt;</span> (<br>    &#123; username, message &#125;<br>  )<br>);<br><span class="hljs-comment">// resulting type:</span><br><span class="hljs-comment">// (...args: any[]) =&gt; &#123;</span><br><span class="hljs-comment">//   type: string;</span><br><span class="hljs-comment">//   payload: &#123; message: string; &#125; | undefined;</span><br><span class="hljs-comment">//   meta: &#123; username: string; message: string | undefined; &#125;;</span><br><span class="hljs-comment">//   error: boolean | undefined;</span><br><span class="hljs-comment">// &#125;</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>this time we got a completely broken arguments arity with no type-safety because of <code>any</code> type with all the earlier issues</p>
+</blockquote>
+<h5 id="typesafe-actions-2"><a href="#typesafe-actions-2" class="headerlink" title="typesafe-actions"></a>typesafe-actions</h5><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">/**<br> * typesafe-actions<br> */</span><br><span class="hljs-keyword">const</span> notify3 = <span class="hljs-function">(<span class="hljs-params">username: <span class="hljs-built_in">string</span>, message?: <span class="hljs-built_in">string</span></span>) =&gt;</span> action(<br>  <span class="hljs-string">'NOTIFY'</span>,<br>  &#123; message: <span class="hljs-string">`<span class="hljs-subst">$&#123;username&#125;</span>: <span class="hljs-subst">$&#123;message || 'Empty!'&#125;</span>`</span> &#125;,<br>  &#123; username, message &#125;,<br>);<br><span class="hljs-comment">// resulting type:</span><br><span class="hljs-comment">// (username: string, message?: string | undefined) =&gt; &#123;</span><br><span class="hljs-comment">//   type: "NOTIFY";</span><br><span class="hljs-comment">//   payload: &#123; message: string; &#125;;</span><br><span class="hljs-comment">//   meta: &#123; username: string; message: string | undefined; &#125;;</span><br><span class="hljs-comment">// &#125;</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p><code>typesafe-actions</code> never fail to <code>any</code> type, even with this advanced scenario all types are correct and provide complete type-safety and excellent developer experience </p>
+</blockquote>
+<p><a href="#table-of-contents">⇧ back to top</a></p>
+<hr>
+<h2 id="MIT-License"><a href="#MIT-License" class="headerlink" title="MIT License"></a>MIT License</h2><p>Copyright (c) 2017 Piotr Witek <a href="mailto:&#x70;&#105;&#111;&#116;&#114;&#101;&#x6b;&#46;&#119;&#x69;&#116;&#101;&#107;&#x40;&#103;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;" target="_blank" rel="noopener">&#x70;&#105;&#111;&#116;&#114;&#101;&#x6b;&#46;&#119;&#x69;&#116;&#101;&#107;&#x40;&#103;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a> (<a href="http://piotrwitek.github.io" target="_blank" rel="noopener">http://piotrwitek.github.io</a>)</p>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div id="reward-container">
+  <div></div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/wechat_pay.jpg" alt="kirno 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>kirno</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://kirning.github.io/2019/07/03/cjxzvzayu0023msu9xxwj5oii/" title="typesafe-actions-zh">https://kirning.github.io/2019/07/03/cjxzvzayu0023msu9xxwj5oii/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+            <a href="/tags/redux/" rel="tag"># redux</a>
+          
+            <a href="/tags/typescript/" rel="tag"># typescript</a>
+          
+            <a href="/tags/react/" rel="tag"># react</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/14/cjxzvzao7001qmsu90knea9p3/" rel="next" title="构建electron、typescript、react、antd应用">
+                <i class="fa fa-chevron-left"></i> 构建electron、typescript、react、antd应用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/04/cjxzvzagm000xmsu9l3ymrtvt/" rel="prev" title="redux">
+                redux <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">kirno</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/kirning" title="GitHub &rarr; https://github.com/kirning" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Table-of-Contents"><span class="nav-number">1.</span> <span class="nav-text">Table of Contents</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">2.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">3.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#兼容性注意"><span class="nav-number">4.</span> <span class="nav-text">兼容性注意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Contributing-Guide"><span class="nav-number">5.</span> <span class="nav-text">Contributing Guide</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Funding"><span class="nav-number">6.</span> <span class="nav-text">Funding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tutorial"><span class="nav-number">7.</span> <span class="nav-text">Tutorial</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常量"><span class="nav-number">7.1.</span> <span class="nav-text">常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Actions"><span class="nav-number">7.2.</span> <span class="nav-text">Actions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Basic-actions"><span class="nav-number">7.2.1.</span> <span class="nav-text">1. Basic actions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-FSA-compliant-actions"><span class="nav-number">7.2.2.</span> <span class="nav-text">2. FSA compliant actions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Custom-actions-non-standard-use-cases"><span class="nav-number">7.2.3.</span> <span class="nav-text">3. Custom actions (non-standard use-cases)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Action-Helpers"><span class="nav-number">7.3.</span> <span class="nav-text">Action Helpers</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Using-regular-type-constants"><span class="nav-number">7.3.1.</span> <span class="nav-text">Using regular type-constants</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reducers"><span class="nav-number">7.4.</span> <span class="nav-text">Reducers</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Extending-internal-types-to-enable-type-free-syntax-with-createReducer"><span class="nav-number">7.4.1.</span> <span class="nav-text">Extending internal types to enable type-free syntax with createReducer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Using-createReducer-API-with-type-free-syntax"><span class="nav-number">7.4.2.</span> <span class="nav-text">Using createReducer API with type-free syntax</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Alternative-usage-with-regular-switch-reducer"><span class="nav-number">7.4.3.</span> <span class="nav-text">Alternative usage with regular switch reducer</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Async-Flows"><span class="nav-number">7.5.</span> <span class="nav-text">Async-Flows</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#With-redux-observable-epics"><span class="nav-number">7.5.1.</span> <span class="nav-text">With redux-observable epics</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#With-redux-saga-sagas"><span class="nav-number">7.5.2.</span> <span class="nav-text">With redux-saga sagas</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#API-Docs"><span class="nav-number">8.</span> <span class="nav-text">API Docs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Action-Creators-API"><span class="nav-number">8.1.</span> <span class="nav-text">Action-Creators API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#action"><span class="nav-number">8.1.1.</span> <span class="nav-text">action</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#createAction"><span class="nav-number">8.1.2.</span> <span class="nav-text">createAction</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#createStandardAction"><span class="nav-number">8.1.3.</span> <span class="nav-text">createStandardAction</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#createCustomAction"><span class="nav-number">8.1.4.</span> <span class="nav-text">createCustomAction</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#createAsyncAction"><span class="nav-number">8.1.5.</span> <span class="nav-text">createAsyncAction</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#AsyncActionCreator"><span class="nav-number">8.1.5.1.</span> <span class="nav-text">AsyncActionCreator</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reducer-Creators-API"><span class="nav-number">8.2.</span> <span class="nav-text">Reducer-Creators API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#createReducer"><span class="nav-number">8.2.1.</span> <span class="nav-text">createReducer</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Action-Helpers-API"><span class="nav-number">8.3.</span> <span class="nav-text">Action-Helpers API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#getType"><span class="nav-number">8.3.1.</span> <span class="nav-text">getType</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#isActionOf"><span class="nav-number">8.3.2.</span> <span class="nav-text">isActionOf</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#isOfType"><span class="nav-number">8.3.3.</span> <span class="nav-text">isOfType</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Type-Helpers-API"><span class="nav-number">8.4.</span> <span class="nav-text">Type-Helpers API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ActionType"><span class="nav-number">8.4.1.</span> <span class="nav-text">ActionType</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#StateType"><span class="nav-number">8.4.2.</span> <span class="nav-text">StateType</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Migration-Guides"><span class="nav-number">9.</span> <span class="nav-text">Migration Guides</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#v3-x-x-to-v4-x-x"><span class="nav-number">9.1.</span> <span class="nav-text">v3.x.x to v4.x.x</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v2-x-x-to-v3-x-x"><span class="nav-number">9.2.</span> <span class="nav-text">v2.x.x to v3.x.x</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v1-x-x-to-v2-x-x"><span class="nav-number">9.3.</span> <span class="nav-text">v1.x.x to v2.x.x</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Migrating-from-redux-actions-to-typesafe-actions"><span class="nav-number">9.4.</span> <span class="nav-text">Migrating from redux-actions to typesafe-actions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Recipes"><span class="nav-number">10.</span> <span class="nav-text">Recipes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Restrict-Meta-type-in-action-creator"><span class="nav-number">10.1.</span> <span class="nav-text">Restrict Meta type in action creator</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compare-to-others"><span class="nav-number">11.</span> <span class="nav-text">Compare to others</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#redux-actions"><span class="nav-number">11.1.</span> <span class="nav-text">redux-actions</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#redux-actions-1"><span class="nav-number">11.1.0.1.</span> <span class="nav-text">redux-actions</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#typesafe-actions"><span class="nav-number">11.1.0.2.</span> <span class="nav-text">typesafe-actions</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#redux-actions-2"><span class="nav-number">11.1.0.3.</span> <span class="nav-text">redux-actions</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#typesafe-actions-1"><span class="nav-number">11.1.0.4.</span> <span class="nav-text">typesafe-actions</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#redux-actions-3"><span class="nav-number">11.1.0.5.</span> <span class="nav-text">redux-actions</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#typesafe-actions-2"><span class="nav-number">11.1.0.6.</span> <span class="nav-text">typesafe-actions</span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#MIT-License"><span class="nav-number">12.</span> <span class="nav-text">MIT License</span></a></li></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kirno</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>

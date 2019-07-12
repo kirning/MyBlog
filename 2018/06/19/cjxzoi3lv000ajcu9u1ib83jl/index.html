@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>bt搜索脚本 | kirnoのBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="脚本 javascript:pachong();function pachong() {var currentUrl = location.href;if (currentUrl.indexOf(&quot;http://sdkcloud.pro/&quot;) == -1) {var query = prompt(&quot;请输入想要搜索的资源关键字&quot;);if(query.trim()){var sdkUrl = &quot;htt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bt搜索脚本">
+<meta property="og:url" content="https://kirning.github.io/2018/06/19/cjxzoi3lv000ajcu9u1ib83jl/index.html">
+<meta property="og:site_name" content="kirnoのBlog">
+<meta property="og:description" content="脚本 javascript:pachong();function pachong() {var currentUrl = location.href;if (currentUrl.indexOf(&quot;http://sdkcloud.pro/&quot;) == -1) {var query = prompt(&quot;请输入想要搜索的资源关键字&quot;);if(query.trim()){var sdkUrl = &quot;htt">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://i4.buimg.com/567571/cbc2cc2efe423ace.png">
+<meta property="og:image" content="http://i2.buimg.com/567571/056c5bde613f7c07.png">
+<meta property="og:image" content="http://i2.buimg.com/567571/a4b0f5a147a6c273.png">
+<meta property="og:image" content="http://i2.buimg.com/567571/4e3701e0b54b1d0e.png">
+<meta property="og:updated_time" content="2019-01-27T10:37:54.331Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="bt搜索脚本">
+<meta name="twitter:description" content="脚本 javascript:pachong();function pachong() {var currentUrl = location.href;if (currentUrl.indexOf(&quot;http://sdkcloud.pro/&quot;) == -1) {var query = prompt(&quot;请输入想要搜索的资源关键字&quot;);if(query.trim()){var sdkUrl = &quot;htt">
+<meta name="twitter:image" content="http://i4.buimg.com/567571/cbc2cc2efe423ace.png">
+  
+    <link rel="alternate" href="/atom.xml" title="kirnoのBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">kirnoのBlog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kirning.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-bt搜索脚本" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/19/cjxzoi3lv000ajcu9u1ib83jl/" class="article-date">
+  <time datetime="2018-06-19T09:37:10.000Z" itemprop="datePublished">2018-06-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      bt搜索脚本
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><pre><code class="javascript">
+javascript:pachong();<span class="function"><span class="keyword">function</span> <span class="title">pachong</span>(<span class="params"></span>) </span>{<span class="keyword">var</span> currentUrl = location.href;<span class="keyword">if</span> (currentUrl.indexOf(<span class="string">"http://sdkcloud.pro/"</span>) == <span class="number">-1</span>) {<span class="keyword">var</span> query = prompt(<span class="string">"请输入想要搜索的资源关键字"</span>);<span class="keyword">if</span>(query.trim()){<span class="keyword">var</span> sdkUrl = <span class="string">"http://sdkcloud.pro/xfs.php?s="</span>+query;location.href = sdkUrl;}} <span class="keyword">else</span> {addBtn();}}<span class="function"><span class="keyword">function</span> <span class="title">addBtn</span>(<span class="params"></span>)</span>{<span class="keyword">var</span> list = <span class="built_in">document</span>.querySelectorAll(<span class="string">".T1 a"</span>);list.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>{<span class="keyword">var</span> l = item.href;<span class="keyword">var</span> mag = l.substring(<span class="number">20</span>, l.length);<span class="keyword">var</span> url =  <span class="string">"https://apiv.ga/magnet/"</span>+mag;<span class="keyword">var</span> btn = <span class="string">"&lt;a style='margin-left:5px;text-decoration:none;border:1px solid #efefef;border-radius:4px;font-size:15px;padding:5px' href='"</span>+url+<span class="string">"' target='view_window'&gt;%E6%92%AD%E6%94%BE&lt;/a&gt;"</span>;item.innerHTML = item.innerHTML + btn;});}
+
+</code></pre>
+<a id="more"></a>
+<p>准备，</p>
+<p>创建收藏夹，然后名字随便填写，网址填入上述脚本即可</p>
+<p>chrome:</p>
+<ol>
+<li>打开书签管理器 <code>alt+ctr+B</code></li>
+<li>添加网址</li>
+<li>按照下图填写<br><img src="http://i4.buimg.com/567571/cbc2cc2efe423ace.png" alt></li>
+</ol>
+<p>其它浏览器类似，反正就是加入到收藏夹就可以了</p>
+<p>使用方法</p>
+<p>在任意网页点击，输入想要观看的资源，也可以是帮助协和社会更加和谐的资源</p>
+<p><img src="http://i2.buimg.com/567571/056c5bde613f7c07.png" alt></p>
+<p>然后会跳转到资源页面，在资源页面再点击一次</p>
+<p><img src="http://i2.buimg.com/567571/a4b0f5a147a6c273.png" alt></p>
+<p>点击播放即可</p>
+<p><img src="http://i2.buimg.com/567571/4e3701e0b54b1d0e.png" alt></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://kirning.github.io/2018/06/19/cjxzoi3lv000ajcu9u1ib83jl/" data-id="cjxzoi3lv000ajcu9u1ib83jl" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/06/28/cjxzoi3n9001jjcu9ye57ynw9/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          gitlab安装教程
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/19/cjxzoi3mm000tjcu9k1a706ym/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">通过源码来编译nginx</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dapper/">Dapper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/">c#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/electron-typescript-react-antd/">electron, typescript, react, antd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitHub/">gitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitlab/">gitlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-redux/">javascript,redux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql-mysqljs-node/">mysql, mysqljs, node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redux-react-javascript-typescript/">redux,react,javascript,typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/协议/">协议</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单片机/">单片机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记/">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编译/">编译</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Dapper/" style="font-size: 10px;">Dapper</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/c/" style="font-size: 10px;">c#</a> <a href="/tags/electron-typescript-react-antd/" style="font-size: 10px;">electron, typescript, react, antd</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/gitHub/" style="font-size: 10px;">gitHub</a> <a href="/tags/gitlab/" style="font-size: 10px;">gitlab</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/javascript-redux/" style="font-size: 10px;">javascript,redux</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql-mysqljs-node/" style="font-size: 10px;">mysql, mysqljs, node</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/redux-react-javascript-typescript/" style="font-size: 10px;">redux,react,javascript,typescript</a> <a href="/tags/协议/" style="font-size: 10px;">协议</a> <a href="/tags/单片机/" style="font-size: 10px;">单片机</a> <a href="/tags/日记/" style="font-size: 20px;">日记</a> <a href="/tags/编译/" style="font-size: 10px;">编译</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/07/12/cjxzoi3mi000qjcu99u4risrj/">mysql8withNodeJs</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/04/cjxzoi3mp000vjcu94izpsjpc/">redux</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/03/cjxzoi3o6001rjcu9yh9ndao2/">typesafe-actions-zh</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/14/cjxzoi3nb001kjcu9gjwn2gld/">构建electron、typescript、react、antd应用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/27/cjxzoi3mg000ojcu9qg5setqx/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 kirno<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>

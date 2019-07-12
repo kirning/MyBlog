@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kirning.github.io/"/>
-  <updated>2019-07-03T05:18:13.531Z</updated>
+  <updated>2019-07-12T05:45:54.158Z</updated>
   <id>https://kirning.github.io/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>构建electron、typescript、react、antd应用</title>
-    <link href="https://kirning.github.io/2019/06/14/cjxmojfg6001eysu9s6jnsq4i/"/>
-    <id>https://kirning.github.io/2019/06/14/cjxmojfg6001eysu9s6jnsq4i/</id>
-    <published>2019-06-14T10:14:11.000Z</published>
-    <updated>2019-07-03T05:18:13.531Z</updated>
+    <title>mysql8withNodeJs</title>
+    <link href="https://kirning.github.io/2019/07/12/cjxzoi3mi000qjcu99u4risrj/"/>
+    <id>https://kirning.github.io/2019/07/12/cjxzoi3mi000qjcu99u4risrj/</id>
+    <published>2019-07-12T05:24:36.000Z</published>
+    <updated>2019-07-12T05:45:54.158Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;.\mysql8withNodeJs\微信图片_20190712134146.png&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;由于mysql8.0的更新，mysql的默认认证方式从 &lt;code&gt;mysql_native_password&lt;/code&gt;更换为&lt;code&gt;caching_sha2_password&lt;/code&gt;所以导致 &lt;a href=&quot;https://github.com/mysqljs/mysql&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;mysql&lt;/a&gt; 库用不了，报错&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="mysql, mysqljs, node" scheme="https://kirning.github.io/tags/mysql-mysqljs-node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>redux</title>
+    <link href="https://kirning.github.io/2019/07/04/cjxzoi3mp000vjcu94izpsjpc/"/>
+    <id>https://kirning.github.io/2019/07/04/cjxzoi3mp000vjcu94izpsjpc/</id>
+    <published>2019-07-04T10:22:20.000Z</published>
+    <updated>2019-07-04T10:43:41.285Z</updated>
     
     <summary type="html">
     
@@ -29,12 +48,49 @@
       
         
         
-          &lt;blockquote&gt;
-&lt;p&gt;这个研究了很旧，还没研究透，先记录，以免忘记&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;1-初始化react项目&quot;&gt;&lt;a href=&quot;#1-初始化react项目&quot; class=&quot;headerlink&quot; title=&quot;1.
+          &lt;p&gt; &lt;img src=&quot;https://avatars3.githubusercontent.com/u/31783875?s=460&amp;amp;v=4&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
+&lt;p&gt;从今天开始，我要坚持每天一篇文章!!!&lt;/p&gt;
+&lt;h2 id=&quot;Redux&quot;&gt;&lt;a
         
       
+    
+    </summary>
+    
+    
+      <category term="javascript,redux" scheme="https://kirning.github.io/tags/javascript-redux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>typesafe-actions-zh</title>
+    <link href="https://kirning.github.io/2019/07/03/cjxzoi3o6001rjcu9yh9ndao2/"/>
+    <id>https://kirning.github.io/2019/07/03/cjxzoi3o6001rjcu9yh9ndao2/</id>
+    <published>2019-07-03T07:51:00.000Z</published>
+    <updated>2019-07-04T10:44:54.157Z</updated>
+    
+    <summary type="html">
+    
+      &lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;br&gt;# typesafe-actions&lt;br&gt;&lt;br&gt;&amp;gt; 主要是学习翻译用的，目前翻译不完整&lt;br&gt;&lt;br&gt;Typesafe utilities designed to reduce types &lt;strong&gt;verbosity&lt;/strong&gt;&lt;br&gt;and &lt;strong&gt;complexity&lt;/strong&gt;  in Redux Architecture.&lt;br&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="redux,react,javascript,typescript" scheme="https://kirning.github.io/tags/redux-react-javascript-typescript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>构建electron、typescript、react、antd应用</title>
+    <link href="https://kirning.github.io/2019/06/14/cjxzoi3nb001kjcu9gjwn2gld/"/>
+    <id>https://kirning.github.io/2019/06/14/cjxzoi3nb001kjcu9gjwn2gld/</id>
+    <published>2019-06-14T10:14:11.000Z</published>
+    <updated>2019-07-03T05:54:53.969Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;这个研究了很旧，还没研究透，先记录，以免忘记&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
@@ -45,8 +101,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://kirning.github.io/2019/01/27/cjxmojffp000sysu98kjnl70z/"/>
-    <id>https://kirning.github.io/2019/01/27/cjxmojffp000sysu98kjnl70z/</id>
+    <link href="https://kirning.github.io/2019/01/27/cjxzoi3mg000ojcu9qg5setqx/"/>
+    <id>https://kirning.github.io/2019/01/27/cjxzoi3mg000ojcu9qg5setqx/</id>
     <published>2019-01-27T10:37:54.357Z</published>
     <updated>2019-01-27T10:37:54.357Z</updated>
     
@@ -67,14 +123,20 @@
   
   <entry>
     <title>2018-11-04日记</title>
-    <link href="https://kirning.github.io/2018/11/05/cjxmojfff000hysu9pdjaxyut/"/>
-    <id>https://kirning.github.io/2018/11/05/cjxmojfff000hysu9pdjaxyut/</id>
+    <link href="https://kirning.github.io/2018/11/05/cjxzoi3ly000cjcu9bbr5ji1c/"/>
+    <id>https://kirning.github.io/2018/11/05/cjxzoi3ly000cjcu9bbr5ji1c/</id>
     <published>2018-11-05T02:45:16.000Z</published>
     <updated>2019-01-27T10:37:54.289Z</updated>
     
     <summary type="html">
     
-      Welcome to my blog, ener password to read.
+      
+      
+        
+        
+          &lt;p&gt;今天周日，双休的最后一天。早上起床后忘了干啥，妈妈他们估计出去找彤彤玩了。大概10点多说叫我们准备一下去吃饭，然后就出去了，我们走路过去，在南海橡塑城那边沿夏西的方向一家叫 鱼虾蟹 的点。海鲜叫了带子，虾，其他的还有
+        
+      
     
     </summary>
     
@@ -85,14 +147,20 @@
   
   <entry>
     <title>2018-11-03日记</title>
-    <link href="https://kirning.github.io/2018/11/05/cjxmojff20007ysu9gd0jtkv6/"/>
-    <id>https://kirning.github.io/2018/11/05/cjxmojff20007ysu9gd0jtkv6/</id>
+    <link href="https://kirning.github.io/2018/11/05/cjxzoi3lc0002jcu9os70y54o/"/>
+    <id>https://kirning.github.io/2018/11/05/cjxzoi3lc0002jcu9os70y54o/</id>
     <published>2018-11-05T02:44:56.000Z</published>
     <updated>2019-01-27T10:37:54.283Z</updated>
     
     <summary type="html">
     
-      Welcome to my blog, ener password to read.
+      
+      
+        
+        
+          &lt;p&gt;今天周六，可以休息的日子，昨天小舅过来了。明天姐的二女儿满月，他过来一起庆祝。明明还是个婴儿，你们都大吃大喝的庆祝，她只能眼巴巴的看着，只能喝奶，真的好吗。&lt;br&gt;今天没有出去，久违的在家里呆了一整天，早上起来已经9点多了，妈妈他们去全名健身广场完了，以为他们会叫我，但是没
+        
+      
     
     </summary>
     
@@ -103,14 +171,20 @@
   
   <entry>
     <title>2018-11-02日记</title>
-    <link href="https://kirning.github.io/2018/11/02/cjxmojff6000aysu9x4zyeipb/"/>
-    <id>https://kirning.github.io/2018/11/02/cjxmojff6000aysu9x4zyeipb/</id>
+    <link href="https://kirning.github.io/2018/11/02/cjxzoi3ll0006jcu9cy80o1tb/"/>
+    <id>https://kirning.github.io/2018/11/02/cjxzoi3ll0006jcu9cy80o1tb/</id>
     <published>2018-11-02T10:26:34.000Z</published>
     <updated>2019-01-27T10:37:54.278Z</updated>
     
     <summary type="html">
     
-      Welcome to my blog, ener password to read.
+      
+      
+        
+        
+          &lt;p&gt;今早拉肚子了，昨晚1点多的时候饿了，跑起来喝了个谷粒多，吃了剩下的面包。然后早上我先上了个厕所，想着先让老婆去洗漱，就回房间继续睡觉，然后突然就肚子痛，然后上厕所，非常的烂。然后今天早上拉了3回。&lt;br&gt;早上吃的是排骨粥，中午吃的是饭，有豆角，猪脚，肉饼。&lt;br&gt;老婆说眼霜
+        
+      
     
     </summary>
     
@@ -121,14 +195,20 @@
   
   <entry>
     <title>2018-11-01日记</title>
-    <link href="https://kirning.github.io/2018/11/01/cjxmojff00006ysu98x8zcez2/"/>
-    <id>https://kirning.github.io/2018/11/01/cjxmojff00006ysu98x8zcez2/</id>
+    <link href="https://kirning.github.io/2018/11/01/cjxzoi3m4000fjcu9hsd3gx8k/"/>
+    <id>https://kirning.github.io/2018/11/01/cjxzoi3m4000fjcu9hsd3gx8k/</id>
     <published>2018-11-01T06:44:50.000Z</published>
     <updated>2019-01-27T10:37:54.237Z</updated>
     
     <summary type="html">
     
-      Welcome to my blog, ener password to read.
+      
+      
+        
+        
+          &lt;p&gt;今天3点多的时候老婆说肚子痛醒了，然后把我也吵醒了……问他要不要去医院，她说先不用，我就和他说那天亮了和她去吧。然后我睡之前又说了下，如果要去就来叫醒我。这个一定要记下来，因为她抱怨说她肚子痛，我居然说天亮才送她去医院，愿望啊。早上6点起来，送她去了医院看了急症，她花费了
+        
+      
     
     </summary>
     
@@ -139,14 +219,20 @@
   
   <entry>
     <title>2018-10-31日记</title>
-    <link href="https://kirning.github.io/2018/11/01/cjxmojfey0005ysu903omkrlx/"/>
-    <id>https://kirning.github.io/2018/11/01/cjxmojfey0005ysu903omkrlx/</id>
+    <link href="https://kirning.github.io/2018/11/01/cjxzoi3m9000kjcu998orfohf/"/>
+    <id>https://kirning.github.io/2018/11/01/cjxzoi3m9000kjcu998orfohf/</id>
     <published>2018-11-01T03:42:20.000Z</published>
     <updated>2019-01-27T10:37:54.223Z</updated>
     
     <summary type="html">
     
-      Welcome to my blog, ener password to read.
+      
+      
+        
+        
+          &lt;p&gt;今天比较早出门，因为今天要去天安数码城那边开会，早上吃的啥又忘了，下次拍照记录吧。&lt;br&gt;老婆今天也上班了，本来说去医院的，后来又说不用了，先看看情况再说。来到公司大概9点钟，时间差不多，因为我打算骑自行车去天安。去到电梯，想起带唇膏，已近进入秋季了，天气有点冷了，很干燥，
+        
+      
     
     </summary>
     
@@ -157,14 +243,20 @@
   
   <entry>
     <title>2018-10-29日记</title>
-    <link href="https://kirning.github.io/2018/10/30/cjxmojfel0000ysu93h301zby/"/>
-    <id>https://kirning.github.io/2018/10/30/cjxmojfel0000ysu93h301zby/</id>
+    <link href="https://kirning.github.io/2018/10/30/cjxzoi3l00000jcu92r6grvyv/"/>
+    <id>https://kirning.github.io/2018/10/30/cjxzoi3l00000jcu92r6grvyv/</id>
     <published>2018-10-30T10:50:36.000Z</published>
     <updated>2019-01-27T10:37:54.212Z</updated>
     
     <summary type="html">
     
-      Welcome to my blog, ener password to read.
+      
+      
+        
+        
+          &lt;p&gt;今天早上过了一遍跟单宝的接口，发现还有有比较多问题的，于是就没有做下去了，把几个有的界面完善了。&lt;br&gt;中午吃的三津，咸鱼蒸肉饭，她吃了酱油鸡饭。下午给了包新买的牛奶她喝，不过他旁晚的时候过来说肠子不舒服，说可能是喝牛奶喝的，也不知道说什么好，我虽然这几天都拉肚子，但是至少
+        
+      
     
     </summary>
     
@@ -175,14 +267,21 @@
   
   <entry>
     <title>2018-10-30日记</title>
-    <link href="https://kirning.github.io/2018/10/30/cjxmojfet0002ysu964psh40y/"/>
-    <id>https://kirning.github.io/2018/10/30/cjxmojfet0002ysu964psh40y/</id>
+    <link href="https://kirning.github.io/2018/10/30/cjxzoi3li0005jcu9cp1urwm8/"/>
+    <id>https://kirning.github.io/2018/10/30/cjxzoi3li0005jcu9cp1urwm8/</id>
     <published>2018-10-30T08:20:29.000Z</published>
     <updated>2019-01-27T10:37:54.219Z</updated>
     
     <summary type="html">
     
-      Welcome to my blog, ener password to read.
+      
+      
+        
+        
+          &lt;p&gt;今天找了一下记日记的软件，挺难找的，找不到符合心意的，觉得还行的又要钱，麻烦。&lt;br&gt;好多次说要记日记都是记了几天就坚持不下去了，这次不知道能坚持多久，唉……&lt;/p&gt;
+&lt;p&gt;今天她没有来上班，说是肠胃不舒服，叫她去医院，她说去一次没几百元的，不想去。那就算了，她身体一直容易
+        
+      
     
     </summary>
     
@@ -193,8 +292,8 @@
   
   <entry>
     <title>dnsCheck</title>
-    <link href="https://kirning.github.io/2018/07/10/cjxmojff8000cysu95ovi8fec/"/>
-    <id>https://kirning.github.io/2018/07/10/cjxmojff8000cysu95ovi8fec/</id>
+    <link href="https://kirning.github.io/2018/07/10/cjxzoi3mb000mjcu97vkaxzkn/"/>
+    <id>https://kirning.github.io/2018/07/10/cjxzoi3mb000mjcu97vkaxzkn/</id>
     <published>2018-07-10T06:45:51.000Z</published>
     <updated>2019-01-27T10:37:54.336Z</updated>
     
@@ -215,8 +314,8 @@
   
   <entry>
     <title>linux常用命令</title>
-    <link href="https://kirning.github.io/2018/07/02/cjxmojffl000oysu9o4qo7zaz/"/>
-    <id>https://kirning.github.io/2018/07/02/cjxmojffl000oysu9o4qo7zaz/</id>
+    <link href="https://kirning.github.io/2018/07/02/cjxzoi3m6000hjcu9vm1xdi4c/"/>
+    <id>https://kirning.github.io/2018/07/02/cjxzoi3m6000hjcu9vm1xdi4c/</id>
     <published>2018-07-02T03:40:43.000Z</published>
     <updated>2019-01-27T10:37:54.363Z</updated>
     
@@ -240,8 +339,8 @@
   
   <entry>
     <title>gitlab安装教程</title>
-    <link href="https://kirning.github.io/2018/06/28/cjxmojfg4001dysu9qgdw4w25/"/>
-    <id>https://kirning.github.io/2018/06/28/cjxmojfg4001dysu9qgdw4w25/</id>
+    <link href="https://kirning.github.io/2018/06/28/cjxzoi3n9001jjcu9ye57ynw9/"/>
+    <id>https://kirning.github.io/2018/06/28/cjxzoi3n9001jjcu9ye57ynw9/</id>
     <published>2018-06-28T09:37:12.000Z</published>
     <updated>2019-01-27T10:37:54.352Z</updated>
     
@@ -273,8 +372,8 @@
   
   <entry>
     <title>bt搜索脚本</title>
-    <link href="https://kirning.github.io/2018/06/19/cjxmojffi000kysu9geof1af7/"/>
-    <id>https://kirning.github.io/2018/06/19/cjxmojffi000kysu9geof1af7/</id>
+    <link href="https://kirning.github.io/2018/06/19/cjxzoi3lv000ajcu9u1ib83jl/"/>
+    <id>https://kirning.github.io/2018/06/19/cjxzoi3lv000ajcu9u1ib83jl/</id>
     <published>2018-06-19T09:37:10.000Z</published>
     <updated>2019-01-27T10:37:54.331Z</updated>
     
@@ -292,8 +391,8 @@ javascript:pachong();&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot
   
   <entry>
     <title>通过源码来编译nginx</title>
-    <link href="https://kirning.github.io/2018/06/19/cjxmojffq000tysu91f77xcx6/"/>
-    <id>https://kirning.github.io/2018/06/19/cjxmojffq000tysu91f77xcx6/</id>
+    <link href="https://kirning.github.io/2018/06/19/cjxzoi3mm000tjcu9k1a706ym/"/>
+    <id>https://kirning.github.io/2018/06/19/cjxzoi3mm000tjcu9k1a706ym/</id>
     <published>2018-06-19T09:34:14.000Z</published>
     <updated>2019-01-27T10:37:54.368Z</updated>
     
@@ -317,8 +416,8 @@ javascript:pachong();&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot
   
   <entry>
     <title>PL2303HX 的驱动安装</title>
-    <link href="https://kirning.github.io/2018/06/19/cjxmojffa000fysu9e5cfl25a/"/>
-    <id>https://kirning.github.io/2018/06/19/cjxmojffa000fysu9e5cfl25a/</id>
+    <link href="https://kirning.github.io/2018/06/19/cjxzoi3lp0007jcu907zba8ep/"/>
+    <id>https://kirning.github.io/2018/06/19/cjxzoi3lp0007jcu907zba8ep/</id>
     <published>2018-06-19T05:52:28.000Z</published>
     <updated>2019-01-27T10:37:54.325Z</updated>
     
@@ -344,8 +443,8 @@ javascript:pachong();&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot
   
   <entry>
     <title>node 远程调试</title>
-    <link href="https://kirning.github.io/2018/06/19/cjxmojffo000rysu9jqc920pi/"/>
-    <id>https://kirning.github.io/2018/06/19/cjxmojffo000rysu9jqc920pi/</id>
+    <link href="https://kirning.github.io/2018/06/19/cjxzoi3mn000ujcu9y3o2mek4/"/>
+    <id>https://kirning.github.io/2018/06/19/cjxzoi3mn000ujcu9y3o2mek4/</id>
     <published>2018-06-19T05:52:00.000Z</published>
     <updated>2019-01-27T10:37:54.382Z</updated>
     
@@ -367,8 +466,8 @@ javascript:pachong();&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot
   
   <entry>
     <title>gitHub库整理</title>
-    <link href="https://kirning.github.io/2018/06/19/cjxmojffk000mysu9jb9miknt/"/>
-    <id>https://kirning.github.io/2018/06/19/cjxmojffk000mysu9jb9miknt/</id>
+    <link href="https://kirning.github.io/2018/06/19/cjxzoi3mk000rjcu9ksqxw501/"/>
+    <id>https://kirning.github.io/2018/06/19/cjxzoi3mk000rjcu9ksqxw501/</id>
     <published>2018-06-19T05:50:25.000Z</published>
     <updated>2019-01-27T10:37:54.341Z</updated>
     
@@ -389,124 +488,6 @@ javascript:pachong();&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot
       <category term="gitHub" scheme="https://kirning.github.io/tags/gitHub/"/>
     
       <category term="javascript" scheme="https://kirning.github.io/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>协议</title>
-    <link href="https://kirning.github.io/2018/06/19/cjxmojffs000vysu9quebggob/"/>
-    <id>https://kirning.github.io/2018/06/19/cjxmojffs000vysu9quebggob/</id>
-    <published>2018-06-19T05:48:51.000Z</published>
-    <updated>2019-01-27T10:37:54.394Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;2018年5月5日&quot;&gt;&lt;a href=&quot;#2018年5月5日&quot; class=&quot;headerlink&quot; title=&quot;2018年5月5日&quot;&gt;&lt;/a&gt;2018年5月5日&lt;/h1&gt;&lt;h3 id=&quot;机台发送给客户端&quot;&gt;&lt;a href=&quot;#机台发送给客户端&quot; class=&quot;headerlink&quot; title=&quot;机台发送给客户端&quot;&gt;&lt;/a&gt;机台发送给客户端&lt;/h3&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;字段&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;类型&lt;/th&gt;
-&lt;th style=&quot;text-align:right&quot;&gt;说明&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;clientId&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;string&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;唯一识别码&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;col 2 is&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;centered&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;$12&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;col 3 is&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;right-aligned&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;$1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;主题&lt;code&gt;zbc/client/death&lt;/code&gt; 死亡主题:&lt;/p&gt;
-&lt;p&gt; 描述:    当客户端掉线的时候发送&lt;/p&gt;
-&lt;p&gt; 等级:  &amp;gt;=1&lt;/p&gt;
-&lt;p&gt; 数据:&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;字段&lt;/th&gt;
-&lt;th&gt;类型&lt;/th&gt;
-&lt;th&gt;说明&lt;/th&gt;
-&lt;th&gt;例子&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;clientId&lt;/td&gt;
-&lt;td&gt;string&lt;/td&gt;
-&lt;td&gt;唯一识别码&lt;/td&gt;
-&lt;td&gt;0201&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;ol start=&quot;2&quot;&gt;
-&lt;li&gt;&lt;p&gt;主题 &lt;code&gt;zbc/client/login&lt;/code&gt; 连接主题&lt;/p&gt;
-&lt;p&gt; 描述:    机台连接上来后发送&lt;/p&gt;
-&lt;p&gt; 等级:    &amp;gt;=1&lt;/p&gt;
-&lt;p&gt; 数据:&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;字段&lt;/th&gt;
-&lt;th&gt;类型&lt;/th&gt;
-&lt;th&gt;说明&lt;/th&gt;
-&lt;th&gt;例子&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;clientId&lt;/td&gt;
-&lt;td&gt;string&lt;/td&gt;
-&lt;td&gt;唯一识别码&lt;/td&gt;
-&lt;td&gt;0201&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-    
-    </summary>
-    
-    
-      <category term="协议" scheme="https://kirning.github.io/tags/%E5%8D%8F%E8%AE%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>c#调用数据库之Dapper</title>
-    <link href="https://kirning.github.io/2018/06/19/cjxmojfft000wysu9b68aagt1/"/>
-    <id>https://kirning.github.io/2018/06/19/cjxmojfft000wysu9b68aagt1/</id>
-    <published>2018-06-19T02:13:40.000Z</published>
-    <updated>2019-01-27T10:37:54.388Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这里记录一下Dapper的使用方式，这个库有点像java的&lt;code&gt;mybatis&lt;/code&gt;可以很方便的把查询出来的数据映射到对象上面去。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;安装&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;通过 NetGet 就可以安装了，vs自带的一个包管理工具&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://oepv0v7je.bkt.clouddn.com/18-3-6/97896696.jpg&quot; alt&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="c#" scheme="https://kirning.github.io/tags/c/"/>
-    
-      <category term="Dapper" scheme="https://kirning.github.io/tags/Dapper/"/>
     
   </entry>
   

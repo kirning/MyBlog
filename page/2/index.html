@@ -1,491 +1,746 @@
 <!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  
+
+
+
+
+
+
+
+
+
+
+
 
   
-  <title>kirnoのBlog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
   <meta property="og:type" content="website">
 <meta property="og:title" content="kirnoのBlog">
 <meta property="og:url" content="https://kirning.github.io/page/2/index.html">
 <meta property="og:site_name" content="kirnoのBlog">
-<meta property="og:locale" content="zh_CN">
+<meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="kirnoのBlog">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="kirnoのBlog" type="application/atom+xml">
+
+
+
   
-    <link rel="alternate" href="/atom.xml" title="kirnoのBlog" type="application/atom+xml">
   
+  <link rel="canonical" href="https://kirning.github.io/page/2/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>kirnoのBlog</title>
   
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
-</html>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">kirnoのBlog</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://kirning.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
   
-    <article id="post-2018-10-29日记" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/30/cjxzoi3l00000jcu92r6grvyv/" class="article-date">
-  <time datetime="2018-10-30T10:50:36.000Z" itemprop="datePublished">2018-10-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/30/cjxzoi3l00000jcu92r6grvyv/">2018-10-29日记</a>
-    </h1>
+    
   
 
+  <div class="container sidebar-position-left 
+  ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">kirnoのBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+    
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
+
+          
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2018/06/19/cjxzr37al000e7ou9dp3z0z1l/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kirno">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kirnoのBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/06/19/cjxzr37al000e7ou9dp3z0z1l/" class="post-title-link" itemprop="url">PL2303HX 的驱动安装</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-19 13:52:28" itemprop="dateCreated datePublished" datetime="2018-06-19T13:52:28+08:00">2018-06-19</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-12 14:57:58" itemprop="dateModified" datetime="2019-07-12T14:57:58+08:00">2019-07-12</time>
+              </span>
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天早上过了一遍跟单宝的接口，发现还有有比较多问题的，于是就没有做下去了，把几个有的界面完善了。<br>中午吃的三津，咸鱼蒸肉饭，她吃了酱油鸡饭。下午给了包新买的牛奶她喝，不过他旁晚的时候过来说肠子不舒服，说可能是喝牛奶喝的，也不知道说什么好，我虽然这几天都拉肚子，但是至少不会痛。不过今天还行，没有怎么拉肚子了。<br>晚上大概6点45左右回去的。晚餐是排骨胡萝卜粉葛汤，其他忘了，吃的米饭，有汤喝就是容易吃得太饱。吃完饭去弄了一下电脑，那台电脑自从换了主板就各种容易蓝屏卡死，后来想会不会是硬盘问题，而不是内存问题，一看开机C盘占用率一直100%不下来，看来是了。然后做了一下硬盘检测，果然有坏道。于是申请了售后，一看是2015-11-11日买的，差几天就过3年保修了，还好，本来想放图片的，奈何mac读取不了图片，fuck。怕第二天忘记带，就拆了下来。放到了外面的桌子上。<br>在快21点30分的时候去跑了一下步，沿着河边往姐方向家跑去，在藕田公园兜圈。两天没有跑了，跑了15分钟左右就不行了，主要是呼吸太干燥不舒服，其他还好。<br>然后去姐家做了一会，他们家在看儿童音乐。妹妹在睡觉，姐说诚哥今晚不回来，他越来越忙的样子。大概快22点的时候回了家，叫妈妈煮了个自己做的酒，有点酸，没有米酒好喝，然后看了下精灵旅社3，在23点左右准备洗澡睡觉了。</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kirning.github.io/2018/10/30/cjxzoi3l00000jcu92r6grvyv/" data-id="cjxzoi3l00000jcu92r6grvyv" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日记/">日记</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2018-10-30日记" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/30/cjxzoi3li0005jcu9cp1urwm8/" class="article-date">
-  <time datetime="2018-10-30T08:20:29.000Z" itemprop="datePublished">2018-10-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
     
     
-      <header class="article-header">
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/30/cjxzoi3li0005jcu9cp1urwm8/">2018-10-30日记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天找了一下记日记的软件，挺难找的，找不到符合心意的，觉得还行的又要钱，麻烦。<br>好多次说要记日记都是记了几天就坚持不下去了，这次不知道能坚持多久，唉……</p>
-<p>今天她没有来上班，说是肠胃不舒服，叫她去医院，她说去一次没几百元的，不想去。那就算了，她身体一直容易出问题，叫她和我去跑步又各种理由，管她呢，烦死了，总是听她说这里不舒服那里不舒服的，自己又不注意，越来越不想管她了。<br>下午她发信息过来，说要吃完了。今晚回去买点给她才行。</p>
-<p><img src="http://kirno-markdown.oss-cn-shenzhen.aliyuncs.com/18-10-30/78244602.jpg" width="30%"></p>
-<p>今天一个人来上班，11点左右有一个人来说要录企业信息，找了一下营业执照给他，然后我就返回在后面的柜筒的第二格里面（记下来，免得以后找忘了）。<br>下午还是想换一个日记软件，于是看中了hexo，这个东西毕竟是开源的，自由度非常的高，而且使用的github服务器，安全也不错，但是有几个问题</p>
-<p>文章加密<br>首页筛选</p>
-<p>第一个问题很好解决，使用了 hexo-blog-encrypt 这个插件解决了。但是第二个问题，总不可能在首页显示日志那么傻逼吧，所以就动手解决，看了很久模板代码，由于它是ejs写的，之前没用过，所以各种不适应。最终解决了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs ejs">&lt;% page.posts.each(function(post, i)&#123; %&gt;<br>  &lt;% let isOk = true; %&gt;<br>  &lt;% post.tags.limit(3).each(function (tag) &#123; %&gt;<br>      &lt;% isOk = true; %&gt;<br>      &lt;% console.log(&apos;tag为&apos;+tag.name) %&gt;<br>      &lt;% if(tag.name === &apos;日记&apos;)&#123;isOk = false;&#125; %&gt;<br>    &lt;% &#125;); %&gt; <br>  &lt;% if(isOk)&#123; %&gt;<br>    &lt;%- partial(&apos;archive-post&apos;, &#123;post: post, even: i % 2 == 0&#125;) %&gt;      <br>  &lt;% &#125; %&gt; <br>&lt;% &#125;) %&gt;<br></code></pre></td></tr></table></figure>
-<p>但是这个办法也是很笨戳，因为是把查出来的数据再判断一次。后来发现可以再查询出来的时候进行一次过滤。<br>方法研究中…</p>
-<p>算了，放弃了</p>
-<p>今晚也跑步了，哈哈，整整20分钟，没有偷鸡了。算下来也有7天，嘻嘻</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kirning.github.io/2018/10/30/cjxzoi3li0005jcu9cp1urwm8/" data-id="cjxzoi3li0005jcu9cp1urwm8" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日记/">日记</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-dnsCheck" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/10/cjxzoi3mb000mjcu97vkaxzkn/" class="article-date">
-  <time datetime="2018-07-10T06:45:51.000Z" itemprop="datePublished">2018-07-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/10/cjxzoi3mb000mjcu97vkaxzkn/">dnsCheck</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>使用dig命令进行检测。<br>运行 dig 主机记录命令进行检测或者运行 dig 主机记录 @8.8.8.8命令指定使用谷歌DNS进行验证。例如， dig txt b.aliyuntest.com @8.8.8.8。<br><img src="http://oepv0v7je.bkt.clouddn.com/18-7-10/92556404.jpg" alt><br>如果返回结果中存在类似图示中的TXT记录，且记录值与订单进度页面中的记录值一致，表示您的DNS配置正确且已生效；如果记录值不同，请按照订单进度页面中的记录值在DNS域名解析服务商处更新该验证记录。<br>如果返回结果中不存在TXT记录，可能是DNS配置有误或者配置未生效。如配置错误，请按照订单进度页面中的配置要求在DNS域名解析服务商处重新配置；如果配置长时间未生效，请联系域名托管商。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kirning.github.io/2018/07/10/cjxzoi3mb000mjcu97vkaxzkn/" data-id="cjxzoi3mb000mjcu97vkaxzkn" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-linuxCmd" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/02/cjxzoi3m6000hjcu9vm1xdi4c/" class="article-date">
-  <time datetime="2018-07-02T03:40:43.000Z" itemprop="datePublished">2018-07-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/02/cjxzoi3m6000hjcu9vm1xdi4c/">linux常用命令</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>查看apt-get下载的软件的位置</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kirning.github.io/2018/07/02/cjxzoi3m6000hjcu9vm1xdi4c/" data-id="cjxzoi3m6000hjcu9vm1xdi4c" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-gitlabInstall" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/28/cjxzoi3n9001jjcu9ye57ynw9/" class="article-date">
-  <time datetime="2018-06-28T09:37:12.000Z" itemprop="datePublished">2018-06-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/28/cjxzoi3n9001jjcu9ye57ynw9/">gitlab安装教程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>这是一片关于GitLab的安装教程以及踩过的坑</p>
-</blockquote>
-<p>浪费了一个下午的时间，终于把Gitlab搭建完成，搭建环境如下：</p>
-<ul>
-<li><p>系统（虚拟机）</p>
-<p>  Distributor ID:    Ubuntu</p>
-<p>  Description:    Ubuntu 18.04 LTS</p>
-<p>  Release:    18.04</p>
-<p>  Codename:    bionic</p>
-</li>
-<li><p>gitlab V11.0.1</p>
-</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/28/cjxzoi3n9001jjcu9ye57ynw9/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kirning.github.io/2018/06/28/cjxzoi3n9001jjcu9ye57ynw9/" data-id="cjxzoi3n9001jjcu9ye57ynw9" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gitlab/">gitlab</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-bt搜索脚本" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/19/cjxzoi3lv000ajcu9u1ib83jl/" class="article-date">
-  <time datetime="2018-06-19T09:37:10.000Z" itemprop="datePublished">2018-06-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/19/cjxzoi3lv000ajcu9u1ib83jl/">bt搜索脚本</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><pre><code class="javascript">
-javascript:pachong();<span class="function"><span class="keyword">function</span> <span class="title">pachong</span>(<span class="params"></span>) </span>{<span class="keyword">var</span> currentUrl = location.href;<span class="keyword">if</span> (currentUrl.indexOf(<span class="string">"http://sdkcloud.pro/"</span>) == <span class="number">-1</span>) {<span class="keyword">var</span> query = prompt(<span class="string">"请输入想要搜索的资源关键字"</span>);<span class="keyword">if</span>(query.trim()){<span class="keyword">var</span> sdkUrl = <span class="string">"http://sdkcloud.pro/xfs.php?s="</span>+query;location.href = sdkUrl;}} <span class="keyword">else</span> {addBtn();}}<span class="function"><span class="keyword">function</span> <span class="title">addBtn</span>(<span class="params"></span>)</span>{<span class="keyword">var</span> list = <span class="built_in">document</span>.querySelectorAll(<span class="string">".T1 a"</span>);list.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>{<span class="keyword">var</span> l = item.href;<span class="keyword">var</span> mag = l.substring(<span class="number">20</span>, l.length);<span class="keyword">var</span> url =  <span class="string">"https://apiv.ga/magnet/"</span>+mag;<span class="keyword">var</span> btn = <span class="string">"&lt;a style='margin-left:5px;text-decoration:none;border:1px solid #efefef;border-radius:4px;font-size:15px;padding:5px' href='"</span>+url+<span class="string">"' target='view_window'&gt;%E6%92%AD%E6%94%BE&lt;/a&gt;"</span>;item.innerHTML = item.innerHTML + btn;});}
-
-</code></pre>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/19/cjxzoi3lv000ajcu9u1ib83jl/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kirning.github.io/2018/06/19/cjxzoi3lv000ajcu9u1ib83jl/" data-id="cjxzoi3lv000ajcu9u1ib83jl" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-nginx编译翻译" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/19/cjxzoi3mm000tjcu9k1a706ym/" class="article-date">
-  <time datetime="2018-06-19T09:34:14.000Z" itemprop="datePublished">2018-06-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/19/cjxzoi3mm000tjcu9k1a706ym/">通过源码来编译nginx</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>使用配置参数进行编译。它定义了系统的各个方面,包含了nginx所允许的链接方法。配置后会生成一个 <code>Makefile</code> 文件. 以下是配置支持的参数:</p>
-<p><code>--prefix=path</code> — 定义一个用于保存服务器的目录 This same directory will also be used for all relative paths set by configure (except for paths to libraries sources) and in the nginx.conf configuration file. It is set to the /usr/local/nginx directory by default.</p>
-<p>–sbin-path=path — sets the name of an nginx executable file. This name is used only during installation. By default the file is named prefix/sbin/nginx.</p>
-<p>–conf-path=path — sets the name of an nginx.conf configuration file. If needs be, nginx can always be started with a different configuration file, by specifying it in the command-line parameter -c file. By default the file is named prefix/conf/nginx.conf.<br>
-        
-          </p><p class="article-more-link">
-            <a href="/2018/06/19/cjxzoi3mm000tjcu9k1a706ym/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://kirning.github.io/2018/06/19/cjxzoi3mm000tjcu9k1a706ym/" data-id="cjxzoi3mm000tjcu9k1a706ym" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编译/">编译</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Pl2302HXDriver" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/19/cjxzoi3lp0007jcu907zba8ep/" class="article-date">
-  <time datetime="2018-06-19T05:52:28.000Z" itemprop="datePublished">2018-06-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/19/cjxzoi3lp0007jcu907zba8ep/">PL2303HX 的驱动安装</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
+          
+            <blockquote>
 <p>由于官方不再支持PL2303HX,所以就没有了win10上可用的官方驱动.有一个应该是民间高手的人补充了这个空白</p>
 </blockquote>
 <p><a href="http://www.ifamilysoftware.com/news37.html" target="_blank" rel="noopener">官网下载</a></p>
 <p><a href="https://pan.baidu.com/s/1N33jAnw1XGreeLBNxHSpSA" target="_blank" rel="noopener">百度备份下载</a> 密码: t65v</p>
 <p>下载完之后安装就可以了</p>
 
+          
+        
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://kirning.github.io/2018/06/19/cjxzoi3lp0007jcu907zba8ep/" data-id="cjxzoi3lp0007jcu907zba8ep" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/单片机/">单片机</a></li></ul>
 
+    
+      
+
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-nodeRemoteDebug" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/19/cjxzoi3mn000ujcu9y3o2mek4/" class="article-date">
-  <time datetime="2018-06-19T05:52:00.000Z" itemprop="datePublished">2018-06-19</time>
-</a>
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2018/06/19/cjxzr37b2000u7ou9h6qxf917/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kirno">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kirnoのBlog">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/19/cjxzoi3mn000ujcu9y3o2mek4/">node 远程调试</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/06/19/cjxzr37b2000u7ou9h6qxf917/" class="post-title-link" itemprop="url">node 远程调试</a>
+              
+            
+          </h1>
+        
 
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-19 13:52:00" itemprop="dateCreated datePublished" datetime="2018-06-19T13:52:00+08:00">2018-06-19</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-12 14:58:04" itemprop="dateModified" datetime="2019-07-12T14:58:04+08:00">2019-07-12</time>
+              </span>
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <ol>
+      
+
+      
+        
+          <ol>
 <li><p>进入项目根目录，假如启动个文件在 <code>./bin/www</code> 这里。</p>
 </li>
 <li><p>命令</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">node --inspect=0.0.0.0:3001 bin/www<br></code></pre></td></tr></table></figure>
 <p> 其中 <code>0.0.0.0</code> 表示监听的Ip地址，全0 表示任意地方可以访问。3001 是访问端口 bin/www 就是程序的启动文件</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/19/cjxzoi3mn000ujcu9y3o2mek4/#more">Read More</a>
-          </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/06/19/cjxzr37b2000u7ou9h6qxf917/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </li></ol></div>
-    <footer class="article-footer">
-      <a data-url="https://kirning.github.io/2018/06/19/cjxzoi3mn000ujcu9y3o2mek4/" data-id="cjxzoi3mn000ujcu9y3o2mek4" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node/">Node</a></li></ul>
 
+    
+      
+
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+      
 
   
-    <article id="post-githubProject" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/19/cjxzoi3mk000rjcu9ksqxw501/" class="article-date">
-  <time datetime="2018-06-19T05:50:25.000Z" itemprop="datePublished">2018-06-19</time>
-</a>
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2018/06/19/cjxzr37ar000l7ou9rbi3aqgl/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kirno">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kirnoのBlog">
+    </span>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <header class="post-header">
+
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/19/cjxzoi3mk000rjcu9ksqxw501/">gitHub库整理</a>
-    </h1>
-  
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/06/19/cjxzr37ar000l7ou9rbi3aqgl/" class="post-title-link" itemprop="url">gitHub库整理</a>
+              
+            
+          </h1>
+        
 
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-19 13:50:25" itemprop="dateCreated datePublished" datetime="2018-06-19T13:50:25+08:00">2018-06-19</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-27 18:37:54" itemprop="dateModified" datetime="2019-01-27T18:37:54+08:00">2019-01-27</time>
+              </span>
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <p><strong>javascript</strong></p>
+      
+
+      
+        
+          <p><strong>javascript</strong></p>
 <ol>
 <li><p><a href="https://github.com/axios/axios" target="_blank" rel="noopener">axios</a> ⭐38,326</p>
 <p>  javascript的 http client 库</p>
@@ -493,133 +748,820 @@ javascript:pachong();<span class="function"><span class="keyword">function</span
 <li><p><a href="https://github.com/react-community/create-react-native-app" target="_blank" rel="noopener">create-react-native-app</a> ⭐8,843</p>
 <p> 简介：辅助创建 react-native 程序</p>
 <p> <a href="https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md" target="_blank" rel="noopener">开发文档</a></p>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/19/cjxzoi3mk000rjcu9ksqxw501/#more">Read More</a>
-          </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/06/19/cjxzr37ar000l7ou9rbi3aqgl/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </li></ol></div>
-    <footer class="article-footer">
-      <a data-url="https://kirning.github.io/2018/06/19/cjxzoi3mk000rjcu9ksqxw501/" data-id="cjxzoi3mk000rjcu9ksqxw501" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gitHub/">gitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 
+    
+      
+
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
     </footer>
   </div>
   
-</article>
+  
+  
+  </article>
 
+
+    
+      
 
   
 
+  
+  
+  
 
-  <nav id="page-nav">
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2018/06/19/cjxzr37b6000z7ou9hhyyy309/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kirno">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kirnoのBlog">
+    </span>
+
     
-    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/06/19/cjxzr37b6000z7ou9hhyyy309/" class="post-title-link" itemprop="url">协议</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-19 13:48:51" itemprop="dateCreated datePublished" datetime="2018-06-19T13:48:51+08:00">2018-06-19</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-12 14:57:33" itemprop="dateModified" datetime="2019-07-12T14:57:33+08:00">2019-07-12</time>
+              </span>
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="2018年5月5日"><a href="#2018年5月5日" class="headerlink" title="2018年5月5日"></a>2018年5月5日</h1><h3 id="机台发送给客户端"><a href="#机台发送给客户端" class="headerlink" title="机台发送给客户端"></a>机台发送给客户端</h3><table>
+<thead>
+<tr>
+<th>字段</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:right">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clientId</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">唯一识别码</td>
+</tr>
+<tr>
+<td>col 2 is</td>
+<td style="text-align:center">centered</td>
+<td style="text-align:right">$12</td>
+</tr>
+<tr>
+<td>col 3 is</td>
+<td style="text-align:center">right-aligned</td>
+<td style="text-align:right">$1</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><p>主题<code>zbc/client/death</code> 死亡主题:</p>
+<p> 描述:    当客户端掉线的时候发送</p>
+<p> 等级:  &gt;=1</p>
+<p> 数据:</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>说明</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clientId</td>
+<td>string</td>
+<td>唯一识别码</td>
+<td>0201</td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li><p>主题 <code>zbc/client/login</code> 连接主题</p>
+<p> 描述:    机台连接上来后发送</p>
+<p> 等级:    &gt;=1</p>
+<p> 数据:</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>说明</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clientId</td>
+<td>string</td>
+<td>唯一识别码</td>
+<td>0201</td>
+</tr>
+</tbody>
+</table>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/06/19/cjxzr37b6000z7ou9hhyyy309/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2018/06/19/cjxzr37b5000x7ou9kl8y9899/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kirno">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kirnoのBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/06/19/cjxzr37b5000x7ou9kl8y9899/" class="post-title-link" itemprop="url">c#调用数据库之Dapper</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-19 10:13:40" itemprop="dateCreated datePublished" datetime="2018-06-19T10:13:40+08:00">2018-06-19</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-27 18:37:54" itemprop="dateModified" datetime="2019-01-27T18:37:54+08:00">2019-01-27</time>
+              </span>
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>这里记录一下Dapper的使用方式，这个库有点像java的<code>mybatis</code>可以很方便的把查询出来的数据映射到对象上面去。</p>
+<ol>
+<li><p><strong>安装</strong></p>
+<ol>
+<li><p>通过 NetGet 就可以安装了，vs自带的一个包管理工具</p>
+<p><img src="http://oepv0v7je.bkt.clouddn.com/18-3-6/97896696.jpg" alt></p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/06/19/cjxzr37b5000x7ou9kl8y9899/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </li></ol></li></ol></div>
+
+    
+      
+
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
   </nav>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
 
+
+          </div>
+          
+
+        </div>
+        
+          
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dapper/">Dapper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node/">Node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/">c#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/electron-typescript-react-antd/">electron, typescript, react, antd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitHub/">gitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitlab/">gitlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript-redux/">javascript,redux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql-mysqljs-node/">mysql, mysqljs, node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redux-react-javascript-typescript/">redux,react,javascript,typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/协议/">协议</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单片机/">单片机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记/">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编译/">编译</a></li></ul>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
 
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Dapper/" style="font-size: 10px;">Dapper</a> <a href="/tags/Node/" style="font-size: 10px;">Node</a> <a href="/tags/c/" style="font-size: 10px;">c#</a> <a href="/tags/electron-typescript-react-antd/" style="font-size: 10px;">electron, typescript, react, antd</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/gitHub/" style="font-size: 10px;">gitHub</a> <a href="/tags/gitlab/" style="font-size: 10px;">gitlab</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/javascript-redux/" style="font-size: 10px;">javascript,redux</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql-mysqljs-node/" style="font-size: 10px;">mysql, mysqljs, node</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/redux-react-javascript-typescript/" style="font-size: 10px;">redux,react,javascript,typescript</a> <a href="/tags/协议/" style="font-size: 10px;">协议</a> <a href="/tags/单片机/" style="font-size: 10px;">单片机</a> <a href="/tags/日记/" style="font-size: 20px;">日记</a> <a href="/tags/编译/" style="font-size: 10px;">编译</a>
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">kirno</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/kirning" title="GitHub &rarr; https://github.com/kirning" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+        </div>
+      </div>
+
+      
+
+      
+
     </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li></ul>
-    </div>
-  </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2019/07/12/cjxzoi3mi000qjcu99u4risrj/">mysql8withNodeJs</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/04/cjxzoi3mp000vjcu94izpsjpc/">redux</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/03/cjxzoi3o6001rjcu9yh9ndao2/">typesafe-actions-zh</a>
-          </li>
-        
-          <li>
-            <a href="/2019/06/14/cjxzoi3nb001kjcu9gjwn2gld/">构建electron、typescript、react、antd应用</a>
-          </li>
-        
-          <li>
-            <a href="/2019/01/27/cjxzoi3mg000ojcu9qg5setqx/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
         
       </div>
-      <footer id="footer">
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kirno</span>
+
   
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2019 kirno<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
+
   
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    
 
+    
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
-
+    
   </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
 </html>

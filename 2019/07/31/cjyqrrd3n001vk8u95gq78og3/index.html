@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <meta name="description" content="备份数据库： 使用的工具为 Xtrabackup  Xtrabackup8 适用于mysql8, mysql8以下的数据库用 Xtrabackup2.4  一、 安装建议从系统的软件库安装，自己编译简直是自取灭亡，官方安装方法 1. CentOS Centos6及以上系统  Centos5不行，以下是官方给出的原因 RHEL/Centos 5 doesn’t support installing">
+<meta name="keywords" content="mysql,backup">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mysql数据库备份">
+<meta property="og:url" content="https://kirning.github.io/2019/07/31/cjyqrrd3n001vk8u95gq78og3/index.html">
+<meta property="og:site_name" content="kirnoのBlog">
+<meta property="og:description" content="备份数据库： 使用的工具为 Xtrabackup  Xtrabackup8 适用于mysql8, mysql8以下的数据库用 Xtrabackup2.4  一、 安装建议从系统的软件库安装，自己编译简直是自取灭亡，官方安装方法 1. CentOS Centos6及以上系统  Centos5不行，以下是官方给出的原因 RHEL/Centos 5 doesn’t support installing">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-31T04:41:20.696Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mysql数据库备份">
+<meta name="twitter:description" content="备份数据库： 使用的工具为 Xtrabackup  Xtrabackup8 适用于mysql8, mysql8以下的数据库用 Xtrabackup2.4  一、 安装建议从系统的软件库安装，自己编译简直是自取灭亡，官方安装方法 1. CentOS Centos6及以上系统  Centos5不行，以下是官方给出的原因 RHEL/Centos 5 doesn’t support installing">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="kirnoのBlog" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://kirning.github.io/2019/07/31/cjyqrrd3n001vk8u95gq78og3/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Mysql数据库备份 | kirnoのBlog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">kirnoのBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/07/31/cjyqrrd3n001vk8u95gq78og3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kirno">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kirnoのBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Mysql数据库备份
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-31 10:58:18 / 修改时间：12:41:20" itemprop="dateCreated datePublished" datetime="2019-07-31T10:58:18+08:00">2019-07-31</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>备份数据库：</p>
+<p>使用的工具为 <a href="https://www.percona.com/doc/percona-xtrabackup/2.4/installation/yum_repo.html" target="_blank" rel="noopener">Xtrabackup</a></p>
+<blockquote>
+<p><code>Xtrabackup8</code> 适用于mysql8, mysql8以下的数据库用 <code>Xtrabackup2.4</code></p>
+</blockquote>
+<h2 id="一、-安装"><a href="#一、-安装" class="headerlink" title="一、 安装"></a>一、 安装</h2><p>建议从系统的软件库安装，自己编译简直是自取灭亡，<a href="https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html#installing-percona-xtrabackup-from-repositories" target="_blank" rel="noopener">官方安装方法</a></p>
+<h3 id="1-CentOS"><a href="#1-CentOS" class="headerlink" title="1. CentOS"></a>1. CentOS</h3><ol>
+<li><p>Centos6及以上系统</p>
+<blockquote>
+<p>Centos5不行，以下是官方给出的原因</p>
+<p><em>RHEL</em>/<em>Centos</em> 5 doesn’t support installing the packages directly from the remote location so you’ll need to download the package first and install it manually with <strong>rpm</strong>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">&gt; $ wget https://repo.percona.com/yum/percona-release-latest.noarch.rpm<br>&gt; $ rpm -ivH percona-release-latest.noarch.rpm<br>&gt;<br></code></pre></td></tr></table></figure>
+</blockquote>
+<p>安装软件源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ yum install https://repo.percona.com/yum/percona-release-latest.noarch.rpm<br></code></pre></td></tr></table></figure>
+<p>中途的确认 y 确认就好</p>
+</li>
+<li><p>测试源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">yum list | grep percona<br></code></pre></td></tr></table></figure>
+<p>这个命令会列出源内所有以 <code>percona</code> 开头的软件，如果其中包括了 <code>percona-xtrabackup-24</code> 就没什么问题了</p>
+</li>
+<li><p>安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">yum install percona-xtrabackup-24<br></code></pre></td></tr></table></figure>
+<p>完成！！😊</p>
+</li>
+</ol>
+<h3 id="2-Ubuntu"><a href="#2-Ubuntu" class="headerlink" title="2. Ubuntu"></a>2. Ubuntu</h3><ol>
+<li><p>从官方获取软件源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>安装下载下来的源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ sudo dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>更新软件列表</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get update<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get install percona-xtrabackup-24<br></code></pre></td></tr></table></figure>
+<p>完成</p>
+</li>
+</ol>
+<h2 id="二、-备份"><a href="#二、-备份" class="headerlink" title="二、 备份"></a>二、 备份</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">innobackupex --user=root --password=123456 --compress --database=数据库名 /备份路径<br></code></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><code class="hljs undefined"># 常用参数<br>--user：该选项表示备份账号。<br>--password：该选项表示备份的密码。<br>--port：该选项表示备份数据库的端口。<br>--host：该选项表示备份数据库的地址。<br>--socket：该选项表示mysql.sock所在位置，以便备份进程登录mysql。<br>--defaults-file：该选项指定了从哪个文件读取MySQL配置，必须放在命令行第一个选项的位置。<br>--databases：该选项接受的参数为数据名，如果要指定多个数据库，彼此间需要以空格隔开；如：&quot;db1 db2&quot;，同时，在指定某数据库时，也可以只指定其中的某张表。如：&quot;mydatabase.mytable&quot;。该选项对innodb引擎表无效，还是会备份所有innodb表。此外，此选项也可以接受一个文件为参数，文件中每一行为一个要备份的对象。<br><br>#压缩参数<br>--compress：该选项表示压缩innodb数据文件的备份。<br>--compress-threads：该选项表示并行压缩worker线程的数量。<br>--compress-chunk-size：该选项表示每个压缩线程worker buffer的大小，单位是字节，默认是64K。<br><br>#加密参数<br>--encrypt：该选项表示通过ENCRYPTION_ALGORITHM的算法加密innodb数据文件的备份，目前支持的算法有ASE128,AES192,AES256。<br>--encrypt-key：该选项使用合适长度加密key，因为会记录到命令行，所以不推荐使用。<br>--encryption-key-file：该选项表示文件必须是一个简单二进制或者文本文件，加密key可通过以下命令行命令生成：openssl rand -base64 24。<br>--encrypt-threads：该选项表示并行加密的worker线程数量。<br>--encrypt-chunk-size：该选项表示每个加密线程worker buffer的大小，单位是字节，默认是64K。<br><br>#增量备份参数<br>--incremental：该选项表示创建一个增量备份，需要指定--incremental-basedir。<br>--incremental-basedir：该选项表示接受了一个字符串参数指定含有full backup的目录为增量备份的base目录，与--incremental同时使用。<br>--incremental-lsn：该选项表示指定增量备份的LSN，与--incremental选项一起使用。<br>--incremental-dir：该选项表示增量备份的目录。<br>--incremental-force-scan：该选项表示创建一份增量备份时，强制扫描所有增量备份中的数据页。<br>--incremental-history-name：该选项表示存储在PERCONA_SCHEMA.xtrabackup_history基于增量备份的历史记录的名字。Percona Xtrabackup搜索历史表查找最近（innodb_to_lsn）成功备份并且将to_lsn值作为增量备份启动出事lsn.与innobackupex--incremental-history-uuid互斥。如果没有检测到有效的lsn，xtrabackup会返回error。<br>--incremental-history-uuid：该选项表示存储在percona_schema.xtrabackup_history基于增量备份的特定历史记录的UUID。 <br><br>#主从<br>--slave-info：该选项表示对slave进行备份的时候使用，打印出master的名字和binlog pos，同样将这些信息以change master的命令写入xtrabackup_slave_info文件。可以通过基于这份备份启动一个从库。<br>--safe-slave-backup：该选项表示为保证一致性复制状态，这个选项停止SQL线程并且等到show status中的slave_open_temp_tables为0的时候开始备份，如果没有打开临时表，bakcup会立刻开始，否则SQL线程启动或者关闭知道没有打开的临时表。如果slave_open_temp_tables在--safe-slave-backup-timeount（默认300秒）秒之后不为0，从库sql线程会在备份完成的时候重启。<br><br>--include：该选项表示使用正则表达式匹配表的名字[db.tb]，要求为其指定匹配要备份的表的完整名称，即databasename.tablename。<br>--tables-file：该选项表示指定含有表列表的文件，格式为database.table，该选项直接传给--tables-file。<br>--no-timestamp：该选项可以表示不要创建一个时间戳目录来存储备份，指定到自己想要的备份文件夹。<br>--rsync：该选项表示通过rsync工具优化本地传输，当指定这个选项，innobackupex使用rsync拷贝非Innodb文件而替换cp，当有很多DB和表的时候会快很多，不能--stream一起使用。<br>--stream：该选项表示流式备份的格式，backup完成之后以指定格式到STDOUT，目前只支持tar和xbstream。<br>--ibbackup：该选项指定了使用哪个xtrabackup二进制程序。IBBACKUP-BINARY是运行percona xtrabackup的命令。这个选项适用于xtrbackup二进制不在你是搜索和工作目录，如果指定了该选项,innoabackupex自动决定用的二进制程序。<br>--kill-long-queries-timeout：该选项表示从开始执行FLUSH TABLES WITH READ LOCK到kill掉阻塞它的这些查询之间等待的秒数。默认值为0，不会kill任何查询，使用这个选项xtrabackup需要有Process和super权限。<br>--kill-long-query-type：该选项表示kill的类型，默认是all，可选select。<br>--ftwrl-wait-threshold：该选项表示检测到长查询，单位是秒，表示长查询的阈值。<br>--ftwrl-wait-query-type：该选项表示获得全局锁之前允许那种查询完成，默认是ALL，可选update。<br>--galera-info：该选项表示生成了包含创建备份时候本地节点状态的文件xtrabackup_galera_info文件，该选项只适用于备份PXC。<br>--defaults-extra-file：该选项指定了在标准defaults-file之前从哪个额外的文件读取MySQL配置，必须在命令行的第一个选项的位置。一般用于存备份用户的用户名和密码的配置文件。<br>----defaults-group：该选项表示从配置文件读取的组，innobakcupex多个实例部署时使用。<br>--no-lock：该选项表示关闭FTWRL的表锁，只有在所有表都是Innodb表并且不关心backup的binlog pos点，如果有任何DDL语句正在执行或者非InnoDB正在更新时（包括mysql库下的表），都不应该使用这个选项，后果是导致备份数据不一致，如果考虑备份因为获得锁失败，可以考虑--safe-slave-backup立刻停止复制线程。<br>--tmpdir：该选项表示指定--stream的时候，指定临时文件存在哪里，在streaming和拷贝到远程server之前，事务日志首先存在临时文件里。在 使用参数stream=tar备份的时候，你的xtrabackup_logfile可能会临时放在/tmp目录下，如果你备份的时候并发写入较大的话 xtrabackup_logfile可能会很大(5G+)，很可能会撑满你的/tmp目录，可以通过参数--tmpdir指定目录来解决这个问题。<br>--history：该选项表示percona server 的备份历史记录在percona_schema.xtrabackup_history表。   --close-files：该选项表示关闭不再访问的文件句柄，当xtrabackup打开表空间通常并不关闭文件句柄目的是正确的处理DDL操作。如果表空间数量巨大，这是一种可以关闭不再访问的文件句柄的方法。使用该选项有风险，会有产生不一致备份的可能。<br>--compact：该选项表示创建一份没有辅助索引的紧凑的备份。--throttle：该选项表示每秒IO操作的次数，只作用于bakcup阶段有效。apply-log和--copy-back不生效不要一起用。<br></code></pre></td></tr></table></figure>
+<h2 id="三、还原"><a href="#三、还原" class="headerlink" title="三、还原"></a>三、还原</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">innobackupex --copy-back [--defaults-file=MY.CNF] [--defaults-group=GROUP-NAME] BACKUP-DIR<br></code></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs undefined">nnobackupex --copy-back [--defaults-file=MY.CNF] [--defaults-group=GROUP-NAME] BACKUP-DIR<br>innobackupex --move-back [--defaults-file=MY.CNF] [--defaults-group=GROUP-NAME] BACKUP-DIR<br><br>--copy-back：做数据恢复时将备份数据文件拷贝到MySQL服务器的datadir。<br>--move-back：这个选项与--copy-back相似，唯一的区别是它不拷贝文件，而是移动文件到目的地。这个选项移除backup文件，用时候必须小心。使用场景：没有足够的磁盘空间同事保留数据文件和Backup副本<br><br>注意：<br>    1.datadir目录必须为空。除非指定innobackupex --force-non-empty-directorires选项指定，否则--copy-backup选项不会覆盖<br>    2.在restore之前,必须shutdown MySQL实例，你不能将一个运行中的实例restore到datadir目录中<br>    3.由于文件属性会被保留，大部分情况下你需要在启动实例之前将文件的属主改为mysql，这些文件将属于创建备份的用户<br>    chown -R my5711:mysql /data1/dbrestore<br>    以上需要在用户调用Innobackupex之前完成<br>--force-non-empty-directories：指定该参数时候，使得innobackupex --copy-back或--move-back选项转移文件到非空目录，已存在的文件不会被覆盖。如果--copy-back和--move-back文件需要从备份目录拷贝一个在datadir已经存在的文件，会报错失败。<br></code></pre></td></tr></table></figure>
+<h2 id="四、备份脚本"><a href="#四、备份脚本" class="headerlink" title="四、备份脚本"></a>四、备份脚本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/sh</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">"开始备份"</span><br>innobackupex --user=root --password=cdkj2017 --database=common_db --compress /home/databasebackup<br><span class="hljs-built_in">echo</span> <span class="hljs-string">"备份成功"</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">"删除7天前的备份"</span><br>a=`date -d -7day +%Y-%m-%d*`<br><span class="hljs-comment"># 删除7天前的备份</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">"7天前的时间为<span class="hljs-variable">$&#123;a&#125;</span>"</span><br>rm -rf /home/databasebackup/<span class="hljs-variable">$&#123;a&#125;</span><br><span class="hljs-comment"># 发送备份成功通知</span><br>curl -d <span class="hljs-string">"text=畅点数据库备份成功通知&amp;desp=数据库名 common_db 备份成功"</span> https://sc.ftqq.com/SCU17509Te58a968e0e85f6103d14a4ad257470db5c6fce4fc5d5b.send<br></code></pre></td></tr></table></figure>
+<h2 id="五、定时备份"><a href="#五、定时备份" class="headerlink" title="五、定时备份"></a>五、定时备份</h2><p>linux中使用 <code>crontab</code></p>
+<ol>
+<li><p>crontab -l 列出定时任务</p>
+</li>
+<li><p>crontab -e 编辑定时任务</p>
+<p>格式大概是这样的<em> </em> <em> </em> <em> 五个</em>号代表的意思分别是分，时，日，月，周</p>
+<p>比如每天凌晨2点执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">0 2 * * * /home/databasebackup/backup.sh<br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div id="reward-container">
+  <div></div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/wechat_pay.jpg" alt="kirno 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>kirno</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://kirning.github.io/2019/07/31/cjyqrrd3n001vk8u95gq78og3/" title="Mysql数据库备份">https://kirning.github.io/2019/07/31/cjyqrrd3n001vk8u95gq78og3/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/mysql/" rel="tag"># mysql</a>
+          
+            <a href="/tags/backup/" rel="tag"># backup</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/16/cjyqrrd1j001pk8u9t4djhccv/" rel="next" title="在vscode中使用Typescript开发node">
+                <i class="fa fa-chevron-left"></i> 在vscode中使用Typescript开发node
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">kirno</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/kirning" title="GitHub &rarr; https://github.com/kirning" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、-安装"><span class="nav-number">1.</span> <span class="nav-text">一、 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-CentOS"><span class="nav-number">1.1.</span> <span class="nav-text">1. CentOS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Ubuntu"><span class="nav-number">1.2.</span> <span class="nav-text">2. Ubuntu</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、-备份"><span class="nav-number">2.</span> <span class="nav-text">二、 备份</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参数"><span class="nav-number">2.1.</span> <span class="nav-text">参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、还原"><span class="nav-number">3.</span> <span class="nav-text">三、还原</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、备份脚本"><span class="nav-number">4.</span> <span class="nav-text">四、备份脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、定时备份"><span class="nav-number">5.</span> <span class="nav-text">五、定时备份</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kirno</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>

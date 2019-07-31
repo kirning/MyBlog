@@ -296,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/07/12/cjxzvzagf000qmsu9qy2dcfny/">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/07/31/cjyqrrd3n001vk8u95gq78og3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kirno">
@@ -316,7 +316,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/07/12/cjxzvzagf000qmsu9qy2dcfny/" class="post-title-link" itemprop="url">hexo 折腾日记</a>
+                <a href="/2019/07/31/cjyqrrd3n001vk8u95gq78og3/" class="post-title-link" itemprop="url">Mysql数据库备份</a>
               
             
           </h1>
@@ -341,7 +341,7 @@
                 
               
 
-              <time title="创建时间：2019-07-12 17:01:09 / 修改时间：17:11:38" itemprop="dateCreated datePublished" datetime="2019-07-12T17:01:09+08:00">2019-07-12</time>
+              <time title="创建时间：2019-07-31 10:58:18 / 修改时间：12:41:20" itemprop="dateCreated datePublished" datetime="2019-07-31T10:58:18+08:00">2019-07-31</time>
             </span>
           
 
@@ -387,50 +387,60 @@
       
         
           
-            <p>Hexo 也用了一段时间了，记录一下折腾日记</p>
-<h2 id="首页文章过滤"><a href="#首页文章过滤" class="headerlink" title="首页文章过滤"></a>首页文章过滤</h2><p>有些文章不想在首页出现，可以用 <a href="https://github.com/Jamling/hexo-generator-index2/blob/master/README_zh.md" target="_blank" rel="noopener">hexo-generator-index2</a></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm install hexo-generator-index2<br></code></pre></td></tr></table></figure>
-<p>来解决，使用比较简单</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># index2 generator是否包含官方的hexo-generator-index，默认true（包含）</span><br><span class="hljs-attr">index2_include_index:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># defult is true</span><br><br><span class="hljs-comment"># 配置index2 generator，可以是数组或对象</span><br><span class="hljs-attr">index2_generator:</span><br><span class="hljs-attr">  per_page:</span> <span class="hljs-number">10</span><br><span class="hljs-attr">  order_by:</span> <span class="hljs-bullet">-date</span><br><span class="hljs-attr">  include:</span><br><span class="hljs-bullet">    -</span> <span class="hljs-string">category</span> <span class="hljs-string">Web</span> <span class="hljs-comment"># 只包含Web分类下的文章</span><br><span class="hljs-attr">  exclude:</span><br><span class="hljs-bullet">    -</span> <span class="hljs-string">tag</span> <span class="hljs-string">Hexo</span> <span class="hljs-comment"># 不包含标签为Hexo的文章</span><br></code></pre></td></tr></table></figure>
-<h2 id="live2D-看板娘"><a href="#live2D-看板娘" class="headerlink" title="live2D 看板娘"></a>live2D 看板娘</h2><p>有看板娘的感觉很好，页面不至于太单调，具体使用 <a href="https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md" target="_blank" rel="noopener">hexo-helper-live2d</a></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm install --save hexo-helper-live2d<br></code></pre></td></tr></table></figure>
-<p>这个只是安装了依赖，还要安装具体的看板娘</p>
-<p>使用 <code>npm install [看板娘的名字]</code> 名字如下：</p>
-<ul>
-<li><code>live2d-widget-model-chitose</code></li>
-<li><code>live2d-widget-model-epsilon2_1</code></li>
-<li><code>live2d-widget-model-gf</code></li>
-<li><code>live2d-widget-model-haru/01</code> (use <code>npm install --save live2d-widget-model-haru</code>)</li>
-<li><code>live2d-widget-model-haru/02</code> (use <code>npm install --save live2d-widget-model-haru</code>)</li>
-<li><code>live2d-widget-model-haruto</code></li>
-<li><code>live2d-widget-model-hibiki</code></li>
-<li><code>live2d-widget-model-hijiki</code></li>
-<li><code>live2d-widget-model-izumi</code></li>
-<li><code>live2d-widget-model-koharu</code></li>
-<li><code>live2d-widget-model-miku</code></li>
-<li><code>live2d-widget-model-ni-j</code></li>
-<li><code>live2d-widget-model-nico</code></li>
-<li><code>live2d-widget-model-nietzsche</code></li>
-<li><code>live2d-widget-model-nipsilon</code></li>
-<li><code>live2d-widget-model-nito</code></li>
-<li><code>live2d-widget-model-shizuku</code></li>
-<li><code>live2d-widget-model-tororo</code></li>
-<li><code>live2d-widget-model-tsumiki</code></li>
-<li><code>live2d-widget-model-unitychan</code></li>
-<li><code>live2d-widget-model-wanko</code></li>
-<li><code>live2d-widget-model-z16</code></li>
-</ul>
-<p><a href="https://huaji8.top/post/live2d-plugin-2.0/" target="_blank" rel="noopener">各看板娘预览</a></p>
-<h2 id="hexo主题推荐之-Next"><a href="#hexo主题推荐之-Next" class="headerlink" title="hexo主题推荐之 Next"></a>hexo主题推荐之 <code>Next</code></h2><p><a href="https://theme-next.org/docs/getting-started/" target="_blank" rel="noopener">主题</a>风格挺好看的，简单明了，具体配官方比较全。</p>
-<p><img src="https://user-images.githubusercontent.com/16272760/61057395-d2deb000-a427-11e9-8e28-f348fe181795.png" alt></p>
-<h2 id="简单命令"><a href="#简单命令" class="headerlink" title="简单命令"></a>简单命令</h2><ol>
-<li><p>生产网站</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo g<br></code></pre></td></tr></table></figure>
+            <p>备份数据库：</p>
+<p>使用的工具为 <a href="https://www.percona.com/doc/percona-xtrabackup/2.4/installation/yum_repo.html" target="_blank" rel="noopener">Xtrabackup</a></p>
+<blockquote>
+<p><code>Xtrabackup8</code> 适用于mysql8, mysql8以下的数据库用 <code>Xtrabackup2.4</code></p>
+</blockquote>
+<h2 id="一、-安装"><a href="#一、-安装" class="headerlink" title="一、 安装"></a>一、 安装</h2><p>建议从系统的软件库安装，自己编译简直是自取灭亡，<a href="https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html#installing-percona-xtrabackup-from-repositories" target="_blank" rel="noopener">官方安装方法</a></p>
+<h3 id="1-CentOS"><a href="#1-CentOS" class="headerlink" title="1. CentOS"></a>1. CentOS</h3><ol>
+<li><p>Centos6及以上系统</p>
+<blockquote>
+<p>Centos5不行，以下是官方给出的原因</p>
+<p><em>RHEL</em>/<em>Centos</em> 5 doesn’t support installing the packages directly from the remote location so you’ll need to download the package first and install it manually with <strong>rpm</strong>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">&gt; $ wget https://repo.percona.com/yum/percona-release-latest.noarch.rpm<br>&gt; $ rpm -ivH percona-release-latest.noarch.rpm<br>&gt;<br></code></pre></td></tr></table></figure>
+</blockquote>
+<p>安装软件源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ yum install https://repo.percona.com/yum/percona-release-latest.noarch.rpm<br></code></pre></td></tr></table></figure>
+<p>中途的确认 y 确认就好</p>
+</li>
+<li><p>测试源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">yum list | grep percona<br></code></pre></td></tr></table></figure>
+<p>这个命令会列出源内所有以 <code>percona</code> 开头的软件，如果其中包括了 <code>percona-xtrabackup-24</code> 就没什么问题了</p>
+</li>
+<li><p>安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">yum install percona-xtrabackup-24<br></code></pre></td></tr></table></figure>
+<p>完成！！😊</p>
 </li>
 </ol>
-<ol start="2">
-<li><p>上传网站</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo delop<br></code></pre></td></tr></table></figure>
+<h3 id="2-Ubuntu"><a href="#2-Ubuntu" class="headerlink" title="2. Ubuntu"></a>2. Ubuntu</h3><ol>
+<li><p>从官方获取软件源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>安装下载下来的源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ sudo dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>更新软件列表</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get update<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get install percona-xtrabackup-24<br></code></pre></td></tr></table></figure>
+<p>完成</p>
+</li>
+</ol>
+<h2 id="二、-备份"><a href="#二、-备份" class="headerlink" title="二、 备份"></a>二、 备份</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">innobackupex --user=root --password=123456 --compress --database=数据库名 /备份路径<br></code></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><code class="hljs undefined"># 常用参数<br>--user：该选项表示备份账号。<br>--password：该选项表示备份的密码。<br>--port：该选项表示备份数据库的端口。<br>--host：该选项表示备份数据库的地址。<br>--socket：该选项表示mysql.sock所在位置，以便备份进程登录mysql。<br>--defaults-file：该选项指定了从哪个文件读取MySQL配置，必须放在命令行第一个选项的位置。<br>--databases：该选项接受的参数为数据名，如果要指定多个数据库，彼此间需要以空格隔开；如：&quot;db1 db2&quot;，同时，在指定某数据库时，也可以只指定其中的某张表。如：&quot;mydatabase.mytable&quot;。该选项对innodb引擎表无效，还是会备份所有innodb表。此外，此选项也可以接受一个文件为参数，文件中每一行为一个要备份的对象。<br><br>#压缩参数<br>--compress：该选项表示压缩innodb数据文件的备份。<br>--compress-threads：该选项表示并行压缩worker线程的数量。<br>--compress-chunk-size：该选项表示每个压缩线程worker buffer的大小，单位是字节，默认是64K。<br><br>#加密参数<br>--encrypt：该选项表示通过ENCRYPTION_ALGORITHM的算法加密innodb数据文件的备份，目前支持的算法有ASE128,AES192,AES256。<br>--encrypt-key：该选项使用合适长度加密key，因为会记录到命令行，所以不推荐使用。<br>--encryption-key-file：该选项表示文件必须是一个简单二进制或者文本文件，加密key可通过以下命令行命令生成：openssl rand -base64 24。<br>--encrypt-threads：该选项表示并行加密的worker线程数量。<br>--encrypt-chunk-size：该选项表示每个加密线程worker buffer的大小，单位是字节，默认是64K。<br><br>#增量备份参数<br>--incremental：该选项表示创建一个增量备份，需要指定--incremental-basedir。<br>--incremental-basedir：该选项表示接受了一个字符串参数指定含有full backup的目录为增量备份的base目录，与--incremental同时使用。<br>--incremental-lsn：该选项表示指定增量备份的LSN，与--incremental选项一起使用。<br>--incremental-dir：该选项表示增量备份的目录。<br>--incremental-force-scan：该选项表示创建一份增量备份时，强制扫描所有增量备份中的数据页。<br>--incremental-history-name：该选项表示存储在PERCONA_SCHEMA.xtrabackup_history基于增量备份的历史记录的名字。Percona Xtrabackup搜索历史表查找最近（innodb_to_lsn）成功备份并且将to_lsn值作为增量备份启动出事lsn.与innobackupex--incremental-history-uuid互斥。如果没有检测到有效的lsn，xtrabackup会返回error。<br>--incremental-history-uuid：该选项表示存储在percona_schema.xtrabackup_history基于增量备份的特定历史记录的UUID。 <br><br>#主从<br>--slave-info：该选项表示对slave进行备份的时候使用，打印出master的名字和binlog pos，同样将这些信息以change master的命令写入xtrabackup_slave_info文件。可以通过基于这份备份启动一个从库。<br>--safe-slave-backup：该选项表示为保证一致性复制状态，这个选项停止SQL线程并且等到show status中的slave_open_temp_tables为0的时候开始备份，如果没有打开临时表，bakcup会立刻开始，否则SQL线程启动或者关闭知道没有打开的临时表。如果slave_open_temp_tables在--safe-slave-backup-timeount（默认300秒）秒之后不为0，从库sql线程会在备份完成的时候重启。<br><br>--include：该选项表示使用正则表达式匹配表的名字[db.tb]，要求为其指定匹配要备份的表的完整名称，即databasename.tablename。<br>--tables-file：该选项表示指定含有表列表的文件，格式为database.table，该选项直接传给--tables-file。<br>--no-timestamp：该选项可以表示不要创建一个时间戳目录来存储备份，指定到自己想要的备份文件夹。<br>--rsync：该选项表示通过rsync工具优化本地传输，当指定这个选项，innobackupex使用rsync拷贝非Innodb文件而替换cp，当有很多DB和表的时候会快很多，不能--stream一起使用。<br>--stream：该选项表示流式备份的格式，backup完成之后以指定格式到STDOUT，目前只支持tar和xbstream。<br>--ibbackup：该选项指定了使用哪个xtrabackup二进制程序。IBBACKUP-BINARY是运行percona xtrabackup的命令。这个选项适用于xtrbackup二进制不在你是搜索和工作目录，如果指定了该选项,innoabackupex自动决定用的二进制程序。<br>--kill-long-queries-timeout：该选项表示从开始执行FLUSH TABLES WITH READ LOCK到kill掉阻塞它的这些查询之间等待的秒数。默认值为0，不会kill任何查询，使用这个选项xtrabackup需要有Process和super权限。<br>--kill-long-query-type：该选项表示kill的类型，默认是all，可选select。<br>--ftwrl-wait-threshold：该选项表示检测到长查询，单位是秒，表示长查询的阈值。<br>--ftwrl-wait-query-type：该选项表示获得全局锁之前允许那种查询完成，默认是ALL，可选update。<br>--galera-info：该选项表示生成了包含创建备份时候本地节点状态的文件xtrabackup_galera_info文件，该选项只适用于备份PXC。<br>--defaults-extra-file：该选项指定了在标准defaults-file之前从哪个额外的文件读取MySQL配置，必须在命令行的第一个选项的位置。一般用于存备份用户的用户名和密码的配置文件。<br>----defaults-group：该选项表示从配置文件读取的组，innobakcupex多个实例部署时使用。<br>--no-lock：该选项表示关闭FTWRL的表锁，只有在所有表都是Innodb表并且不关心backup的binlog pos点，如果有任何DDL语句正在执行或者非InnoDB正在更新时（包括mysql库下的表），都不应该使用这个选项，后果是导致备份数据不一致，如果考虑备份因为获得锁失败，可以考虑--safe-slave-backup立刻停止复制线程。<br>--tmpdir：该选项表示指定--stream的时候，指定临时文件存在哪里，在streaming和拷贝到远程server之前，事务日志首先存在临时文件里。在 使用参数stream=tar备份的时候，你的xtrabackup_logfile可能会临时放在/tmp目录下，如果你备份的时候并发写入较大的话 xtrabackup_logfile可能会很大(5G+)，很可能会撑满你的/tmp目录，可以通过参数--tmpdir指定目录来解决这个问题。<br>--history：该选项表示percona server 的备份历史记录在percona_schema.xtrabackup_history表。   --close-files：该选项表示关闭不再访问的文件句柄，当xtrabackup打开表空间通常并不关闭文件句柄目的是正确的处理DDL操作。如果表空间数量巨大，这是一种可以关闭不再访问的文件句柄的方法。使用该选项有风险，会有产生不一致备份的可能。<br>--compact：该选项表示创建一份没有辅助索引的紧凑的备份。--throttle：该选项表示每秒IO操作的次数，只作用于bakcup阶段有效。apply-log和--copy-back不生效不要一起用。<br></code></pre></td></tr></table></figure>
+<h2 id="三、还原"><a href="#三、还原" class="headerlink" title="三、还原"></a>三、还原</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">innobackupex --copy-back [--defaults-file=MY.CNF] [--defaults-group=GROUP-NAME] BACKUP-DIR<br></code></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs undefined">nnobackupex --copy-back [--defaults-file=MY.CNF] [--defaults-group=GROUP-NAME] BACKUP-DIR<br>innobackupex --move-back [--defaults-file=MY.CNF] [--defaults-group=GROUP-NAME] BACKUP-DIR<br><br>--copy-back：做数据恢复时将备份数据文件拷贝到MySQL服务器的datadir。<br>--move-back：这个选项与--copy-back相似，唯一的区别是它不拷贝文件，而是移动文件到目的地。这个选项移除backup文件，用时候必须小心。使用场景：没有足够的磁盘空间同事保留数据文件和Backup副本<br><br>注意：<br>    1.datadir目录必须为空。除非指定innobackupex --force-non-empty-directorires选项指定，否则--copy-backup选项不会覆盖<br>    2.在restore之前,必须shutdown MySQL实例，你不能将一个运行中的实例restore到datadir目录中<br>    3.由于文件属性会被保留，大部分情况下你需要在启动实例之前将文件的属主改为mysql，这些文件将属于创建备份的用户<br>    chown -R my5711:mysql /data1/dbrestore<br>    以上需要在用户调用Innobackupex之前完成<br>--force-non-empty-directories：指定该参数时候，使得innobackupex --copy-back或--move-back选项转移文件到非空目录，已存在的文件不会被覆盖。如果--copy-back和--move-back文件需要从备份目录拷贝一个在datadir已经存在的文件，会报错失败。<br></code></pre></td></tr></table></figure>
+<h2 id="四、备份脚本"><a href="#四、备份脚本" class="headerlink" title="四、备份脚本"></a>四、备份脚本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/sh</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">"开始备份"</span><br>innobackupex --user=root --password=cdkj2017 --database=common_db --compress /home/databasebackup<br><span class="hljs-built_in">echo</span> <span class="hljs-string">"备份成功"</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">"删除7天前的备份"</span><br>a=`date -d -7day +%Y-%m-%d*`<br><span class="hljs-comment"># 删除7天前的备份</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">"7天前的时间为<span class="hljs-variable">$&#123;a&#125;</span>"</span><br>rm -rf /home/databasebackup/<span class="hljs-variable">$&#123;a&#125;</span><br><span class="hljs-comment"># 发送备份成功通知</span><br>curl -d <span class="hljs-string">"text=畅点数据库备份成功通知&amp;desp=数据库名 common_db 备份成功"</span> https://sc.ftqq.com/SCU17509Te58a968e0e85f6103d14a4ad257470db5c6fce4fc5d5b.send<br></code></pre></td></tr></table></figure>
+<h2 id="五、定时备份"><a href="#五、定时备份" class="headerlink" title="五、定时备份"></a>五、定时备份</h2><p>linux中使用 <code>crontab</code></p>
+<ol>
+<li><p>crontab -l 列出定时任务</p>
+</li>
+<li><p>crontab -e 编辑定时任务</p>
+<p>格式大概是这样的<em> </em> <em> </em> <em> 五个</em>号代表的意思分别是分，时，日，月，周</p>
+<p>比如每天凌晨2点执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">0 2 * * * /home/databasebackup/backup.sh<br></code></pre></td></tr></table></figure>
 </li>
 </ol>
 
@@ -495,7 +505,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/07/12/cjxzvzagh000smsu9attocrbo/">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/07/16/cjyqrrd1j001pk8u9t4djhccv/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kirno">
@@ -515,7 +525,329 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/07/12/cjxzvzagh000smsu9attocrbo/" class="post-title-link" itemprop="url">在nodejs使用mysql库中连接mysql8的问题</a>
+                <a href="/2019/07/16/cjyqrrd1j001pk8u9t4djhccv/" class="post-title-link" itemprop="url">在vscode中使用Typescript开发node</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-16 11:48:05 / 修改时间：12:06:26" itemprop="dateCreated datePublished" datetime="2019-07-16T11:48:05+08:00">2019-07-16</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>使用<code>Typescript</code>开发node的话，可以使用<code>ts-node</code>库，这样就可以直接运行，不需要另外编译。</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/16/cjyqrrd1j001pk8u9t4djhccv/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/07/12/cjyqrrcxy000vk8u90jyqj9fc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kirno">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kirnoのBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/12/cjyqrrcxy000vk8u90jyqj9fc/" class="post-title-link" itemprop="url">hexo 折腾日记</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-12 17:01:09 / 修改时间：17:19:31" itemprop="dateCreated datePublished" datetime="2019-07-12T17:01:09+08:00">2019-07-12</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Hexo 也用了一段时间了，记录一下折腾日记</p>
+<h2 id="hexo主题推荐之-Next"><a href="#hexo主题推荐之-Next" class="headerlink" title="hexo主题推荐之 Next"></a>hexo主题推荐之 <code>Next</code></h2><p><a href="https://theme-next.org/docs/getting-started/" target="_blank" rel="noopener">主题</a>风格挺好看的，简单明了，具体配官方比较全。</p>
+<p><img src="https://user-images.githubusercontent.com/16272760/61057395-d2deb000-a427-11e9-8e28-f348fe181795.png" alt></p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/12/cjyqrrcxy000vk8u90jyqj9fc/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/07/12/cjyqrrcxq000qk8u9pt0i3f71/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kirno">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kirnoのBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/12/cjyqrrcxq000qk8u9pt0i3f71/" class="post-title-link" itemprop="url">在nodejs使用mysql库中连接mysql8的问题</a>
               
             
           </h1>
@@ -590,7 +922,7 @@
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/07/12/cjxzvzagh000smsu9attocrbo/#more" rel="contents">
+              <a class="btn" href="/2019/07/12/cjyqrrcxq000qk8u9pt0i3f71/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -656,7 +988,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/07/04/cjxzvzagm000xmsu9l3ymrtvt/">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/07/04/cjyqrrcxu000tk8u9dyi0ipkp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kirno">
@@ -676,7 +1008,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/07/04/cjxzvzagm000xmsu9l3ymrtvt/" class="post-title-link" itemprop="url">redux</a>
+                <a href="/2019/07/04/cjyqrrcxu000tk8u9dyi0ipkp/" class="post-title-link" itemprop="url">redux</a>
               
             
           </h1>
@@ -825,7 +1157,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/07/03/cjxzvzayu0023msu9xxwj5oii/">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/07/03/cjyqrrdjg002ck8u92i3aj4nn/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kirno">
@@ -845,7 +1177,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/07/03/cjxzvzayu0023msu9xxwj5oii/" class="post-title-link" itemprop="url">typesafe-actions-zh</a>
+                <a href="/2019/07/03/cjyqrrdjg002ck8u92i3aj4nn/" class="post-title-link" itemprop="url">typesafe-actions-zh</a>
               
             
           </h1>
@@ -929,7 +1261,7 @@
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/07/03/cjxzvzayu0023msu9xxwj5oii/#more" rel="contents">
+              <a class="btn" href="/2019/07/03/cjyqrrdjg002ck8u92i3aj4nn/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -995,7 +1327,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/06/14/cjxzvzao7001qmsu90knea9p3/">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/06/14/cjyqrrd9x0024k8u97m8507cg/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kirno">
@@ -1015,7 +1347,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/06/14/cjxzvzao7001qmsu90knea9p3/" class="post-title-link" itemprop="url">构建electron、typescript、react、antd应用</a>
+                <a href="/2019/06/14/cjyqrrd9x0024k8u97m8507cg/" class="post-title-link" itemprop="url">构建electron、typescript、react、antd应用</a>
               
             
           </h1>
@@ -1101,7 +1433,7 @@
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/06/14/cjxzvzao7001qmsu90knea9p3/#more" rel="contents">
+              <a class="btn" href="/2019/06/14/cjyqrrd9x0024k8u97m8507cg/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1167,7 +1499,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/01/27/cjxzvzagc000nmsu97v2r28ek/">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2019/01/27/cjyqrrcxf000lk8u9r5tgct1z/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kirno">
@@ -1187,7 +1519,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/01/27/cjxzvzagc000nmsu97v2r28ek/" class="post-title-link" itemprop="url">Hello World</a>
+                <a href="/2019/01/27/cjyqrrcxf000lk8u9r5tgct1z/" class="post-title-link" itemprop="url">Hello World</a>
               
             
           </h1>
@@ -1325,7 +1657,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2018/07/10/cjxzvzag7000gmsu91b6eqir3/">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2018/07/10/cjyqrrcxk000ok8u91br4p40x/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kirno">
@@ -1345,7 +1677,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/07/10/cjxzvzag7000gmsu91b6eqir3/" class="post-title-link" itemprop="url">dnsCheck</a>
+                <a href="/2018/07/10/cjyqrrcxk000ok8u91br4p40x/" class="post-title-link" itemprop="url">dnsCheck</a>
               
             
           </h1>
@@ -1489,7 +1821,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2018/07/02/cjxzvzagg000rmsu9rvp5qj53/">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2018/07/02/cjyqrrcxm000pk8u9vg0ak515/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kirno">
@@ -1509,7 +1841,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/07/02/cjxzvzagg000rmsu9rvp5qj53/" class="post-title-link" itemprop="url">linux常用命令</a>
+                <a href="/2018/07/02/cjyqrrcxm000pk8u9vg0ak515/" class="post-title-link" itemprop="url">linux常用命令</a>
               
             
           </h1>
@@ -1640,362 +1972,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2018/06/28/cjxzvzao3001omsu9ni57c7sr/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kirno">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kirnoのBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/06/28/cjxzvzao3001omsu9ni57c7sr/" class="post-title-link" itemprop="url">gitlab安装教程</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-06-28 17:37:12" itemprop="dateCreated datePublished" datetime="2018-06-28T17:37:12+08:00">2018-06-28</time>
-            </span>
-          
-
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-27 18:37:54" itemprop="dateModified" datetime="2019-01-27T18:37:54+08:00">2019-01-27</time>
-              </span>
-            
-          
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>这是一片关于GitLab的安装教程以及踩过的坑</p>
-</blockquote>
-<p>浪费了一个下午的时间，终于把Gitlab搭建完成，搭建环境如下：</p>
-<ul>
-<li><p>系统（虚拟机）</p>
-<p>  Distributor ID:    Ubuntu</p>
-<p>  Description:    Ubuntu 18.04 LTS</p>
-<p>  Release:    18.04</p>
-<p>  Codename:    bionic</p>
-</li>
-<li><p>gitlab V11.0.1</p>
-</li>
-</ul>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/06/28/cjxzvzao3001omsu9ni57c7sr/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2018/06/19/cjxzvzag9000jmsu9081fzymz/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kirno">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="kirnoのBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/06/19/cjxzvzag9000jmsu9081fzymz/" class="post-title-link" itemprop="url">bt搜索脚本</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-06-19 17:37:10" itemprop="dateCreated datePublished" datetime="2018-06-19T17:37:10+08:00">2018-06-19</time>
-            </span>
-          
-
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-27 18:37:54" itemprop="dateModified" datetime="2019-01-27T18:37:54+08:00">2019-01-27</time>
-              </span>
-            
-          
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><pre><code class="javascript">
-javascript:pachong();<span class="function"><span class="keyword">function</span> <span class="title">pachong</span>(<span class="params"></span>) </span>{<span class="keyword">var</span> currentUrl = location.href;<span class="keyword">if</span> (currentUrl.indexOf(<span class="string">"http://sdkcloud.pro/"</span>) == <span class="number">-1</span>) {<span class="keyword">var</span> query = prompt(<span class="string">"请输入想要搜索的资源关键字"</span>);<span class="keyword">if</span>(query.trim()){<span class="keyword">var</span> sdkUrl = <span class="string">"http://sdkcloud.pro/xfs.php?s="</span>+query;location.href = sdkUrl;}} <span class="keyword">else</span> {addBtn();}}<span class="function"><span class="keyword">function</span> <span class="title">addBtn</span>(<span class="params"></span>)</span>{<span class="keyword">var</span> list = <span class="built_in">document</span>.querySelectorAll(<span class="string">".T1 a"</span>);list.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>{<span class="keyword">var</span> l = item.href;<span class="keyword">var</span> mag = l.substring(<span class="number">20</span>, l.length);<span class="keyword">var</span> url =  <span class="string">"https://apiv.ga/magnet/"</span>+mag;<span class="keyword">var</span> btn = <span class="string">"&lt;a style='margin-left:5px;text-decoration:none;border:1px solid #efefef;border-radius:4px;font-size:15px;padding:5px' href='"</span>+url+<span class="string">"' target='view_window'&gt;%E6%92%AD%E6%94%BE&lt;/a&gt;"</span>;item.innerHTML = item.innerHTML + btn;});}
-
-</code></pre>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/06/19/cjxzvzag9000jmsu9081fzymz/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2042,7 +2018,7 @@ javascript:pachong();<span class="function"><span class="keyword">function</span
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2099,7 +2075,11 @@ javascript:pachong();<span class="function"><span class="keyword">function</span
                     
                       
                     
-                    <span class="site-state-item-count">21</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">23</span>
                     <span class="site-state-item-name">标签</span>
                   
                 </div>

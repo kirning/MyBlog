@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <meta name="description" content="这是一片关于GitLab的安装教程以及踩过的坑  浪费了一个下午的时间，终于把Gitlab搭建完成，搭建环境如下：  系统（虚拟机）   Distributor ID:    Ubuntu   Description:    Ubuntu 18.04 LTS   Release:    18.04   Codename:    bionic  gitlab V11.0.1">
+<meta name="keywords" content="gitlab,git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gitlab安装教程">
+<meta property="og:url" content="https://kirning.github.io/2018/06/28/cjyqrrd3p001wk8u9ra86j6jh/index.html">
+<meta property="og:site_name" content="kirnoのBlog">
+<meta property="og:description" content="这是一片关于GitLab的安装教程以及踩过的坑  浪费了一个下午的时间，终于把Gitlab搭建完成，搭建环境如下：  系统（虚拟机）   Distributor ID:    Ubuntu   Description:    Ubuntu 18.04 LTS   Release:    18.04   Codename:    bionic  gitlab V11.0.1">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://oepv0v7je.bkt.clouddn.com/18-7-10/20173328.jpg">
+<meta property="og:updated_time" content="2019-01-27T10:37:54.352Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="gitlab安装教程">
+<meta name="twitter:description" content="这是一片关于GitLab的安装教程以及踩过的坑  浪费了一个下午的时间，终于把Gitlab搭建完成，搭建环境如下：  系统（虚拟机）   Distributor ID:    Ubuntu   Description:    Ubuntu 18.04 LTS   Release:    18.04   Codename:    bionic  gitlab V11.0.1">
+<meta name="twitter:image" content="http://oepv0v7je.bkt.clouddn.com/18-7-10/20173328.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="kirnoのBlog" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://kirning.github.io/2018/06/28/cjyqrrd3p001wk8u9ra86j6jh/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>gitlab安装教程 | kirnoのBlog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">kirnoのBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://kirning.github.io/2018/06/28/cjyqrrd3p001wk8u9ra86j6jh/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kirno">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kirnoのBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">gitlab安装教程
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-28 17:37:12" itemprop="dateCreated datePublished" datetime="2018-06-28T17:37:12+08:00">2018-06-28</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-27 18:37:54" itemprop="dateModified" datetime="2019-01-27T18:37:54+08:00">2019-01-27</time>
+              </span>
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>这是一片关于GitLab的安装教程以及踩过的坑</p>
+</blockquote>
+<p>浪费了一个下午的时间，终于把Gitlab搭建完成，搭建环境如下：</p>
+<ul>
+<li><p>系统（虚拟机）</p>
+<p>  Distributor ID:    Ubuntu</p>
+<p>  Description:    Ubuntu 18.04 LTS</p>
+<p>  Release:    18.04</p>
+<p>  Codename:    bionic</p>
+</li>
+<li><p>gitlab V11.0.1</p>
+</li>
+</ul>
+<a id="more"></a>
+<h2 id="安装Gitlab"><a href="#安装Gitlab" class="headerlink" title="安装Gitlab"></a>安装Gitlab</h2><p>这里有一个问题，gitlab官方源太慢了，一个gitlab安装包要<code>500M+</code>如果直接下载，很容易挂掉，或者等很久，所以这里要替换源。不过似乎在阿里云上搭载的话，会很快，不用更换。</p>
+<p>这里推荐 <a href="https://mirrors.tuna.tsinghua.edu.cn/" target="_blank" rel="noopener">清华大学开源软件镜像站</a> 里面有不少的镜像源，其中就包括了gitlab的。</p>
+<p>具体地址是</p>
+<pre><code>deb http://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/ubuntu bionic main
+</code></pre><blockquote>
+<p>注意其中 <code>bionic</code> 是系统代号，比如我的ubuntu 18 代号就是 <code>bionic</code> 其他的系统可以使用 <code>lsb_relase</code> 命令自行查询。</p>
+</blockquote>
+<p><strong>使用方法</strong> <a href="https://mirrors.tuna.tsinghua.edu.cn/help/gitlab-ce/" target="_blank" rel="noopener">参考</a></p>
+<ol>
+<li><p>信任 GitLab 的 GPG 公钥:</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">curl https://packages.gitlab.com/gpg.key 2&gt; /dev/null | sudo apt-key add - &amp;&gt;/dev/null<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>设置源</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">cd /etc/apt/sources.list.d<br>vim gitlab-ce.list<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>编辑gitlab-ce.list 输入以下内容</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">deb https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/ubuntu/ bionic main<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>更新并安装</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get update<br>sudo apt-get install gitlab-ce<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>配置gitlab</p>
+<p> 由于gitlab要用到域名，所以需要准备好域名。由于我是用虚拟机搭建，所以公共域名用不了，所以我就自己搭建了一个域名服务。可以参考可选步骤，搭建私有DNS服务器。</p>
+<p> 配置文件是 <code>/etc/gitlab/gitlab.rb</code> 文件，因为文件内容过多，就简单的把会用到的配置列出来</p>
+<ol>
+<li><p>域名，这个设计到了gitlab系统自动生成的链接，所以必须修改为<strong>自己的域名</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"># external_url &apos;http://gitlab.explme.com&apos;<br>external_url &apos;http://kirno.com&apos;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>配置时区，由于默认是UTC，导致使用的时候时间不正确，所以需要修改为本地的时区</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"># gitlab_rails[&apos;time_zone&apos;] = &apos;UTC&apos;<br>gitlab_rails[&apos;time_zone&apos;] = &apos;Asia/Shanghai&apos;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>邮件，由于gitlab会通过邮箱找回密码或者认证，所以需要配置。原本是使用系统自己的邮件系统，但是我不会配置，所以就是用了QQ邮箱作为发送方</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs undefined">gitlab_rails[&apos;smtp_enable&apos;] = true<br>gitlab_rails[&apos;smtp_address&apos;] = &quot;smtp.qq.com&quot;<br>gitlab_rails[&apos;smtp_port&apos;] = 465<br># 发送方的邮箱完整地址 xx@qq.com<br>gitlab_rails[&apos;smtp_user_name&apos;] = &quot;XXX&quot;<br># 这里是发送方的QQ邮箱地址，也就是和上面的一样<br>gitlab_rails[&apos;gitlab_email_from&apos;] = &apos;XXX&apos;<br># 密码，注意这里要使用QQ邮箱的 授权码 不是密码，可以在设置，账户处找到<br>gitlab_rails[&apos;smtp_password&apos;] = &quot;xxx&quot;    <br>gitlab_rails[&apos;smtp_domain&apos;] = &quot;smtp.qq.com&quot;<br>gitlab_rails[&apos;smtp_authentication&apos;] = &quot;login&quot;<br>gitlab_rails[&apos;smtp_enable_starttls_auto&apos;] = true<br>gitlab_rails[&apos;smtp_tls&apos;] = true<br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+<p>配置完成后初始化 gitlab 时间比较久</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">gitlab-ctl reconfigure<br></code></pre></td></tr></table></figure>
+<p>可以通过以下命令测试邮件</p>
+<pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 进入控制台</span><br>gitlab-rails console<br><span class="hljs-comment"># 发送邮件</span><br>Notify.test_email(<span class="hljs-string">"收件人邮箱"</span>, <span class="hljs-string">"标题"</span>, <span class="hljs-string">"内容"</span>).deliver_now<br></code></pre></td></tr></table></figure>
+</code></pre><p>然后就可以在浏览器通过域名访问了</p>
+<h2 id="汉化教程"><a href="#汉化教程" class="headerlink" title="汉化教程"></a>汉化教程</h2><p>默认的gitlab是英文，可以选择进行汉化，不过其实汉化并不完整。</p>
+<ol>
+<li><p><a href="https://gitlab.com/xhang/gitlab/tags" target="_blank" rel="noopener">下载汉化文件</a> 文件比较大在 48m+ 左右，而且下载比较慢，所以建议下载完拉上服务器。</p>
+<blockquote>
+<p>一定要注意版本，已安装的gitlab版本可以通过 <code>cat /opt/gitlab/embedded/service/gitlab-rails/VERSION</code> 命令查看</p>
+</blockquote>
+</li>
+<li><p>下载完之后解压，通过 <code>cat gitlab/VERSION</code> 查看是版本是否匹配，如果版本不匹配可能会导致gitlab崩溃，所以小心</p>
+</li>
+<li><p>停止gitlab</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">gitlab-ctl stop<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>覆盖 </li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">cp -rf gitlab/* /opt/gitlab/embedded/service/gitlab-rails/<br></code></pre></td></tr></table></figure>
+<ol start="4">
+<li>重新配置gitlab并启动它</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">gitlab-ctl reconfigure<br>gitlab-ctl restart<br></code></pre></td></tr></table></figure>
+<h2 id="使用现有的Nginx作为服务器"><a href="#使用现有的Nginx作为服务器" class="headerlink" title="使用现有的Nginx作为服务器"></a>使用现有的Nginx作为服务器</h2><p>这个地方巨坑，真的是巨坑，被卡在这里太久了😭。<br>首先通过apt-get或者从官网下载的nginx，如果没有注意的话都不行，因为他们默认都不支持 <code>Passenger</code> 这是个巨坑啊，多少次因为这个摔鼠标了🖱️。虽然网上有教程通过 passenger-install-nginx-modules 的方式来重新安装nginx，但是这个的编译过程贼慢，我的双核4g云服务器完全卡死在这了，所以不推荐。还有的办法就是通过利用 <code>nginx 1.9</code> 以上的版本的动态模块加载功能来实现。</p>
+<ol>
+<li>安装 <code>ruby</code> 没办法，passenger依赖 <code>ruby</code></li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt install ruby<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>安装 <code>passenger</code> 安装这个东西最好换源，否则巨慢</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">换源</span><br>gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/<br><span class="hljs-meta">$</span><span class="bash"> gem sources -l</span><br>https://gems.ruby-china.com<br><span class="hljs-meta">#</span><span class="bash"> 确保只有 gems.ruby-china.com</span><br><span class="hljs-meta"><br>#</span><span class="bash">安装</span><br>gem install passenger<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>下载nginx源码，编译模块，<a href="https://www.phusionpassenger.com/library/install/nginx/install_as_nginx_module.html" target="_blank" rel="noopener">参考</a></li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">cd /path-to-nginx-source-dir<br>./configure --prefix=/opt/nginx \<br>  --add-dynamic-module=$(passenger-config --nginx-addon-dir) \<br>  --add-module=/path-to-some-other-nginx-module<br>make<br>sudo make install<br></code></pre></td></tr></table></figure>
+<ol start="4">
+<li>配置现有的nginx的配置文件 <code>nginx.conf</code>, 添加</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs nginx">#user  nobody;<br>worker_processes  1;<br><br>#============重点================================<br>load_module modules/ngx_http_passenger_module.so;<br>#===============================================<br><br>events &#123;<br>    worker_connections  1024;<br>&#125;<br><br><br>http &#123;<br>    include       mime.types;<br>    default_type  application/octet-stream;<br><br>    #============重点===如果忘记passenger的目录了，可以通过 passenger-config --root 指令来获取=============================<br>    passenger_root /var/lib/gems/2.3.0/gems/passenger-5.3.3;<br>    #===============================================<br><br>    sendfile        on;<br><br>    keepalive_timeout  65;<br>    ...<br></code></pre></td></tr></table></figure>
+<ol start="5">
+<li>重中之重，这里最坑，配置了好了<code>nginx</code>之后报了一个奇葩🤮的错误</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">2018/07/10 10:44:19 [crit] 28138#0: *3739 connect() to unix:/tmp/passenger.uPSo3Mj/agents.s/core failed (2: No such file or directory) while connecting to upstream, client: 119.127.17.115, server: xxx, request: &quot;GET / HTTP/1.1&quot;, upstream: &quot;passenger:unix:/tmp/passenger.uPSo3Mj/agents.s/core:&quot;, host: &quot;xxx&quot;<br></code></pre></td></tr></table></figure>
+<p>这个地方浪费了我一个下午加半个早上🌞，多次想放弃，网上还找不到资料。其实解决也很简单，就是重启nginx，不能简单的<code>nginx -s reload</code> 或者 <code>nginx -s reopen</code> 的重启，没有效果的，必须要先 <code>kill</code> 了nginx的进程然后再重新运行 <code>nginx</code> 才行😭。为了解决这个问题，我重装了gitlab，各种百度，谷歌，差点就去看gitlab源码了😭。手抖重启ngxin后成功看到<code>/tmp</code>下创建<code>passenger.xxx</code>文件，太开心了。然后刷新页面果然成功</p>
+<ol start="6">
+<li>一定要记住配置 <code>passenger_root /var/lib/gems/2.3.0/gems/passenger-5.3.3;</code> 否则也会出现403错误</li>
+</ol>
+<p><img src="http://oepv0v7je.bkt.clouddn.com/18-7-10/20173328.jpg" alt="成功图"></p>
+<h2 id="可选-搭建私有DNS服务器"><a href="#可选-搭建私有DNS服务器" class="headerlink" title="(可选)搭建私有DNS服务器"></a>(可选)搭建私有DNS服务器</h2><p>网上基本都是 <code>bind9</code> 的教程，所以我也就使用它来搭建。</p>
+<p>首先安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get install bind9<br></code></pre></td></tr></table></figure>
+<p>安装了之后，有几个路径需要了解</p>
+<ul>
+<li>/etc/bind 用于存放主要的配置文件</li>
+<li>/var/cache/bind 用于存放域名相关的配置文件</li>
+</ul>
+<p>比如我要创建一个 <code>kirno.com</code> 的域名</p>
+<p>首先编辑 <code>/etc/bind/named.conf.local</code> 文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined">// 这里的 kirno.com 就是想要创建的域名<br>zone &quot;kirno.com&quot; &#123;    <br>    type master;<br><br>    // 这个对应着 /var/cache/bind 里面的解析配置文件的名字<br>    file &quot;db.kirno.com&quot;;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<p>然后把 <code>/etc/bind</code> 目录下的解析配置模板 <code>db.local</code> 复制到 <code>/var/cache/bind</code> 里面</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">cp /etc/<span class="hljs-built_in">bind</span>/db.local.com /var/cache/<span class="hljs-built_in">bind</span>/db.kirno.com<br></code></pre></td></tr></table></figure>
+<p>编辑 <code>/var/cache/bind/db.kirno.com</code> 把其中的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">@	IN	A	127.0.0.1<br></code></pre></td></tr></table></figure>
+<p>改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">@	IN	A	192.168.2.100<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>其中 <code>192.168.2.100</code> 是你想解析的域名对应着的ip</p>
+</blockquote>
+<p>最后编辑 <code>/etc/bind/named.conf.options</code> 文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs undefined">options &#123;<br>	directory &quot;/var/cache/bind&quot;;<br><br>	// If there is a firewall between you and nameservers you want<br>	// to talk to, you may need to fix the firewall to allow multiple<br>	// ports to talk.  See http://www.kb.cert.org/vuls/id/800113<br><br>	// If your ISP provided one or more IP addresses for stable <br>	// nameservers, you probably want to use them as forwarders.  <br>	// Uncomment the following block, and insert the addresses replacing <br>	// the all-0&apos;s placeholder.<br><br>	forwarders &#123;<br>	 	223.5.5.5;<br>	&#125;;<br><br>	//========================================================================<br>	// If BIND logs error messages about the root key being expired,<br>	// you will need to update your keys.  See https://www.isc.org/bind-keys<br>	//========================================================================<br>	dnssec-validation auto;<br><br>	auth-nxdomain no;    # conform to RFC1035<br>	listen-on-v6 &#123; any; &#125;;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>其中 <code>223.5.5.5</code> 是阿里云的DNS，这里的意思其实是如果本地找不到相应的域名，就会交给第三方DNS服务器处理,所以改成任意的可使用的第三方域名服务器即可。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div id="reward-container">
+  <div></div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/wechat_pay.jpg" alt="kirno 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>kirno</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://kirning.github.io/2018/06/28/cjyqrrd3p001wk8u9ra86j6jh/" title="gitlab安装教程">https://kirning.github.io/2018/06/28/cjyqrrd3p001wk8u9ra86j6jh/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/gitlab/" rel="tag"># gitlab</a>
+          
+            <a href="/tags/git/" rel="tag"># git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/19/cjyqrrcxs000sk8u9qgqw061a/" rel="next" title="bt搜索脚本">
+                <i class="fa fa-chevron-left"></i> bt搜索脚本
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/02/cjyqrrcxm000pk8u9vg0ak515/" rel="prev" title="linux常用命令">
+                linux常用命令 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">kirno</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/kirning" title="GitHub &rarr; https://github.com/kirning" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Gitlab"><span class="nav-number">1.</span> <span class="nav-text">安装Gitlab</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#汉化教程"><span class="nav-number">2.</span> <span class="nav-text">汉化教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用现有的Nginx作为服务器"><span class="nav-number">3.</span> <span class="nav-text">使用现有的Nginx作为服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可选-搭建私有DNS服务器"><span class="nav-number">4.</span> <span class="nav-text">(可选)搭建私有DNS服务器</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kirno</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>

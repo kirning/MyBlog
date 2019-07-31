@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kirning.github.io/"/>
-  <updated>2019-07-12T09:11:38.472Z</updated>
+  <updated>2019-07-31T04:41:20.696Z</updated>
   <id>https://kirning.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>hexo 折腾日记</title>
-    <link href="https://kirning.github.io/2019/07/12/cjxzvzagf000qmsu9qy2dcfny/"/>
-    <id>https://kirning.github.io/2019/07/12/cjxzvzagf000qmsu9qy2dcfny/</id>
-    <published>2019-07-12T09:01:09.000Z</published>
-    <updated>2019-07-12T09:11:38.472Z</updated>
+    <title>Mysql数据库备份</title>
+    <link href="https://kirning.github.io/2019/07/31/cjyqrrd3n001vk8u95gq78og3/"/>
+    <id>https://kirning.github.io/2019/07/31/cjyqrrd3n001vk8u95gq78og3/</id>
+    <published>2019-07-31T02:58:18.000Z</published>
+    <updated>2019-07-31T04:41:20.696Z</updated>
     
     <summary type="html">
     
@@ -29,10 +29,54 @@
       
         
         
-          &lt;p&gt;Hexo 也用了一段时间了，记录一下折腾日记&lt;/p&gt;
-&lt;h2 id=&quot;首页文章过滤&quot;&gt;&lt;a href=&quot;#首页文章过滤&quot; class=&quot;headerlink&quot; title=&quot;首页文章过滤&quot;&gt;&lt;/a&gt;首页文章过滤&lt;/h2&gt;&lt;p&gt;有些文章不想在首页出现，可以用 &lt;a
+          &lt;p&gt;备份数据库：&lt;/p&gt;
+&lt;p&gt;使用的工具为 &lt;a href=&quot;https://www.percona.com/doc/percona-xtrabackup/2.4/installation/yum_repo.html&quot; target=&quot;_blank&quot;
         
       
+    
+    </summary>
+    
+    
+      <category term="mysql" scheme="https://kirning.github.io/tags/mysql/"/>
+    
+      <category term="backup" scheme="https://kirning.github.io/tags/backup/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在vscode中使用Typescript开发node</title>
+    <link href="https://kirning.github.io/2019/07/16/cjyqrrd1j001pk8u9t4djhccv/"/>
+    <id>https://kirning.github.io/2019/07/16/cjyqrrd1j001pk8u9t4djhccv/</id>
+    <published>2019-07-16T03:48:05.000Z</published>
+    <updated>2019-07-16T04:06:26.746Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用&lt;code&gt;Typescript&lt;/code&gt;开发node的话，可以使用&lt;code&gt;ts-node&lt;/code&gt;库，这样就可以直接运行，不需要另外编译。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="node" scheme="https://kirning.github.io/tags/node/"/>
+    
+      <category term="vscode" scheme="https://kirning.github.io/tags/vscode/"/>
+    
+      <category term="typescript" scheme="https://kirning.github.io/tags/typescript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo 折腾日记</title>
+    <link href="https://kirning.github.io/2019/07/12/cjyqrrcxy000vk8u90jyqj9fc/"/>
+    <id>https://kirning.github.io/2019/07/12/cjyqrrcxy000vk8u90jyqj9fc/</id>
+    <published>2019-07-12T09:01:09.000Z</published>
+    <updated>2019-07-12T09:19:31.458Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Hexo 也用了一段时间了，记录一下折腾日记&lt;/p&gt;
+&lt;h2 id=&quot;hexo主题推荐之-Next&quot;&gt;&lt;a href=&quot;#hexo主题推荐之-Next&quot; class=&quot;headerlink&quot; title=&quot;hexo主题推荐之 Next&quot;&gt;&lt;/a&gt;hexo主题推荐之 &lt;code&gt;Next&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://theme-next.org/docs/getting-started/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;主题&lt;/a&gt;风格挺好看的，简单明了，具体配官方比较全。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/16272760/61057395-d2deb000-a427-11e9-8e28-f348fe181795.png&quot; alt&gt;&lt;/p&gt;
     
     </summary>
     
@@ -43,8 +87,8 @@
   
   <entry>
     <title>在nodejs使用mysql库中连接mysql8的问题</title>
-    <link href="https://kirning.github.io/2019/07/12/cjxzvzagh000smsu9attocrbo/"/>
-    <id>https://kirning.github.io/2019/07/12/cjxzvzagh000smsu9attocrbo/</id>
+    <link href="https://kirning.github.io/2019/07/12/cjyqrrcxq000qk8u9pt0i3f71/"/>
+    <id>https://kirning.github.io/2019/07/12/cjyqrrcxq000qk8u9pt0i3f71/</id>
     <published>2019-07-12T05:24:36.000Z</published>
     <updated>2019-07-12T08:14:50.658Z</updated>
     
@@ -64,8 +108,8 @@
   
   <entry>
     <title>redux</title>
-    <link href="https://kirning.github.io/2019/07/04/cjxzvzagm000xmsu9l3ymrtvt/"/>
-    <id>https://kirning.github.io/2019/07/04/cjxzvzagm000xmsu9l3ymrtvt/</id>
+    <link href="https://kirning.github.io/2019/07/04/cjyqrrcxu000tk8u9dyi0ipkp/"/>
+    <id>https://kirning.github.io/2019/07/04/cjyqrrcxu000tk8u9dyi0ipkp/</id>
     <published>2019-07-04T10:22:20.000Z</published>
     <updated>2019-07-12T06:57:51.418Z</updated>
     
@@ -92,8 +136,8 @@
   
   <entry>
     <title>typesafe-actions-zh</title>
-    <link href="https://kirning.github.io/2019/07/03/cjxzvzayu0023msu9xxwj5oii/"/>
-    <id>https://kirning.github.io/2019/07/03/cjxzvzayu0023msu9xxwj5oii/</id>
+    <link href="https://kirning.github.io/2019/07/03/cjyqrrdjg002ck8u92i3aj4nn/"/>
+    <id>https://kirning.github.io/2019/07/03/cjyqrrdjg002ck8u92i3aj4nn/</id>
     <published>2019-07-03T07:51:00.000Z</published>
     <updated>2019-07-12T06:57:39.677Z</updated>
     
@@ -116,8 +160,8 @@
   
   <entry>
     <title>构建electron、typescript、react、antd应用</title>
-    <link href="https://kirning.github.io/2019/06/14/cjxzvzao7001qmsu90knea9p3/"/>
-    <id>https://kirning.github.io/2019/06/14/cjxzvzao7001qmsu90knea9p3/</id>
+    <link href="https://kirning.github.io/2019/06/14/cjyqrrd9x0024k8u97m8507cg/"/>
+    <id>https://kirning.github.io/2019/06/14/cjyqrrd9x0024k8u97m8507cg/</id>
     <published>2019-06-14T10:14:11.000Z</published>
     <updated>2019-07-12T06:58:21.673Z</updated>
     
@@ -130,9 +174,9 @@
     </summary>
     
     
-      <category term="electron" scheme="https://kirning.github.io/tags/electron/"/>
-    
       <category term="typescript" scheme="https://kirning.github.io/tags/typescript/"/>
+    
+      <category term="electron" scheme="https://kirning.github.io/tags/electron/"/>
     
       <category term="react" scheme="https://kirning.github.io/tags/react/"/>
     
@@ -142,8 +186,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://kirning.github.io/2019/01/27/cjxzvzagc000nmsu97v2r28ek/"/>
-    <id>https://kirning.github.io/2019/01/27/cjxzvzagc000nmsu97v2r28ek/</id>
+    <link href="https://kirning.github.io/2019/01/27/cjyqrrcxf000lk8u9r5tgct1z/"/>
+    <id>https://kirning.github.io/2019/01/27/cjyqrrcxf000lk8u9r5tgct1z/</id>
     <published>2019-01-27T10:37:54.357Z</published>
     <updated>2019-01-27T10:37:54.357Z</updated>
     
@@ -164,8 +208,8 @@
   
   <entry>
     <title>2018-11-04日记</title>
-    <link href="https://kirning.github.io/2018/11/05/cjxzvzafy000bmsu9dpxqqhgj/"/>
-    <id>https://kirning.github.io/2018/11/05/cjxzvzafy000bmsu9dpxqqhgj/</id>
+    <link href="https://kirning.github.io/2018/11/05/cjyqrrcxa000hk8u9g0rrll8a/"/>
+    <id>https://kirning.github.io/2018/11/05/cjyqrrcxa000hk8u9g0rrll8a/</id>
     <published>2018-11-05T02:45:16.000Z</published>
     <updated>2019-07-12T08:40:24.713Z</updated>
     
@@ -182,8 +226,8 @@
   
   <entry>
     <title>2018-11-03日记</title>
-    <link href="https://kirning.github.io/2018/11/05/cjxzvzafw0009msu9po5semod/"/>
-    <id>https://kirning.github.io/2018/11/05/cjxzvzafw0009msu9po5semod/</id>
+    <link href="https://kirning.github.io/2018/11/05/cjyqrrcx6000fk8u9ii6rujbm/"/>
+    <id>https://kirning.github.io/2018/11/05/cjyqrrcx6000fk8u9ii6rujbm/</id>
     <published>2018-11-05T02:44:56.000Z</published>
     <updated>2019-07-12T08:40:27.001Z</updated>
     
@@ -200,8 +244,8 @@
   
   <entry>
     <title>2018-11-02日记</title>
-    <link href="https://kirning.github.io/2018/11/02/cjxzvzaft0006msu96fbtc1ej/"/>
-    <id>https://kirning.github.io/2018/11/02/cjxzvzaft0006msu96fbtc1ej/</id>
+    <link href="https://kirning.github.io/2018/11/02/cjyqrrcx1000bk8u9v6dqg7vc/"/>
+    <id>https://kirning.github.io/2018/11/02/cjyqrrcx1000bk8u9v6dqg7vc/</id>
     <published>2018-11-02T10:26:34.000Z</published>
     <updated>2019-07-12T08:40:16.466Z</updated>
     
@@ -218,8 +262,8 @@
   
   <entry>
     <title>2018-11-01日记</title>
-    <link href="https://kirning.github.io/2018/11/01/cjxzvzafr0005msu9xatk22eu/"/>
-    <id>https://kirning.github.io/2018/11/01/cjxzvzafr0005msu9xatk22eu/</id>
+    <link href="https://kirning.github.io/2018/11/01/cjyqrrcwk0004k8u9p5fj1971/"/>
+    <id>https://kirning.github.io/2018/11/01/cjyqrrcwk0004k8u9p5fj1971/</id>
     <published>2018-11-01T06:44:50.000Z</published>
     <updated>2019-07-12T08:40:14.409Z</updated>
     
@@ -236,8 +280,8 @@
   
   <entry>
     <title>2018-10-31日记</title>
-    <link href="https://kirning.github.io/2018/11/01/cjxzvzafp0004msu93g2vkld7/"/>
-    <id>https://kirning.github.io/2018/11/01/cjxzvzafp0004msu93g2vkld7/</id>
+    <link href="https://kirning.github.io/2018/11/01/cjyqrrcwh0003k8u9gkqqkrwq/"/>
+    <id>https://kirning.github.io/2018/11/01/cjyqrrcwh0003k8u9gkqqkrwq/</id>
     <published>2018-11-01T03:42:20.000Z</published>
     <updated>2019-07-12T08:40:10.154Z</updated>
     
@@ -254,8 +298,8 @@
   
   <entry>
     <title>2018-10-29日记</title>
-    <link href="https://kirning.github.io/2018/10/30/cjxzvzafh0001msu9ktlgftwu/"/>
-    <id>https://kirning.github.io/2018/10/30/cjxzvzafh0001msu9ktlgftwu/</id>
+    <link href="https://kirning.github.io/2018/10/30/cjyqrrcw50000k8u9j4qqgkx3/"/>
+    <id>https://kirning.github.io/2018/10/30/cjyqrrcw50000k8u9j4qqgkx3/</id>
     <published>2018-10-30T10:50:36.000Z</published>
     <updated>2019-07-12T08:40:12.433Z</updated>
     
@@ -272,8 +316,8 @@
   
   <entry>
     <title>2018-10-30日记</title>
-    <link href="https://kirning.github.io/2018/10/30/cjxzvzafl0002msu926ok6zvd/"/>
-    <id>https://kirning.github.io/2018/10/30/cjxzvzafl0002msu926ok6zvd/</id>
+    <link href="https://kirning.github.io/2018/10/30/cjyqrrcwc0001k8u92nuvud9e/"/>
+    <id>https://kirning.github.io/2018/10/30/cjyqrrcwc0001k8u92nuvud9e/</id>
     <published>2018-10-30T08:20:29.000Z</published>
     <updated>2019-07-12T08:40:11.113Z</updated>
     
@@ -290,8 +334,8 @@
   
   <entry>
     <title>dnsCheck</title>
-    <link href="https://kirning.github.io/2018/07/10/cjxzvzag7000gmsu91b6eqir3/"/>
-    <id>https://kirning.github.io/2018/07/10/cjxzvzag7000gmsu91b6eqir3/</id>
+    <link href="https://kirning.github.io/2018/07/10/cjyqrrcxk000ok8u91br4p40x/"/>
+    <id>https://kirning.github.io/2018/07/10/cjyqrrcxk000ok8u91br4p40x/</id>
     <published>2018-07-10T06:45:51.000Z</published>
     <updated>2019-01-27T10:37:54.336Z</updated>
     
@@ -312,8 +356,8 @@
   
   <entry>
     <title>linux常用命令</title>
-    <link href="https://kirning.github.io/2018/07/02/cjxzvzagg000rmsu9rvp5qj53/"/>
-    <id>https://kirning.github.io/2018/07/02/cjxzvzagg000rmsu9rvp5qj53/</id>
+    <link href="https://kirning.github.io/2018/07/02/cjyqrrcxm000pk8u9vg0ak515/"/>
+    <id>https://kirning.github.io/2018/07/02/cjyqrrcxm000pk8u9vg0ak515/</id>
     <published>2018-07-02T03:40:43.000Z</published>
     <updated>2019-01-27T10:37:54.363Z</updated>
     
@@ -337,8 +381,8 @@
   
   <entry>
     <title>gitlab安装教程</title>
-    <link href="https://kirning.github.io/2018/06/28/cjxzvzao3001omsu9ni57c7sr/"/>
-    <id>https://kirning.github.io/2018/06/28/cjxzvzao3001omsu9ni57c7sr/</id>
+    <link href="https://kirning.github.io/2018/06/28/cjyqrrd3p001wk8u9ra86j6jh/"/>
+    <id>https://kirning.github.io/2018/06/28/cjyqrrd3p001wk8u9ra86j6jh/</id>
     <published>2018-06-28T09:37:12.000Z</published>
     <updated>2019-01-27T10:37:54.352Z</updated>
     
@@ -370,8 +414,8 @@
   
   <entry>
     <title>bt搜索脚本</title>
-    <link href="https://kirning.github.io/2018/06/19/cjxzvzag9000jmsu9081fzymz/"/>
-    <id>https://kirning.github.io/2018/06/19/cjxzvzag9000jmsu9081fzymz/</id>
+    <link href="https://kirning.github.io/2018/06/19/cjyqrrcxs000sk8u9qgqw061a/"/>
+    <id>https://kirning.github.io/2018/06/19/cjyqrrcxs000sk8u9qgqw061a/</id>
     <published>2018-06-19T09:37:10.000Z</published>
     <updated>2019-01-27T10:37:54.331Z</updated>
     
@@ -389,8 +433,8 @@ javascript:pachong();&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot
   
   <entry>
     <title>通过源码来编译nginx</title>
-    <link href="https://kirning.github.io/2018/06/19/cjxzvzagk000umsu92gbsllii/"/>
-    <id>https://kirning.github.io/2018/06/19/cjxzvzagk000umsu92gbsllii/</id>
+    <link href="https://kirning.github.io/2018/06/19/cjyqrrcy40011k8u9kyj2ai02/"/>
+    <id>https://kirning.github.io/2018/06/19/cjyqrrcy40011k8u9kyj2ai02/</id>
     <published>2018-06-19T09:34:14.000Z</published>
     <updated>2019-01-27T10:37:54.368Z</updated>
     
@@ -409,56 +453,6 @@ javascript:pachong();&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot
       <category term="编译" scheme="https://kirning.github.io/tags/%E7%BC%96%E8%AF%91/"/>
     
       <category term="linux" scheme="https://kirning.github.io/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PL2303HX 的驱动安装</title>
-    <link href="https://kirning.github.io/2018/06/19/cjxzvzag5000emsu9mmz4b5f0/"/>
-    <id>https://kirning.github.io/2018/06/19/cjxzvzag5000emsu9mmz4b5f0/</id>
-    <published>2018-06-19T05:52:28.000Z</published>
-    <updated>2019-07-12T06:57:58.651Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;由于官方不再支持PL2303HX,所以就没有了win10上可用的官方驱动.有一个应该是民间高手的人补充了这个空白&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="单片机" scheme="https://kirning.github.io/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>node 远程调试</title>
-    <link href="https://kirning.github.io/2018/06/19/cjxzvzagl000vmsu9wx3gmqfj/"/>
-    <id>https://kirning.github.io/2018/06/19/cjxzvzagl000vmsu9wx3gmqfj/</id>
-    <published>2018-06-19T05:52:00.000Z</published>
-    <updated>2019-07-12T06:58:04.008Z</updated>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;进入项目根目录，假如启动个文件在 &lt;code&gt;./bin/www&lt;/code&gt; 这里。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;命令&lt;/p&gt;
- &lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs shell&quot;&gt;node --inspect=0.0.0.0:3001 bin/www&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt; 其中 &lt;code&gt;0.0.0.0&lt;/code&gt; 表示监听的Ip地址，全0 表示任意地方可以访问。3001 是访问端口 bin/www 就是程序的启动文件&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Node" scheme="https://kirning.github.io/tags/Node/"/>
     
   </entry>
   
